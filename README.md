@@ -33,7 +33,7 @@ Things you may want to cover:
 |first_name_kana|string|null: false
 |last_name_kana|string|null: false|
 |birthday|string|null: false|
-|email|string|null: false unique: true|
+|email|string|null: false, unique: true|
 |password|string|null: false|
 
 ### Association
@@ -49,26 +49,27 @@ Things you may want to cover:
 |name|string|null: false|
 |status|string|null: false|
 |image|string|null: false|
-|body|string|null: false|
+|body|text|null: false|
 |deliver_fee|string|null: false|
 |how_to_deliver|string|null: false|
 |region|string|null: false|
 |price|string|null: false|
-|user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
 - belongs_to :category
-- has_many :images
+- belongs_to :brand
+- has_many :sub_images
 - has_many :comments
 - has_many :likes
 
 ## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|
-|item_id|refelence|null: false, foreign_key: true|
+|name|string|null: false|
+|item_id|references|foreign_key: true|
 
 ### Association
 - has_many :items
@@ -78,7 +79,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|reference|
+|item_id|references|foreign_key: true|
 ### Association
 - has_many: categories
 - has_many: items
@@ -86,19 +87,19 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|item_id|reference|
-|body|text|
+|user_id|references|null: false|
+|item_id|references|foreign_key: true|
+|body|string|null: false|
 
 ### Association
-- has_many :users
-- has_many :messages
+- belongs_to :user
+- belongs_to :item
 
 ## sub_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|
-|image|text|
+|item_id|references|foreign_key: true|
+|image|text|null: false|
 
 ### Association
 - belongs_to: item
@@ -106,34 +107,34 @@ Things you may want to cover:
 ## paymentsテーブル
 |column|Type|Options|
 |-------|---------|-----------|
-|user_id|reference|
-|card_number|integer|null: false unique: true|
+|user_id|reference|foreign_key: true|
+|card_number|string|null: false unique: true|
 |year|integer|null: false|
 |month|integer|null: false|
 |security_number|integer|null: false|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 ## addressテーブル
 |column|Type|Option|
 |----------|------|---------|
-|user_id|reference|
+|user_id|references|foreign_key: true|
 |build_name|string|
-|address_banchi|stiring|null: false|
+|address_banchi|string|null: false|
 |post_number|integer|null: false|
-|phone-number|integer|
-|prefectues|string|null: false|
+|phone_number|string|
+|prefectures|string|null: false|
 |city|string|null: false|
 
 ### Association
-- has_one: user
+- belongs_to: user
 
 ## Likesテーブル
 |column|Type|Option|
 |----------|------|---------|
-|user_id|reference|
-|item_id|reference|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
 
 ### Association
 - belongs_to: user
