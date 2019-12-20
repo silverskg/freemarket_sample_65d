@@ -3,8 +3,10 @@
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|name_zenkaku|string|null: false|
-|name_kana|string|null: false|
+|first_name_zenkaku|string|null: false|
+|last_name_zenkaku|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
 |birthday|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -21,7 +23,6 @@
 |------|----|-------|
 |name|string|null: false|
 |status|string|null: false|
-|image|string|null: false|
 |body|text|null: false|
 |deliver_fee|string|null: false|
 |delivery_date|string|null: false|
@@ -30,6 +31,7 @@
 |price|string|null: false|
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -43,7 +45,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
 
 ### Association
 - has_many :items
@@ -53,7 +55,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|references|foreign_key: true|
+
 ### Association
 - has_many: categories
 - has_many: items
@@ -69,7 +71,7 @@
 - belongs_to :user
 - belongs_to :item
 
-## sub_imagesテーブル
+## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |item_id|references|foreign_key: true|
