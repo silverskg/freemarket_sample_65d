@@ -1,37 +1,10 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
 ## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
-|fist_name_zenkaku|string|null: false|
-|last_name_zenkaku|string|null: false|
-|first_name_kana|string|null: false
-|last_name_kana|string|null: false|
+|name_zenkaku|string|null: false|
+|name_kana|string|null: false|
 |birthday|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
@@ -51,6 +24,7 @@ Things you may want to cover:
 |image|string|null: false|
 |body|text|null: false|
 |deliver_fee|string|null: false|
+|delivery_date|string|null: false|
 |how_to_deliver|string|null: false|
 |region|string|null: false|
 |price|string|null: false|
@@ -87,7 +61,7 @@ Things you may want to cover:
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false|
+|user_id|references|foreign_key: true|
 |item_id|references|foreign_key: true|
 |body|string|null: false|
 
