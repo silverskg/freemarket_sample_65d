@@ -1,24 +1,117 @@
-# README
+## usersテーブル
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+|Column|Type|Options|
+|------|----|-------|
+|nickname|string|null: false|
+|first_name_zenkaku|string|null: false|
+|last_name_zenkaku|string|null: false|
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday|string|null: false|
+|email|string|null: false, unique: true|
+|password|string|null: false|
 
-Things you may want to cover:
+### Association
+- has_many :items
+- has_many :likes
+- has_many :comments
+- has_one : payment
+- has_one : address
 
-* Ruby version
+## itemsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|status|string|null: false|
+|body|text|null: false|
+|deliver_fee|string|null: false|
+|delivery_date|string|null: false|
+|how_to_deliver|string|null: false|
+|region|string|null: false|
+|price|string|null: false|
+|user_id|references|foreign_key: true|
+|category_id|references|foreign_key: true|
+|brand_id|references|foreign_key: true|
 
-* System dependencies
+### Association
+- belongs_to :user
+- belongs_to :category
+- belongs_to :brand
+- has_many :images
+- has_many :comments
+- has_many :likes
 
-* Configuration
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|brand_id|references|foreign_key: true|
 
-* Database creation
+### Association
+- has_many :items
+- belongs_to :brand
 
-* Database initialization
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
 
-* How to run the test suite
+### Association
+- has_many: categories
+- has_many: items
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
+|body|string|null: false|
 
-* Deployment instructions
+### Association
+- belongs_to :user
+- belongs_to :item
 
-* ...
+## imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|references|foreign_key: true|
+|image|text|null: false|
+
+### Association
+- belongs_to: item
+
+## paymentsテーブル
+|column|Type|Options|
+|-------|---------|-----------|
+|user_id|reference|foreign_key: true|
+|card_number|string|null: false unique: true|
+|year|integer|null: false|
+|month|integer|null: false|
+|security_number|integer|null: false|
+
+### Association
+- belongs_to :user
+
+## addressテーブル
+|column|Type|Option|
+|----------|------|---------|
+|user_id|references|foreign_key: true|
+|build_name|string|
+|address_banchi|string|null: false|
+|post_number|integer|null: false|
+|phone_number|string|
+|prefectures|string|null: false|
+|city|string|null: false|
+
+### Association
+- belongs_to: user
+
+## Likesテーブル
+|column|Type|Option|
+|----------|------|---------|
+|user_id|references|foreign_key: true|
+|item_id|references|foreign_key: true|
+
+### Association
+- belongs_to: user
+- belongs_to: item
