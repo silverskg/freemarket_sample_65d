@@ -1,0 +1,251 @@
+body{
+  background-color: #f5f5f5;
+}
+
+.header{
+  text-align: center; 
+  width: 100%;
+  height: 128px;
+  display:flex;
+  left: auto;
+  .logo{
+    margin-top: 40px;
+    margin-left: 340px;
+    margin-right: 60px;
+  }
+  
+  .clearfix{
+    margin-top: 38px;
+  }
+  .maru1red {
+    background:#ea352d;
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    border-radius: 50%;
+  }
+  .maru2gray, .maru3gray, .maru4gray, .maru5gray{
+      background: #ccc;
+      width: 12px;
+      height: 12px;
+      margin: 8px auto 0;
+      border-radius: 50%;
+  }
+
+  li1--red {
+    font-weight: 600;
+    color: #ea352d;
+    z-index: 1;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 40px;
+  }
+
+  li2--gray, li3--gray, li4--gray, li5--gray {
+  z-index: 5;
+  display: inline-block;
+  font-size: 12px;
+  color: #888;
+  margin-right: 40px;
+  }
+
+  .line1-1 {
+    display: block;
+    content: '';
+    width: 444px;
+    border-bottom: solid 3px #ccc;
+    margin-top: -8px;
+    margin-left: 30px;
+  }
+
+  //赤ラインのwidthの値を変更
+  .line2-1 {
+  width: 0px;
+  display: block;
+  content: '';
+  border-bottom: solid 3px #ea352d;
+  margin-top: -3px;
+  margin-left: 30px;
+  }
+}
+
+
+.main{
+  background-color: #f5f5f5;
+  .registrationHeader {
+    @include centralContent();
+    border-bottom: 1px solid #f1f1f1;
+    height: 97px;
+    text-align: center;
+    margin: auto;
+    font-size: 22px;
+    line-height: 97px;
+  }
+  .registrationForm {
+    @include centralContent();
+    height: auto;
+    padding: 40px 178.5px 64px;
+    box-sizing: border-box;
+    font-size: 14px;
+    .formNickname {
+      .x {
+        @include x();
+      }
+      .y {
+        @include y();
+      }
+      .formareaBig {
+        @include formarea();
+      }
+    }
+
+    .f {
+      margin-top: 32px;
+      .x {
+        @include x();
+      }
+      .y {
+        @include y();
+      }
+      .formareaBig {
+        @include formarea();
+      }
+      .flex {
+        display: flex;
+        vertical-align: middle;
+        .formareaHalf {
+          width: 165.5px;
+          height: 48px;
+          border-radius: 5px;
+          border: 1px solid #dbd6d6;
+          box-shadow: none;
+          margin: 8px 8px 0px 0px;
+          padding: 10px 16px 8px;
+          box-sizing: border-box;
+        }
+        .formareaSmall {
+          width: 76px;
+          height: 48px;
+          padding: 0px 10px;
+          border-radius: 5px;
+          border: 1px solid #dbd6d6;
+          box-shadow: none;
+          box-sizing: border-box;
+          margin-top: 8px;
+        }
+        .bd {
+          font-size: 14px;
+          color: #333333;
+          margin: 16px 5px 0px;
+          line-height: 30px;
+        }
+      }
+      .z {
+        @include z();
+      }
+      .big {
+        font-size: 16px;
+        font-weight: bolder;
+      }
+      .small {
+        color: #333333;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+    }
+    .formAttention {
+      margin-top: 40px;
+      text-align: center;
+      .link {
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+    .submitbtn {
+      width: 343px;
+      height: 50px;
+      font-size: 13px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 40px;
+      display: inline-block;
+      background-color: #EA352D;
+      color: white;
+      margin-top: 32px;
+    }
+    .AboutRegistration {
+      display: inline-block;
+      width: 343px;
+      text-align: right;
+      color: #0099e8;
+      text-decoration: none;
+      margin-top: 32px;
+    }
+    .attentionInEnglish {
+      width: 343px;
+      height: 52px;
+      margin-top: 32px;
+      padding: 8px 16px;
+      box-sizing: border-box;
+      font-size: 12px;
+      color: #888888;
+      background-color: #f5f5f5;
+      .link {
+        color: #0099e8;
+        text-decoration: none;
+      }
+    }
+  }
+  .showPassword {
+    display: flex;
+    margin-top: 16px;
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      border: 1px solid #dbd6d6;
+      box-shadow: none;
+    }
+    p {
+      display: inline-block;
+      font-size: 14px;
+      color: #333333;
+      margin-left: 8px;
+    }
+  }
+}
+
+.footer{
+  height: 140px;
+  width: 456px;
+  margin: auto;
+  padding: 40px 0px;
+  &__menu{
+    height: 12px;
+    width: 456px;
+    font-size: 12px;
+    text-align: center; 
+
+    a{
+    color: #333333;
+    text-decoration: none;
+    }
+    .privacybtn{
+      margin-right: 15px;
+    }
+    .transactionbtn{
+      margin-left: 15px;
+    }
+
+  
+  }
+  .logo2{
+    margin-top: 40px;
+    margin-left: 188px;
+  }
+  p{
+    text-align: center; 
+    font-size: 13px;
+    color: #333333;
+  }
+}

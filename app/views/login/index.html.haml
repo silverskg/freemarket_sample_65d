@@ -1,0 +1,43 @@
+.main
+  .header
+    .headerIcon
+      = link_to '#' do
+        = image_tag "fmarket_logo_red.svg", alt: 'header_icon', class: 'img headerIcon'
+  .loginNoAccount
+    .loginNoAccount__contents
+      .text
+        アカウントをお持ちでない方はこちら
+      .registrationButton
+        = link_to '#', class: 'btn resistration' do
+          新規会員登録
+  .loginWithSNSaccount
+    .btns
+      = link_to '#', class: 'btn facebookLoginLink' do
+        = icon('fab', 'facebook-square', class: 'facebookIcon')
+        Facebookでログイン
+      = link_to '#', class: 'btn googleLoginLink' do
+        = icon('fab', 'google', class: 'googleIcon')
+        Googleでログイン
+  .loginWithEmail
+    .loginform
+      = form_for "#" do |f|
+        = f.text_field :text, placeholder: "メールアドレス", class: "emailLogin"
+        = f.text_field :text, placeholder: "パスワード", class: "passwordLogin"
+        = image_tag 'iamnotrobot.png', class: "robot_img"
+        = f.submit "ログイン", class: "submitbtn"
+    .forgetPassword
+      パスワードをお忘れの方
+  .footer
+    .footerLinks
+      %ul
+        = link_to "#", class: "links" do
+          プライバシーポリシー
+        = link_to "#", class: "links", id: "margin" do
+          メルカリ利用規約
+        = link_to "#", class: "links" do
+          特定商取引に関する表記
+    .footerIcon
+      = link_to '#' do
+        = image_tag "logo_gray.svg", alt: 'footer_icon', class: 'img footerIcon'
+    .authority
+      ©︎ Mercari, Inc.
