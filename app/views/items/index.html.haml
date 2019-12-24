@@ -9,13 +9,14 @@
           .main__top--search
             %input.card-nomber-form{placeholder:"何かお探しですか？"}
             .icon
-              %i.fa.fa-search
+              %a(href="#")
+                %i.fa.fa-search
         .main__bottom
           %ul 
             %li.num1
-              = link_to do
-                = icon('fas', 'bars')
-                カテゴリーから探す
+              %link(href="#")/
+              = icon('fas', 'bars')
+              カテゴリーから探す
             %li.num2 
               = link_to do
                 = icon('fas', 'tag')
@@ -320,16 +321,10 @@
         %p.name
           @Fmarket
         
-= link_to "#", class: "abcde" do      
+= link_to "#", class: "logo-btn" do      
   .exhibition-btn
     .fixed_btn
-      %span.ccccccc
+      %span.btn-name
       出品
-      %p.ssssss
+      %p.camera-icon
         = icon('fas', 'camera')
-      -# .exhibition
-      -#   出品
-
-
-
-
