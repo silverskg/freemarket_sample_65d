@@ -1,0 +1,37 @@
+current directory: /Users/ikedakeigo/projects/freemarket_sample_65d/vendor/bundle/ruby/2.5.0/gems/nokogiri-1.10.7/ext/nokogiri
+/Users/ikedakeigo/.rbenv/versions/2.5.1/bin/ruby -r ./siteconf20191220-22515-4q6t7l.rb extconf.rb
+checking if the C compiler accepts  -I /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/libxml2... *** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/ikedakeigo/.rbenv/versions/2.5.1/bin/$(RUBY_BASE_NAME)
+	--help
+	--clean
+/Users/ikedakeigo/.rbenv/versions/2.5.1/lib/ruby/2.5.0/mkmf.rb:456:in `try_do': The compiler failed to generate an executable file. (RuntimeError)
+You have to install development tools first.
+	from /Users/ikedakeigo/.rbenv/versions/2.5.1/lib/ruby/2.5.0/mkmf.rb:574:in `block in try_compile'
+	from /Users/ikedakeigo/.rbenv/versions/2.5.1/lib/ruby/2.5.0/mkmf.rb:521:in `with_werror'
+	from /Users/ikedakeigo/.rbenv/versions/2.5.1/lib/ruby/2.5.0/mkmf.rb:574:in `try_compile'
+	from extconf.rb:138:in `nokogiri_try_compile'
+	from extconf.rb:162:in `block in add_cflags'
+	from /Users/ikedakeigo/.rbenv/versions/2.5.1/lib/ruby/2.5.0/mkmf.rb:632:in `with_cflags'
+	from extconf.rb:161:in `add_cflags'
+	from extconf.rb:416:in `<main>'
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/ikedakeigo/projects/freemarket_sample_65d/vendor/bundle/ruby/2.5.0/extensions/x86_64-darwin-18/2.5.0/nokogiri-1.10.7/mkmf.log
+
+extconf failed, exit code 1

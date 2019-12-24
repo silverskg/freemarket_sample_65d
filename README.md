@@ -83,7 +83,7 @@
 ## paymentsテーブル
 |column|Type|Options|
 |-------|---------|-----------|
-|user_id|reference|foreign_key: true|
+|user_id|references|foreign_key: true|
 |card_number|string|null: false unique: true|
 |year|integer|null: false|
 |month|integer|null: false|
