@@ -49,7 +49,7 @@ body{
   margin-right: 40px;
   }
 
-  .line1-1 {
+  .grayline1 {
     display: block;
     content: '';
     width: 444px;
@@ -59,15 +59,16 @@ body{
   }
 
   //赤ラインのwidthの値を変更
-  .line2-1 {
-  width: 0px;
-  display: block;
-  content: '';
-  border-bottom: solid 3px #ea352d;
-  margin-top: -3px;
-  margin-left: 30px;
+  .redline1 {
+    width: 0px;
+    display: block;
+    content: '';
+    border-bottom: solid 3px #ea352d;
+    margin-top: -3px;
+    margin-left: 30px;
   }
 }
+
 
 
 .main{
@@ -88,24 +89,24 @@ body{
     box-sizing: border-box;
     font-size: 14px;
     .formNickname {
-      .x {
-        @include x();
+      .titleBold {
+        @include titleBold();
       }
-      .y {
-        @include y();
+      .hissuTag {
+        @include hissuTag();
       }
       .formareaBig {
         @include formarea();
       }
     }
 
-    .f {
+    .topmargin {
       margin-top: 32px;
-      .x {
-        @include x();
+      .titleBold {
+        @include titleBold();
       }
-      .y {
-        @include y();
+      .hissuTag {
+        @include hissuTag();
       }
       .formareaBig {
         @include formarea();
@@ -133,15 +134,15 @@ body{
           box-sizing: border-box;
           margin-top: 8px;
         }
-        .bd {
+        .date {
           font-size: 14px;
           color: #333333;
           margin: 16px 5px 0px;
           line-height: 30px;
         }
       }
-      .z {
-        @include z();
+      .attentionText {
+        @include attentionText();
       }
       .big {
         font-size: 16px;
@@ -216,36 +217,5 @@ body{
 }
 
 .footer{
-  height: 140px;
-  width: 456px;
-  margin: auto;
-  padding: 40px 0px;
-  &__menu{
-    height: 12px;
-    width: 456px;
-    font-size: 12px;
-    text-align: center; 
-
-    a{
-    color: #333333;
-    text-decoration: none;
-    }
-    .privacybtn{
-      margin-right: 15px;
-    }
-    .transactionbtn{
-      margin-left: 15px;
-    }
-
-  
-  }
-  .logo2{
-    margin-top: 40px;
-    margin-left: 188px;
-  }
-  p{
-    text-align: center; 
-    font-size: 13px;
-    color: #333333;
-  }
+  @include footer();
 }

@@ -54,7 +54,7 @@ color: #888;
 margin-right: 40px;
 
 }
-.line1-4 {
+.grayline4 {
   display: block;
   content: '';
   width: 444px;
@@ -64,7 +64,7 @@ margin-right: 40px;
 }
 
 //赤ラインのwidthの値を変更
-.line2-4 {
+.redline4 {
 width: 350px;
 display: block;
 content: '';
@@ -92,11 +92,11 @@ margin-left: 30px;
     padding: 40px 178.5px 64px;
     box-sizing: border-box;
     font-size: 14px;
-    .x {
-      @include x();
+    .titleBold {
+      @include titleBold();
     }
-    .y {
-      @include y();
+    .hissuTag {
+      @include hissuTag();
     }
     .cardImages {
       margin-top: 8px;
@@ -138,10 +138,10 @@ margin-left: 30px;
       color: white;
       margin-top: 32px;
     }
-    .f {
+    .topmargin {
       margin-top: 32px;
     }
-    .d {
+    .date {
       font-size: 14px;
       color: #333333;
       margin: 16px 10px 0px;
@@ -158,36 +158,5 @@ margin-left: 30px;
 }
 
 .footer{
-  height: 140px;
-  width: 456px;
-  margin: auto;
-  padding: 40px 0px;
-  &__menu{
-    height: 12px;
-    width: 456px;
-    font-size: 12px;
-    text-align: center; 
-
-    a{
-    color: #333333;
-    text-decoration: none;
-    }
-    .privacybtn{
-      margin-right: 15px;
-    }
-    .transactionbtn{
-      margin-left: 15px;
-    }
-
-  
-  }
-  .logo2{
-    margin-top: 40px;
-    margin-left: 188px;
-  }
-  p{
-    text-align: center; 
-    font-size: 13px;
-    color: #333333;
-  }
+  @include footer();
 }

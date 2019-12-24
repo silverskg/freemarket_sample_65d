@@ -18,8 +18,8 @@
     %li5--gray
       完了
       .maru5gray
-    .line1-2
-    .line2-2
+    .grayline2
+    .redline2
 
 .main
   .certificatePhoneNumber
@@ -27,16 +27,16 @@
   .certificationForm
     = form_for "#" do |f|
       .formPhoneNumber
-        %p.x 認証番号
+        %p.titleBold 認証番号
         = f.text_field :text, placeholder: "認証番号を入力", class: "certificationNumber formareaBig"
         %p.small SMSで届いた認証番号を入力してください
         = f.submit "認証して完了", class: "submitbtn"
   .certificateWithPhonecall
-    %p.x 30秒たっても認証番号が届かない方へ
+    %p.titleBold 30秒たっても認証番号が届かない方へ
     %p.small 電話で認証番号を聞くこともできます。
     = link_to "電話で認証番号を聞く（通話無料）", "#", class: "submitbtn"
   .resendCertificationNumber
-    %p.x 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+    %p.titleBold 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
     = link_to "電話番号を再度入力する", "#", class: "rewriteNumber link"
     .sms.small 
       ※SMSが届かない場合は

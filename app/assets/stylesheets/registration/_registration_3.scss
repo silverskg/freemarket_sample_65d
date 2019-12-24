@@ -55,7 +55,7 @@ li1--gray, li3--gray, li4--gray, li5--gray {
   margin-right: 40px;
   
 }
-.line1-2 {
+.grayline2 {
     display: block;
     content: '';
     width: 444px;
@@ -65,7 +65,7 @@ li1--gray, li3--gray, li4--gray, li5--gray {
 }
 
 //赤ラインのwidthの値を変更
-.line2-2 {
+.redline2 {
   width: 100px;
   display: block;
   content: '';
@@ -94,8 +94,8 @@ li1--gray, li3--gray, li4--gray, li5--gray {
     box-sizing: border-box;
     font-size: 14px;
     .formPhoneNumber {
-      .x {
-        @include x();
+      .titleBold {
+        @include titleBold();
       }
       .formareaBig {
         @include formarea();
@@ -126,8 +126,8 @@ li1--gray, li3--gray, li4--gray, li5--gray {
     padding: 40px 178.5px 64px;
     box-sizing: border-box;
     font-size: 14px;
-    .x {
-      @include x();
+    .titleBold {
+      @include titleBold();
     }
     .small {
       color: #333333;
@@ -153,8 +153,8 @@ li1--gray, li3--gray, li4--gray, li5--gray {
     padding: 40px 178.5px 64px;
     box-sizing: border-box;
     font-size: 14px;
-    .x {
-      @include x();
+    .titleBold {
+      @include titleBold();
     }
     .link {
       color: #0099e8;
@@ -171,39 +171,6 @@ li1--gray, li3--gray, li4--gray, li5--gray {
 }
 
 
-
-
 .footer{
-  height: 140px;
-  width: 456px;
-  margin: auto;
-  padding: 40px 0px;
-  &__menu{
-    height: 12px;
-    width: 456px;
-    font-size: 12px;
-    text-align: center; 
-
-    a{
-    color: #333333;
-    text-decoration: none;
-    }
-    .privacybtn{
-      margin-right: 15px;
-    }
-    .transactionbtn{
-      margin-left: 15px;
-    }
-
-  
-  }
-  .logo2{
-    margin-top: 40px;
-    margin-left: 188px;
-  }
-  p{
-    text-align: center; 
-    font-size: 13px;
-    color: #333333;
-  }
+  @include footer();
 }

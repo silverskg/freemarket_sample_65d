@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  # root to: "items#index"
-  # resources :items, only: [:index]
+  root to: "items#index"
+  resources :items, only: [:index]
 
-  root to: "login#index"
+  # ログイン画面表示
+  # root to: "login#index"
+
+  # ユーザー新規登録ページ表示
+  # root to: "registration#index_0"
   # root to: "registration#index_1"
   # root to: "registration#index_2"
   # root to: "registration#index_3"

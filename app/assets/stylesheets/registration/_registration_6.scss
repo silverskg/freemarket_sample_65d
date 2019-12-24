@@ -44,7 +44,7 @@ body{
   margin-right: 40px;
   }
 
-  .line1-5 {
+  .grayline5 {
     display: block;
     content: '';
     width: 444px;
@@ -54,7 +54,7 @@ body{
   }
   
   //赤ラインのwidthの値を変更
-  .line2-5 {
+  .redline5 {
   width: 444px;
   display: block;
   content: '';
@@ -66,8 +66,7 @@ body{
   
   
   
-  
-  
+
 .main-complete {
   width: 700px;
   height: 344px;
@@ -107,36 +106,6 @@ body{
 }  
   
 
-
 .footer{
-  height: 140px;
-  width: 456px;
-  margin: auto;
-  padding: 40px 0px;
-  &__menu{
-    height: 12px;
-    width: 456px;
-    font-size: 12px;
-    text-align: center; 
-
-    a{
-    color: #333333;
-    text-decoration: none;
-    }
-    .privacybtn{
-      margin-right: 15px;
-    }
-    .transactionbtn{
-      margin-left: 15px;
-    }
-  }
-  .logo2{
-    margin-top: 40px;
-    margin-left: 188px;
-  }
-  p{
-    text-align: center; 
-    font-size: 13px;
-    color: #333333;
-  }
+  @include footer();
 }
