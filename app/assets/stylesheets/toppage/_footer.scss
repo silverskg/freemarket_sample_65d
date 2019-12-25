@@ -1,122 +1,135 @@
-.images{
-  display: flex;
-}
-
-.about{
-  background-color: rgb(34, 34, 34);
-  color: rgb(255, 255, 255);
-  font-size: 12px;
-  padding: 0px 20px 10px;
-  height: 388px;
-
-  &__box{
-    height: 310px;
-    width: 1020px;
-    font-size: 16px;
-    padding-top: 18px;
-    margin-left: 190px;
+footer{
+  height: 100%;
+  width: 100%;
+  .images{
     display: flex;
-    position: relative;
+  }
 
-    &--text{
-      width: 210px;
-      height: 277px;
-      padding: 0px 40px 0px 0px;
+  .about{
+    background-color: rgb(34, 34, 34);
+    color: rgb(255, 255, 255);
+    font-size: 12px;
+    padding: 0px 20px 10px;
+    height: 388px;
 
-    }
-      
-      &--textIn{
-        height: 100px;
+    &__box{
+      height: 310px;
+      width: 1020px;
+      font-size: 16px;
+      padding-top: 18px;
+      margin-left: 190px;
+      display: flex;
+      position: relative;
+
+      &--text{
         width: 210px;
-        font-size: 12px; 
+        height: 277px;
+        padding: 0px 40px 0px 0px;
 
-        ul{
-          display: inline-block;
-        }     
+      }
+        
+        &--textIn{
+          height: 100px;
+          width: 210px;
+          font-size: 12px; 
 
-        li{
-          margin: 16px 0px 0px;
+          ul{
+            display: inline-block;
+          }     
+
+          li{
+            margin: 16px 0px 0px;
+            box-sizing: border-box;
+          }
+
+          *{
+            color: white;
+            text-decoration: none; 
+          }
         }
 
-        *{
-          color: white;
-          text-decoration: none; 
-        }
+
+      &--text1{
+        width: 210px;
+        height: 277px;
+        padding: 0px 40px 0px 0px;
       }
 
+      &--text2{
+        width: 455px;
+        height: 200px;
+        padding: 0px 40px 0px 0px;
+      }
 
-    &--text1{
-      width: 210px;
-      height: 277px;
-      padding: 0px 40px 0px 0px;
+      &--text5 {
+        width: 455px;
+        height: 200px;
+        padding-top: 22px;
     }
 
-    &--text2{
-      width: 455px;
-      height: 200px;
-      padding: 0px 40px 0px 0px;
-    }
-
-    &--text5 {
-      width: 455px;
-      height: 200px;
-      padding-top: 22px;
+      &--text3{
+        width: 100px;
+        height: 200px;
+        padding: 0px 40px 0px 0px;
+      }
   }
 
-    &--text3{
-      width: 100px;
-      height: 200px;
-      padding: 0px 40px 0px 0px;
+    &__bottom--logo{
+      width: 100%;
+      height: 78px;
+      position: relative;
+      a{
+        padding-top: 20px;
+        .logologo{
+          height: 35px;
+          position: absolute;
+          top: 40px;
+          
+        }
+      }
     }
- }
-
-  &__logo{
-    width: 100%;
-    height: 78px;
-    margin-left: 650px;
-  }
 
 
-.footer_logo{
-  font-size: 30px;
-  float: left;
-  margin-top: 30px;
-}
-
-.footer_logo1{
-  font-size: 30px;
-  margin-top: 30px;
-  
-  a{
-    margin-left: 20px;
+  .footer_logo{
+    font-size: 30px;
+    float: left;
     margin-top: 30px;
   }
 
- }
-  &__bottom{
-    width: 1020px;
-    height: 77px;
-    margin-left: 190px;
-    padding-top: 30px;
-    display: flex;
+  .footer_logo1{
+    font-size: 30px;
+    margin-top: 30px;
+    
+    a{
+      margin-left: 20px;
+      margin-top: 30px;
+    }
+
+  }
+    &__bottom{
+      width: 1020px;
+      height: 77px;
+      margin-left: 190px;
+      // padding-top: 30px;
+      display: flex;
+    }
+  }
+    
+  .about__bottom--name{
+    width: 100%;
+    margin-top: 53px;
+    // margin-left: 50px;
+    p {
+    // text-align: center;
+    // margin-right: 150px;
+    }
+
+  }
+
+  .about__box--textIn *{
+    opacity: 0.9;
   }
 }
-  
-.about__bottom--name{
-  width: 100%;
-  margin-left: 50px;
-  p {
-   text-align: center;
-   margin-right: 150px;
-  }
-
-}
-
-.about__box--textIn *{
-  opacity: 0.9;
-}
-
-
 .fixed_btn
   {
     position: fixed;
@@ -137,8 +150,7 @@
     -moz-border-radius: 50%;
     color: #FFF;
     cursor: pointer;
-    
-    // position: relative;
+
   }
 
   .fa-camera:before {
@@ -147,7 +159,7 @@
 }
 fieldset, img {
   border: 0;
-  margin-top: -63px;
+
 }
 
 element.style {
@@ -170,5 +182,4 @@ element.style {
   text-decoration: none;
   color: white;
 }
-
-
+* { margin: 0; padding: 0; }

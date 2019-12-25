@@ -1,4 +1,4 @@
--# item
+-# header
 %html
   %header
     .header
@@ -14,9 +14,9 @@
         .main__bottom
           %ul 
             %li.num1
-              %link(href="#")/
-              = icon('fas', 'bars')
-              カテゴリーから探す
+              = link_to do
+                = icon('fas', 'bars')
+                カテゴリーから探す
             %li.num2 
               = link_to do
                 = icon('fas', 'tag')
@@ -51,183 +51,536 @@
       %a(href="#" class="btn-gradient-radius")おもちゃ・ホビー・グッズ
 
       -# レディースカテゴリー
-  .woman-category
-    .woman-category__woman
-      レディース新着アイテム
-      = icon('fas', 'angle-right')
-      %a(href="#") もっと見る
-      -# 上の段の写真
-    %a(href="#" class="woman-photos")
-      .woman-photos__photo1
-      .woman-photos__photo2
-      .woman-photos__photo3
-      .woman-photos__photo4
-      .woman-photos__photo5
-        -# 下の段の写真
-    %a(href="#" class="woman-photos1")
-      .woman-photos1__photo1
-      .woman-photos1__photo2
-      .woman-photos1__photo3
-      .woman-photos1__photo4
-      .woman-photos1__photo5
-
-        -#  メンズカテゴリー
-    .men-category
-      .men-category__men
-        メンズ新着アイテム
-        = icon('fas', 'angle-right')
-        %a(href="#") もっと見る
-        -# 上の段の写真
-      %a(href="#" class="men-photos")
-        .men-photos__photo1
-        .men-photos__photo2
-        .men-photos__photo3
-        .men-photos__photo4
-        .men-photos__photo5
-          -# 下の段の写真
-      %a(href="#" class="men-photos1")
-        .men-photos1__photo1
-        .men-photos1__photo2
-        .men-photos1__photo3
-        .men-photos1__photo4
-        .men-photos1__photo5
-
-          -#  カメラカテゴリー
-      .camera-category
-        .camera-category__camera
-          家電・スマホ・カメラ新着アイテム
-          = icon('fas', 'angle-right')
-          %a(href="#") もっと見る
-          -# 上の段の写真
-        %a(href="#" class="camera-photos")
-          .camera-photos__photo1
-          .camera-photos__photo2
-          .camera-photos__photo3
-          .camera-photos__photo4
-          .camera-photos__photo5
-            -# 下の段の写真
-        %a(href="#" class="camera-photos1")
-          .camera-photos1__photo1
-          .camera-photos1__photo2
-          .camera-photos1__photo3
-          .camera-photos1__photo4
-          .camera-photos1__photo5
-
-          -#  おもちゃカテゴリー
-        .toy-category
-          .toy-category__toy
-            おもちゃ・ホビー・グッズ新着アイテム
+.category
+  .category__box
+    .women
+      .category-name
+        %p レディース新着アイテム
+        .motto
+          = link_to do
+            もっと見る
             = icon('fas', 'angle-right')
-            %a(href="#") もっと見る
             -# 上の段の写真
-          %a(href="#" class="toy-photos")
-            .toy-photos__photo1
-            .toy-photos__photo2
-            .toy-photos__photo3
-            .toy-photos__photo4
-            .toy-photos__photo5
-              -# 下の段の写真
-          %a(href="#" class="toy-photos1")
-            .toy-photos1__photo1
-            .toy-photos1__photo2
-            .toy-photos1__photo3
-            .toy-photos1__photo4
-            .toy-photos1__photo5
-
-    -# item2
-  .bar
-    %div 人気のブランド
-    .bar__btn
-      %a(href="#" class="btn-gradient-radius")シャネル
-      %a(href="#" class="btn-gradient-radius")ルイヴィトン
-      %a(href="#" class="btn-gradient-radius")シュプリーム
-      %a(href="#" class="btn-gradient-radius")ナイキ
-
-  .chanel-category
-    .chanel-category__chanel
-      シャネル新着アイテム
-      = icon('fas', 'angle-right')
-      %a(href="#") もっと見る
-      -# 上の段の写真
-    %a(href="#" class="chanel-photos")
-      .chanel-photos__photo1
-      .chanel-photos__photo2
-      .chanel-photos__photo3
-      .chanel-photos__photo4
-      .chanel-photos__photo5
+      .women__up
+        %ul.item-boxes
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+            -# 下の段の写真
+      .women-down
+        %ul.item-boxes
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+      -# メンズカテゴリー
+  .men
+    .category-name
+      %p メンズ新着アイテム
+      .motto
+        = link_to do
+          もっと見る
+          = icon('fas', 'angle-right')
+          -# 上の段の写真
+    .men__up
+      %ul.item-boxes
+        = link_to do
+          %li.item-box
+            = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+            %p.price ¥10,000
+            %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          -# 下の段の写真
+    .men-down
+      %ul.item-boxes
+        = link_to do
+          %li.item-box
+            = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+            %p.price ¥10,000
+            %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+    -# カメラカテゴリー
+  .camera
+  .category-name
+    %p 家電・スマホ・カメラ新着アイテム
+    .motto
+      = link_to do
+        もっと見る
+        = icon('fas', 'angle-right')
+        -# 上の段の写真
+  .camera__up
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
         -# 下の段の写真
-    %a(href="#" class="chanel-photos1")
-      .chanel-photos1__photo1
-      .chanel-photos1__photo2
-      .chanel-photos1__photo3
-      .chanel-photos1__photo4
-      .chanel-photos1__photo5
+  .camera-down
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
 
-      -#  ビトンカテゴリー
-    .vuitton-category
-      .vuitton-category__vuitton
-        ルイヴィトン新着アイテム
+    -# おもちゃカテゴリー
+  .toy
+  .category-name
+    %p おもちゃ・ホビー・グッズ新着アイテム
+    .motto
+      = link_to do
+        もっと見る
         = icon('fas', 'angle-right')
-        %a(href="#") もっと見る
         -# 上の段の写真
-      %a(href="#" class="vuitton-photos")
-        .vuitton-photos__photo1
-        .vuitton-photos__photo2
-        .vuitton-photos__photo3
-        .vuitton-photos__photo4
-        .vuitton-photos__photo5
-          -# 下の段の写真
-      %a(href="#" class="vuitton-photos1")
-        .vuitton-photos1__photo1
-        .vuitton-photos1__photo2
-        .vuitton-photos1__photo3
-        .vuitton-photos1__photo4
-        .vuitton-photos1__photo5
+  .toy__up
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+        -# 下の段の写真
+  .toy-down
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+  
+.bar
+  %div 人気のカテゴリー
+  .bar__btn
+    %a(href="#" class="btn-gradient-radius")シャネル
+    %a(href="#" class="btn-gradient-radius")ルイヴィトン
+    %a(href="#" class="btn-gradient-radius")シュプリーム
+    %a(href="#" class="btn-gradient-radius")ナイキ
 
-      -#  シュプリームカテゴリー
-    .supreme-category
-      .supreme-category__supreme
-        シュプリーム新着アイテム
+  -# シャネルカテゴリー
+.category
+  .category__box
+    .chanel
+      .category-name
+        %p シャネル新着アイテム
+        .motto
+          = link_to do
+            もっと見る
+            = icon('fas', 'angle-right')
+            -# 上の段の写真
+      .chanel__up
+        %ul.item-boxes
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+            -# 下の段の写真
+      .chanel-down
+        %ul.item-boxes
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+      -# ビトンカテゴリー
+  .vuitton
+    .category-name
+      %p ルイヴィトン新着アイテム
+      .motto
+        = link_to do
+          もっと見る
+          = icon('fas', 'angle-right')
+          -# 上の段の写真
+    .vuitton__up
+      %ul.item-boxes
+        = link_to do
+          %li.item-box
+            = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+            %p.price ¥10,000
+            %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          -# 下の段の写真
+    .vuitton-down
+      %ul.item-boxes
+        = link_to do
+          %li.item-box
+            = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+            %p.price ¥10,000
+            %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+    -# シュプリームカテゴリー
+  .supreme
+  .category-name
+    %p シュプリーム新着アイテム
+    .motto
+      = link_to do
+        もっと見る
         = icon('fas', 'angle-right')
-        %a(href="#") もっと見る
         -# 上の段の写真
-      %a(href="#" class="supreme-photos")
-        .supreme-photos__photo1
-        .supreme-photos__photo2
-        .supreme-photos__photo3
-        .supreme-photos__photo4
-        .supreme-photos__photo5
-          -# 下の段の写真
-      %a(href="#" class="supreme-photos1")
-        .supreme-photos1__photo1
-        .supreme-photos1__photo2
-        .supreme-photos1__photo3
-        .supreme-photos1__photo4
-        .supreme-photos1__photo5
+  .supreme__up
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+        -# 下の段の写真
+  .supreme-down
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
 
-      -#  ナイキカテゴリー
-    .niki-category
-      .niki-category__niki
-        ナイキ新着アイテム
+    -# ナイキカテゴリー
+  .niki
+  .category-name
+    %p ナイキ新着アイテム
+    .motto
+      = link_to do
+        もっと見る
         = icon('fas', 'angle-right')
-        %a(href="#") もっと見る
         -# 上の段の写真
-      %a(href="#" class="niki-photos")
-        .niki-photos__photo1
-        .niki-photos__photo2
-        .niki-photos__photo3
-        .niki-photos__photo4
-        .niki-photos__photo5
-          -# 下の段の写真
-      %a(href="#" class="niki-photos1")
-        .niki-photos1__photo1
-        .niki-photos1__photo2
-        .niki-photos1__photo3
-        .niki-photos1__photo4
-        .niki-photos1__photo5
+  .niki__up
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+        -# 下の段の写真
+  .niki-down
+    %ul.item-boxes
+      = link_to do
+        %li.item-box
+          = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+          %p.price ¥10,000
+          %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
+          = link_to do
+            %li.item-box
+              = image_tag 'toppage/car.jpeg', height: '252px', width: '188px', class: 'box'
+              %p.price ¥10,000
+              %p.name product-name
 
 
-    -#  item3
+
+
 %footer
   .images
     = image_tag 'toppage/free-image-1.jpg', height: '260px', width: '100%', class: 'bottom-photo'
@@ -237,17 +590,17 @@
         メルカリについて
         .about__box--textIn
           %nav.my-parts
-            %ul
+            %ul.ber
               %li
-                %a{:href => "#"} 会社概要（運営会社）
+                %a{href: "#"} 会社概要（運営会社）
               %li
-                %a{:href => "#"} 採用情報
+                %a{href: "#"} 採用情報
               %li
-                %a{:href => "#"} プレスリリース
+                %a{href: "#"} プレスリリース
               %li
-                %a{:href => "#"} 公式ブログ
+                %a{href: "#"} 公式ブログ
               %li
-                %a{:href => "#"} メルカリロゴ利用ガイドライン
+                %a{href: "#"} メルカリロゴ利用ガイドライン
           .footer_logo
             = link_to "https://twitter.com/mercari_jp", class: "twi-icon" do
               = icon('fab', 'twitter')
@@ -261,21 +614,21 @@
           %nav.my-parts
             %ul
               %li
-                %a{:href => "#"} メルカリガイド
+                %a{href: "#"} メルカリガイド
               %li
-                %a{:href => "#"} らくらくメルカリ便
+                %a{href: "#"} らくらくメルカリ便
               %li
-                %a{:href => "#"} ゆうゆうメルカリ便
+                %a{href: "#"} ゆうゆうメルカリ便
               %li
-                %a{:href => "#"} 大型メルカリ便
+                %a{href: "#"} 大型メルカリ便
               %li
-                %a{:href => "#"} 車体取引ガイド
+                %a{href: "#"} 車体取引ガイド
               %li
-                %a{:href => "#"} メルカリあんしん・あんぜん宣言！
+                %a{href: "#"} メルカリあんしん・あんぜん宣言！
               %li
-                %a{:href => "#"} 偽ブランド品撲滅への取り組み
+                %a{href: "#"} 偽ブランド品撲滅への取り組み
               %li
-                %a{:href => "#"} メルカリボックス
+                %a{href: "#"} メルカリボックス
 
 
       .about__box--text2
@@ -284,34 +637,34 @@
           %nav.my-parts
             %ul
               %li
-                %a{:href => "#"} プライバシーポリシー
+                %a{href: "#"} プライバシーポリシー
               %li
-                %a{:href => "#"} メルカリ利用規約
+                %a{href: "#"} メルカリ利用規約
               %li
-                %a{:href => "#"} あんしんスマホサポート制度に関する利用特約
+                %a{href: "#"} あんしんスマホサポート制度に関する利用特約
               %li
-                %a{:href => "#"} コンプライアンスポリシー
+                %a{href: "#"} コンプライアンスポリシー
       .about__box--text5
         .about__box--textIn
           %nav.my-parts
             %ul
               %li
-                %a{:href => "#"} 個人データの安全管理に係る基本方針
+                %a{href: "#"} 個人データの安全管理に係る基本方針
               %li
-                %a{:href => "#"} 特定商取引に関する表記
+                %a{href: "#"} 特定商取引に関する表記
               %li
-                %a{:href => "#"} 資金決済法に基づく表示
+                %a{href: "#"} 資金決済法に基づく表示
               %li
-                %a{:href => "#"} 法令順守と犯罪抑止のために            
+                %a{href: "#"} 法令順守と犯罪抑止のために            
       .about__box--text3
         国
         .about__box--textIn
           %nav.my-parts
             %ul
               %li
-                %a{:href => "#"} 日本
+                %a{href: "#"} 日本
               %li
-                %a{:href => "#"} United States
+                %a{href: "#"} United States
 
     .about__bottom
       .about__bottom--logo
@@ -320,7 +673,7 @@
       .about__bottom--name
         %p.name
           @Fmarket
-        
+        -#  出品ボタン      
 = link_to "#", class: "logo-btn" do      
   .exhibition-btn
     .fixed_btn
