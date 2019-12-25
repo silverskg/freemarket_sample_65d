@@ -76,3 +76,5 @@ gem 'mini_magick'
 gem 'fog-aws'
 gem "font-awesome-sass"
 gem 'active_hash'
+gem 'devise'
+gem 'omniauth'
