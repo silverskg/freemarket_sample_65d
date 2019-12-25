@@ -108,6 +108,9 @@ li1--gray, li2--gray, li4--gray, li5--gray {
     .formareaBig {
       @include formarea();
     }
+    #_prefecture_id {
+      @include formarea();
+    }
     .small {
       color: #333333;
       font-size: 14px;
