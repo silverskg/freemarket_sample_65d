@@ -1,0 +1,85 @@
+.header
+  =link_to('#', class:'image') do
+    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+  %nav.progress-bar
+  %ol.clearfix
+    %li1--gray
+      会員情報
+      .maru1red
+    %li2--gray
+      電話番号認証
+      .maru2red
+    %li3--gray
+      お届け先住所入力
+      .maru3red
+    %li4--red
+      支払い方法
+      .maru4red
+    %li5--gray
+      完了
+      .maru5gray
+    .grayline4
+    .redline4
+
+.main
+  .paymentHeader
+    支払い方法
+  .paymentForm
+    - hissuTag = "必須"
+    = form_for "#" do |f|
+      .formCardNumber
+        %p.titleBold カード番号
+        %span.hissuTag #{hissuTag}
+        = f.text_field :text, placeholder: "半角数字のみ", class: "cardNumber formareaBig"
+        = image_tag 'cardimages.png', class: 'cardImages'
+      .formExpirationDate.topmargin
+        %p.titleBold 有効期限
+        %span.hissuTag #{hissuTag}
+        .flex
+          %select.select-default{name: "month", class: "month formareaMiddle"}
+            %option{value: "01"} 01
+            %option{value: "02"} 02
+            %option{value: "03"} 03
+            %option{value: "04"} 04
+            %option{value: "05"} 05
+            %option{value: "06"} 06
+            %option{value: "07"} 07
+            %option{value: "08"} 08
+            %option{value: "09"} 09
+            %option{value: "10"} 10
+            %option{value: "11"} 11
+            %option{value: "12"} 12
+          %p.date 月
+          %select.select-default{name: "year", class: "year formareaMiddle"}
+            %option{value: "1"} 19
+            %option{value: "2"} 20
+            %option{value: "3"} 21
+            %option{value: "4"} 22
+            %option{value: "5"} 23
+            %option{value: "6"} 24
+            %option{value: "7"} 25
+            %option{value: "8"} 26
+            %option{value: "9"} 27
+            %option{value: "10"} 28
+            %option{value: "11"} 29
+          %p.date 年
+      .formSecurityCode.topmargin
+        %p.titleBold セキュリティコード
+        %span.hissuTag #{hissuTag}
+        = f.text_field :text, placeholder: "カード背面4桁もしくは3桁の番号", class: "securityNumber formareaBig"
+        = link_to '#', class: 'link questionLink' do
+          = icon('fas', 'question-circle', class: 'question')
+          カード裏面の番号とは？
+        = f.submit "次へ進む", class: "submitbtn"
+
+.footer
+  .footer__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.

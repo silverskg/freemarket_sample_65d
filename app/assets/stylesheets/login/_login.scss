@@ -1,0 +1,171 @@
+@mixin centralContent() {
+  width: 456px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+@mixin buttonDesign() {
+  width: 328px;
+  height: 42px;
+  font-size: 13px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  display: inline-block;
+}
+
+
+.main {
+  background-color: #f1f1f1;
+  .header {
+    display: flex;
+    justify-content: center;
+    .img {
+      width: 160px;
+      height: 44px;
+      margin: 40px auto;
+      display: inline-block;
+    }
+  }
+
+  .loginNoAccount {
+    @include centralContent();
+    height: 150px;
+    border-bottom: 1px solid #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__contents {
+      .text {
+        font-size: 13px;
+        text-align: center;
+      }
+      .btn {
+        @include buttonDesign();
+        background-color: #0099E8;
+        color: white;
+        text-align: center;
+        line-height: 40px;
+        margin: 8px auto 0px;
+      }
+    }
+  }
+  
+  .loginWithSNSaccount {
+    @include centralContent();
+    height: auto;
+    padding: 32px 64px;
+    box-sizing: border-box;
+    .btns {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      .facebookLoginLink {
+        @include buttonDesign();
+        height: 50px;
+        background-color: #385185;
+        color: white;
+        line-height: 49px;
+        margin-top: 30px;
+        .facebookIcon {
+          line-height: 49px;
+          font-size: 30px;
+          position: absolute;
+          margin-left: -83px;
+        }
+      }
+      .googleLoginLink {
+        @include buttonDesign();
+        width: 326px;
+        height: 50px;
+        border: 1px solid #333333;
+        color: #333333;
+        line-height: 49px;
+        margin-top: 20px;
+        .googleIcon {
+          line-height: 47px;
+          font-size: 25px;
+          color: red;
+          position: absolute;
+          margin-left: -90px;
+        }
+      }
+    }
+  }
+  
+  .loginWithEmail {
+    @include centralContent();
+    height: auto;
+    padding: 24px auto 32px;
+    box-sizing: border-box;
+    .loginform {
+      padding-top: 24px;
+      margin-left: 64px;
+      .emailLogin {
+        width: 328px;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 5px;
+        box-shadow: none;
+        border: 1px solid #cccccc;
+        box-sizing: border-box;
+      }
+      .passwordLogin {
+        width: 328px;
+        height: 48px;
+        padding: 10px 16px 8px;
+        border-radius: 5px;
+        border: 1px solid #cccccc;
+        margin-top: 20px;
+        box-sizing: border-box;
+      }
+      .robot_img {
+        width: 328px;
+        height: 78px;
+        margin-top: 20px;
+      }
+      .submitbtn {
+        @include buttonDesign();
+        height: 50px;
+        background-color: #EA352D;
+        color: white;
+        margin-top: 20px;
+      }
+    }
+    .forgetPassword {
+      font-size: 13px;
+      margin: 40px 0px 32px 64px;
+      color: #0099E8;
+      display: inline-block;
+    }
+  }
+
+  .footer {
+    text-align: center;
+    padding: 40px 0px;
+    height: auto;
+    .footerLinks {
+      display: inline-block;
+      justify-content: space-between;
+      width: 450px;
+      margin: 0 auto;
+      .links {
+        font-size: 12px;
+        text-decoration: none;
+        color: #333333;  
+      }
+      #margin {
+        margin: 0 5px;
+      }
+    }
+    .img {
+      margin-top: 32px;
+      width: 80px;
+      height: 80px;
+    }
+    .authority {
+      font-size: 12px;
+    }
+  }
+}

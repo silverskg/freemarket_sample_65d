@@ -1,0 +1,81 @@
+// ページ中央の白いボックスのレイアウト
+@mixin centralContent() {
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+// フォームの入力欄レイアウト
+@mixin formarea() {
+  width: 343px;
+  height: 48px;
+  border-radius: 5px;
+  border: 1px solid #dbd6d6;
+  box-shadow: none;
+  margin-top: 8px;
+  padding: 10px 16px 8px;
+  box-sizing: border-box;
+}
+
+// フォームのタイトル文字レイアウト
+@mixin titleBold() {
+  font-size: 14px;
+  font-weight: bolder;
+  display: inline-block;
+}
+
+// 「必須」タグのレイアウト
+@mixin hissuTag() {
+  width: 32px;
+  height: 22px;
+  border-radius: 3px;
+  background-color: #ea352d;
+  color: white;
+  font-size: 12px;
+  margin-left: 8px;
+  padding: 4px 4px;
+  box-sizing: border-box;
+  line-height: 15px;
+  vertical-align: top;
+}
+
+// グレーの説明テキストのレイアウト
+@mixin attentionText() {
+  font-size: 14px;
+  color: #888888;
+  margin-top: 8px;
+}
+
+// フッターのレイアウト
+@mixin footer() {
+  height: 140px;
+  width: 456px;
+  margin: auto;
+  padding: 40px 0px;
+  &__menu{
+    height: 12px;
+    width: 456px;
+    font-size: 12px;
+    text-align: center; 
+    a{
+    color: #333333;
+    text-decoration: none;
+    }
+    .privacybtn{
+      margin-right: 15px;
+    }
+    .transactionbtn{
+      margin-left: 15px;
+    }
+  }
+  .logo2{
+    margin-top: 40px;
+    margin-left: 188px;
+  }
+  p{
+    text-align: center; 
+    font-size: 13px;
+    color: #333333;
+  }
+}
+
