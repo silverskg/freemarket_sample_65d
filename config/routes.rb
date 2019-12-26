@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "items#index"
+    root to: "items#index"
   resources :items, only: [:index]
 
   # ログイン画面表示
@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   # root to: "registration#index_4"
   # root to: "registration#index_5"
   # root to: "registration#index_6"
+
+  # 商品詳細ページ
+  #  root to: "items#productDetails" 
 end

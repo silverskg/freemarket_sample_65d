@@ -1,0 +1,403 @@
+body{
+  background-color: #f5f5f5;
+  font-size:14px;
+  font-weight: normal;
+}
+.footer1{
+  height: 40px;
+}
+
+.main1{
+    width: 700px;
+    background-color: #ffffff;
+    text-align: center; 
+    margin-left: 370px;
+    top:40px;
+    padding:24px 40px 40px;
+
+      &__product-name{
+        font-size: 24px;
+        font-weight:  bold;
+        width: 620px;
+        height: 33px;
+      }
+
+      &__Introduction{
+        width: 620px;
+        color: #888;
+        line-height: 1.5;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: normal;
+  
+          .link{
+            text-decoration: none;
+            color: #888;
+          }
+
+          .link:hover{
+            color: black;
+            text-decoration:underline;
+          }
+      }  
+
+        &__menu{
+          height: 420px;
+          width: 700px;
+          margin-top: 16px;
+          display: flex;
+          font-size: 14px;
+    
+            &__big{
+            height: 300px;
+            background: #fafafa;
+            }  
+                .picsmall{
+                height: 120px;
+                width: 300px;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                box-sizing: border-box;
+
+                } 
+        }
+
+      &__data{
+        height: 360px;
+        display:flex;
+      }
+          .box{
+            height: 332px;
+            margin-right: 0px;
+            border: solid 0.5px #f5f5f5;
+            font-size:14px;
+            columns: #333333;
+            margin-left: 15px;
+      
+              //テーブル左
+              th{
+                background: #fafafa;
+                padding: 12px;
+                width:117px;
+              }
+
+              //テーブル右
+              td{
+                width: 182px;
+                padding: 12px;
+                text-align: left;
+                font-weight: normal; 
+              }
+
+              //テーブル内のリンク指定
+              .link1{
+                color:#0099EB;
+                text-decoration: none;
+              }
+              .link1:hover{
+                text-decoration:underline;
+              }
+
+              //評価アイコン色指定
+              i1{
+                color:#ff00ff;
+                font-size:16px;
+              }
+              i2{
+                color:#fcb000;
+                font-size:16px;
+                margin-left: 16px;
+                margin-top: 8px;
+              }
+                i3{
+                color:#00a9ff;
+                font-size:16px;
+                margin-left: 16px;
+              }
+          
+          }  
+    &__price{
+      height: 50px;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+          //値段の文字指定
+          p{
+            font-size:40px;
+            margin-right:16px;
+            font-weight: bold; 
+            margin-left: 190px;
+          }
+          p1{
+            font-size:10px;
+            line-height: 80px;
+            font-weight: normal;  
+          }
+          p2{
+            font-size:16px;
+            line-height: 80px;
+            font-weight: normal;  
+          }
+    }
+    
+    &__btn{
+    background-color: #EA352D;
+    height: 50px;
+    width: 620px;
+    color: #ffffff;
+    line-height: 48px;
+    display: block;
+    margin-top:16px;
+    font-size:24px;
+    font-weight: bold;
+  }  
+
+      //購入画面進むのリンク編集
+      .link2{
+        text-decoration: none;
+      }
+
+
+    &__alrt{
+      font-size:14px;
+      color:red;
+      margin-top:16px;
+      font-weight: normal;
+    }
+
+    &__text{
+      padding-top: 32px;
+      width: 620px;
+      font-size:18px;
+      text-align: left;
+      height: 300px;
+      font-weight: normal;
+    }
+    &__botom{
+      display:flex;
+      font-weight: normal;     
+
+          .like{
+            font-size:14px;
+            background-color: #f5f5f5;
+            display: block;
+            height: 33px;
+            width: 118.27px;
+            margin:8px 0px;
+            border-radius: 40px;
+            text-decoration: none;
+            color:#333333;
+            padding-top:10px;
+            font-weight: normal;
+          }
+        
+          .report{
+            font-size:14px;
+            background-color: #f5f5f5;
+            display: block;
+            height: 33px;
+            width: 179.97px;
+            margin:8px 16px 8px 16px;
+            border-radius: 40px;
+            text-decoration: none;
+            color:#333333;
+            padding-top:10px;
+            font-weight: normal;  
+          }
+          
+          
+          //安心安全への取り組みリンク指定
+          .link3{
+            color:#0099EB;
+            text-decoration: none;
+            font-size:14px;
+            margin:auto 0px auto 50px;
+            font-weight: normal;
+          }
+    }
+}    
+
+
+.line{
+    background: #f5f5f5;
+    width: 700px;
+    height: 28px;
+    margin:24px 370px;
+    font-size:14px;
+  
+  //カテゴリーリンク指定  
+    .link4,.link5{
+      text-decoration: none;
+      color:#0099EB;
+    }
+    .link5{
+      margin-left: 75%;
+    }
+    .link4:hover,.link5:hover{
+      text-decoration:underline;
+    }
+}
+
+.main2{
+  width: 700px;
+  height: 100px;
+  background-color: #ffffff;
+  text-align: center; 
+  margin-left: 370px;
+  font-size:14px;
+  padding:24px 30px;
+  margin-bottom: 40px;
+
+
+  &__box{
+    display: flex;
+    margin:15px 250px;
+  
+  
+
+    .iconbtn1{
+      background: #385185;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      line-height: 44px;
+      color:white;
+      font-size:30px;
+      display: block;
+      text-decoration: none;
+    }
+
+    .iconbtn2{
+      background: #5d9dc9;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      line-height: 44px;
+      color:white;
+      font-size:30px;
+      display: block;
+      text-decoration: none;
+      margin: 0% 10px;
+    }
+
+      .iconbtn3{
+      background: #aa262a;
+      width: 44px;
+      height: 44px;
+      border-radius: 4px;
+      line-height: 44px;
+      color:white;
+      font-size:30px;
+      display: block;
+      text-decoration: none;
+      }
+  }
+}
+
+//その他の商品リンク指定
+.link6{
+  font-size:22px;
+  text-decoration: none;
+  color:#0099EB;
+  margin-left:360px;
+  font-weight: bold;
+  margin-top:24px;
+}
+.link6:hover{
+  text-decoration:underline;
+}
+
+.other__list{
+  width: 700px;
+  height: 700px;
+  margin-top: 8px;
+  margin-left: 370px;
+  margin-bottom: 8px;
+}
+  .itemsBox {
+    width: 700px;
+    height: 330px;
+    display: flex;
+    margin: 0 auto;
+    .itemSingle {
+      width: 220px;
+      height: 330px;
+      margin: 0 20px 20px 0;
+      .linkstyle {
+        text-decoration: none;
+        .itemSinglePhoto {
+          width: 220px;
+          height: 220px;
+          .itemPhoto {
+            width: 220px;
+            height: 220px;
+          }
+        }
+        .itemSingleBody {
+          width: 220px;
+          height: 110px;
+          background-color: white;
+          padding: 16px;
+          box-sizing: border-box;
+          .title {
+            font-size: 16px;
+            color: #333333;
+            background-color: white;
+            height: 48px;
+            width: 188px;
+            display: block;
+            font-weight: normal;
+            
+          }
+          .price2 {
+            font-size: 16px;
+            color: #333333;
+            background-color: white;
+            margin-top: 8px;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+    #noRightMargin {
+      margin: 0 0 20px 0;
+    }
+  }
+    .itemLine{
+      height: 40px;
+    }
+
+.otherCategory__list{
+  width: 700px;
+  height: 700px;
+  margin-top: 8px;
+  margin-left: 370px;
+  margin-bottom: 8px;
+}
+
+.botom{
+  height: 49px;
+  width: 100%;
+  border-top: solid 1px #e8e7e7;
+  margin-top: 60px;
+  font-size:14px;
+  
+
+      &__menu{
+        margin:0px 210px;
+        padding:16px 0;
+      }
+
+    //メルカリのリンク指定  
+      .link7{
+        color:black;
+        text-decoration: none; 
+      }
+
+      .link7:hover{
+        text-decoration:underline;
+      }
+}
