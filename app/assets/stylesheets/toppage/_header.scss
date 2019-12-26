@@ -1,0 +1,128 @@
+.header{
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  position: relative;
+  z-index: 3;
+
+  .main{
+    width: 1020px;
+    margin-left: 200px;
+    height: 100px;
+    padding: 0px;
+
+    &__top{
+      width: 100%;
+      height: 50%;
+      padding-top: 10px;
+      display: flex;
+    }
+
+    .free-logo{
+      margin-top: -43px;
+    }
+
+      &--search{
+        position: relative;
+      }
+
+    .icon{
+      position: absolute;
+      right: 200px;
+      top: 22px;
+    }
+
+    .fa-search:before {
+      color: black;
+  }
+
+  .card-nomber-form{
+    background-color: rgb(245, 245, 245);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+    border-radius: 4px;
+    padding: 0px 50px 0px 10px;
+    height: 40px;
+    width: 875px;
+    margin-left: 20px;
+    outline: none;
+  }
+
+    &__bottom{
+      width: 104%;
+      height: 50%;
+      padding-top: 10px;
+    }
+
+    ul { 	
+      display: flex;
+      font-size: 14px;
+      line-height: 36px;
+
+    .num2{
+      margin-left: 47px;
+    }
+
+    .num3{
+      margin-left: 200px;
+    }
+
+    .num4{
+      margin-left: 55px;     
+    }
+
+    .num5{
+      margin-left: 50px;
+    }
+
+    .num6{
+      margin-left: 59px;
+    }
+
+    .fa-bars:before {
+      color: rgb(234, 53, 45);
+    }
+    .fa-tag:before{
+      color: rgb(234, 53, 45);
+    }
+    .fa-heart:before{
+      color: rgb(204, 204, 204);
+    }
+
+    .fa-bell:before{
+      color: rgb(204, 204, 204);
+    }
+
+    .fa-check:before{
+      color: rgb(204, 204, 204);
+    }
+    *{
+      text-decoration: none;
+      font-weight: 600;
+      color: black;
+    }
+  }
+}
+}
+
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+
+#fucnBtn{
+  position: fixed; right: -10px; bottom: -10px;
+  display: block;
+  transition:
+  right 0.2s ease-out 0s,
+  bottom 0.2s ease-out 0s,
+  opacity 0.2s ease-out 0s,
+  transform 0.2s ease-out 0s;
+  }
+
+  * { margin: 0; padding: 0; }
