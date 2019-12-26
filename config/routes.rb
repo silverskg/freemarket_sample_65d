@@ -15,6 +15,6 @@ Rails.application.routes.draw do
   # root to: "registration#index_5"
   # root to: "registration#index_6"
 
-  # ユーザーマイページ編集画面
+  # ユーザーマイページ編集画面(マイページ完成次第ルーティング編集)
   # root to: "edit_profile#index"
 end
