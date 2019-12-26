@@ -75,17 +75,22 @@ body{
             columns: #333333;
             margin-left: 15px;
       
+              //テーブル左
               th{
                 background: #fafafa;
                 padding: 12px;
                 width:117px;
               }
+
+              //テーブル右
               td{
                 width: 182px;
                 padding: 12px;
                 text-align: left;
                 font-weight: normal; 
               }
+
+              //テーブル内のリンク指定
               .link1{
                 color:#0099EB;
                 text-decoration: none;
@@ -93,6 +98,8 @@ body{
               .link1:hover{
                 text-decoration:underline;
               }
+
+              //評価アイコン色指定
               i1{
                 color:#ff00ff;
                 font-size:16px;
@@ -117,6 +124,7 @@ body{
       flex-direction: row;
       flex-wrap: wrap;
 
+          //値段の文字指定
           p{
             font-size:40px;
             margin-right:16px;
@@ -146,6 +154,8 @@ body{
     font-size:24px;
     font-weight: bold;
   }  
+
+      //購入画面進むのリンク編集
       .link2{
         text-decoration: none;
       }
@@ -198,7 +208,8 @@ body{
             font-weight: normal;  
           }
           
-
+          
+          //安心安全への取り組みリンク指定
           .link3{
             color:#0099EB;
             text-decoration: none;
@@ -216,7 +227,8 @@ body{
     height: 28px;
     margin:24px 370px;
     font-size:14px;
-    
+  
+  //カテゴリーリンク指定  
     .link4,.link5{
       text-decoration: none;
       color:#0099EB;
@@ -284,6 +296,8 @@ body{
       }
   }
 }
+
+//その他の商品リンク指定
 .link6{
   font-size:22px;
   text-decoration: none;
@@ -377,6 +391,7 @@ body{
         padding:16px 0;
       }
 
+    //メルカリのリンク指定  
       .link7{
         color:black;
         text-decoration: none; 
