@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "items#index"
+    root to: "items#index"
   resources :items, only: [:index]
 
   # ログイン画面表示
@@ -17,4 +17,7 @@ Rails.application.routes.draw do
 
   # ユーザーマイページ編集画面(マイページ完成次第ルーティング編集)
   # root to: "edit_profile#index"
+
+  # 商品詳細ページ
+  #  root to: "items#productDetails" 
 end

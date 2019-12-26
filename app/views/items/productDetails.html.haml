@@ -1,0 +1,254 @@
+.footer1
+.main1
+  .main1__product-name
+    商品名
+  .main1__Introduction
+    『商品名』は、✖︎回の取引実績を持つ
+    =link_to('#', class:'link') do
+      %span 出品者 
+    さんから出品されました。
+    =link_to('#', class:'link') do
+      %span カテゴリー
+    =link_to('#', class:'link') do
+      %span （Tシャツ/カットソー(七分/長袖)/レディース）
+    の商品で、都道府県から×日で発送されます。
+  .main1__menu
+    .main1__menu__picbig
+      =image_tag "03.gif", size: "300x300", class: "picmain" 
+      .picsmall
+        =image_tag "03.gif", size: "60x60", class: "picsmall1"
+        =image_tag "03.gif", size: "60x60", class: "picsmall2" 
+        =image_tag "03.gif", size: "60x60", class: "picsmall3"
+        =image_tag "03.gif", size: "60x60", class: "picsmall4"
+        =image_tag "03.gif", size: "60x60", class: "picsmall5"                
+        %br/
+        =image_tag "03.gif", size: "60x60", class: "picsmall6"
+        =image_tag "03.gif", size: "60x60", class: "picsmall7"
+        =image_tag "03.gif", size: "60x60", class: "picsmall8"
+        =image_tag "03.gif", size: "60x60", class: "picsmall9"
+        =image_tag "03.gif", size: "60x60", class: "picsmall10"                                     
+    .main1__menu__data
+      %table{border: "1",class:"box"}
+        %tr
+          %th 出品者
+          %td 
+            =link_to('#', class:'link1') do
+              出品者名
+            %br/
+            %i1.fas.fa-laugh-beam
+            %span 0
+            %i2.fas.fa-meh
+            %span 0
+            %i3.fas.fa-frown
+            %span 0
+        %tr
+          %th カテゴリー
+          %td 
+            =link_to('#', class:'link1') do
+              カテゴリー
+              %br/
+            =link_to('#', class:'link1') do
+              %i.fas.fa-chevron-right
+              カテゴリー
+              %br/
+            =link_to('#', class:'link1') do
+              %i.fas.fa-chevron-right
+              カテゴリー 
+        %tr
+          %th ブランド
+          %td 
+            =link_to('#', class:'link1') do
+              ブランド名
+        %tr
+          %th 商品サイズ
+          %td M
+        %tr
+          %th 商品状態
+          %td 目立った傷や汚れなし
+        %tr
+          %th 配送料負担
+          %td 送料込み
+        %tr
+          %th 配送元の地域
+          %td 
+            =link_to('#', class:'link1') do
+              都道府県
+        %tr
+          %th 配送日の目安
+          %td 1~2日で配送
+  .main1__price
+    %p ¥980   
+    %p1 (税込) 
+    %p2 送料込み
+  =link_to('#', class:'link2') do
+    .main1__btn
+      購入画面に進む
+  .main1__alrt
+    この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
+  .main1__text
+    即購入OKなどの商品説明がここに入ります！！
+  .main1__botom
+    =link_to('#', class:'link2') do
+      .like
+        %i.far.fa-heart
+        いいね! 0
+    =link_to('#', class:'link2') do
+      .report
+        %i.far.fa-flag
+        不適切な商品の報告
+    =link_to('#', class:'link3') do
+      .anzen
+      %i.fas.fa-lock
+        あんしん・あんぜんへの取り組み
+.line
+  =link_to('#', class:'link4') do
+    %i.fas.fa-chevron-left
+    カテゴリー
+  =link_to('#', class:'link5') do
+    カテゴリー 
+    %i.fas.fa-chevron-right
+.main2
+  .main2__box
+    = link_to "https://www.facebook.com/", class: "iconbtn1" do
+      = icon('fab', 'facebook-square')
+    = link_to "https://twitter.com/", class: "iconbtn2" do
+      = icon('fab', 'twitter')
+    = link_to "https://www.pinterest.jp/", class: "iconbtn3" do
+      = icon('fab', 'pinterest')
+.other
+  =link_to('#', class:'link6') do
+    %p3 出品者さんのその他の商品
+  .other__list
+    .itemsBox
+      .itemSingle1.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle2.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle3.itemSingle#noRightMargin
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+    .itemLine
+    .itemsBox
+      .itemSingle1.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle2.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle3.itemSingle#noRightMargin
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+.itemLine              
+.otherCategory
+  =link_to('#', class:'link6') do
+    %p3 カテゴリー その他の商品
+  .otherCategory__list
+    .itemsBox
+      .itemSingle1.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle2.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle3.itemSingle#noRightMargin
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+    .itemLine
+    .itemsBox
+      .itemSingle1.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle2.itemSingle
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+
+      .itemSingle3.itemSingle#noRightMargin
+        = link_to "#", class: "linkstyle" do
+          .itemSinglePhoto
+            = image_tag 'huku.jpg', class: 'itemPhoto'
+          .itemSingleBody
+            %p5.title
+              カーディガン
+            %p6.price2
+              ¥1,600
+.botom
+  .botom__menu
+    =link_to('#', class:'link7') do
+      メルカリ 
+    %i.fas.fa-chevron-right
+      %p4 商品名
