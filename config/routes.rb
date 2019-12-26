@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "items#index"
-  resources :items, only: [:index]
+  # devise_for :users
+  # root to: "items#index"
+  # resources :items, only: [:index]
 
   # ログイン画面表示
   # root to: "login#index"
@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   # root to: "registration#index_4"
   # root to: "registration#index_5"
   # root to: "registration#index_6"
+
+  # ユーザーマイページ編集画面
+  root to: "edit_profile#index"
 end
