@@ -13,13 +13,12 @@ footer{
     height: 388px;
 
     &__box{
+      margin: 0 auto;
       height: 310px;
       width: 1020px;
       font-size: 16px;
       padding-top: 18px;
-      margin-left: 190px;
       display: flex;
-      position: relative;
 
       &--text{
         width: 210px;
@@ -107,10 +106,9 @@ footer{
 
   }
     &__bottom{
+      margin: 0 auto;
       width: 1020px;
       height: 77px;
-      margin-left: 190px;
-      // padding-top: 30px;
       display: flex;
     }
   }
