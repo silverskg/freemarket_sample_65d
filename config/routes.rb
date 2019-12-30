@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # ログイン画面表示
   # root to: "login#index"
 
+  # ログアウト画面
+  # root to: "logout#index"
+
   # ユーザー新規登録ページ表示
   # root to: "registration#index_0"
   # root to: "registration#index_1"
