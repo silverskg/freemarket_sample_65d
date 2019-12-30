@@ -1,0 +1,103 @@
+.cardRegisterHeader {
+  width: 100%;
+  height: 149px;
+  background-color: white;
+}
+
+.cardRegisterMain {
+  margin: 40px 193px 0px;
+  padding-bottom: 40px;
+  display: flex;
+  .sideBar {
+    width: 280px;
+    height: 1252px;
+    margin-right: 40px;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  .mainContainer {
+    width: 700px;
+    height: 568px;
+    background-color: white;
+    color: #333333;
+    box-sizing: border-box;
+    .cardRegisterTitle {
+      background-color: white;
+      padding: 8px 24px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .cardRegisterForm {
+      @include centralContent();
+      height: auto;
+      padding: 40px 178.5px 64px;
+      box-sizing: border-box;
+      font-size: 14px;
+      .titleBold {
+        @include titleBold();
+      }
+      .hissuTag {
+        @include hissuTag();
+      }
+      .cardImages {
+        margin-top: 8px;
+        width: 343px;
+        height: 20px;
+      }
+      .formareaBig {
+        @include formarea();
+      }
+      .flex {
+        display: flex;
+        vertical-align: middle;
+        .formareaMiddle {
+          width: 131.5px;
+          height: 48px;
+          padding: 0px 16px;
+          border-radius: 5px;
+          border: 1px solid #dbd6d6;
+          box-shadow: none;
+          box-sizing: border-box;
+          margin-top: 8px;
+          background-color: white;
+        }
+      }
+      .small {
+        color: #333333;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .submitbtn {
+        width: 343px;
+        height: 50px;
+        font-size: 13px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+        background-color: #EA352D;
+        color: white;
+        margin-top: 32px;
+        border-style: none;
+      }
+      .topmargin {
+        margin-top: 32px;
+      }
+      .date {
+        font-size: 14px;
+        color: #333333;
+        margin: 16px 10px 0px;
+        line-height: 30px;
+      }
+      .link {
+        color: #0099e8;
+        text-decoration: none;
+        text-align: right;
+        display: inherit;
+        margin-top: 5px;
+      }
+    }
+  }
+}
