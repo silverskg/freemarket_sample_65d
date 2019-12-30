@@ -22,7 +22,8 @@ Rails.application.routes.draw do
   # root to: "edit_profile#index"
 
   # 商品詳細ページ
-  #  root to: "items#productDetails" 
+  # root to: "items#productDetails" 
+
 
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
@@ -30,4 +31,10 @@ Rails.application.routes.draw do
 
   # マイページ
   # root to: "my_page#index"
+
+
+  #購入内容確認ページ
+  #root to: "items#productConfirmation"
+
 end
+

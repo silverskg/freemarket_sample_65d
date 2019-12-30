@@ -1,0 +1,48 @@
+.confirmationBody
+.confirmationHeader
+  =link_to('#', class:'imag') do
+    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "rogo" 
+.confirmationMain
+  .confirmationMain__title
+    購入内容の確認
+  .confirmationMain__menu
+    .picter
+      =image_tag "03.gif", size: "80x80"
+    .details
+      %p.name 商品の名前
+      %p.nedan ¥13,000 (税込) 送料込み
+  .confirmationMain__price
+    .confirmationMain__price__pay
+      %p.price1 支払い金額
+      %p.nedan1 ¥13,000
+    .confirmationMain__price__box
+      %label
+        %input.checkbox-input{type: "checkbox"}/
+      %p.point ポイント使用（所有ポイント：P0）
+  .confirmationMain__payment
+    %p.Method 支払い方法
+    %p.Credit クレジットカード 
+    %p.Nomber ********123
+    %p.Deadline 有効期限09/18
+  .confirmationMain__delivery
+    .confirmationMain__delivery__change  
+      %p.Delivery 配送先
+      =link_to('#', class:'Change') do
+        変更する
+    %p.add 〒000-0000
+    %p.add スカイオ 15F
+    %p.add3 テックエキスパート
+  .confirmationMain__purchase
+    =link_to('#', class:'purchaseBtn') do
+      購入する
+.confirmationFooter
+  .confirmationFooter__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "mercarirogo"  
+  %p © Mercari, Inc.
