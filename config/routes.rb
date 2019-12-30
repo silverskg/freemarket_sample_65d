@@ -20,4 +20,11 @@ Rails.application.routes.draw do
 
   # 商品詳細ページ
   #  root to: "items#productDetails" 
+
+  # クレジットカード情報登録ページ
+  # root to: "card_register#index"
+  # root to: "card_register#index2"
+
+  # マイページ
+  # root to: "my_page#index"
 end
