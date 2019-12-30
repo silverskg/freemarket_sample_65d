@@ -73,14 +73,15 @@ body{
         color: #fff;
         background-color: #aaa;
         border: 1px solid  #aaa;
+        text-decoration: none;
       }
     }
 
-    .x {
-      @include x();
+    .fontBorder {
+      @include fontBorder();
     }
-    .y{
-      @include y();
+    .hissuBtn{
+      @include hissuBtn();
     }
   } 
 }
@@ -191,6 +192,13 @@ body{
       font-weight: bold;
     }
   }
+
+  .link {
+    color: #0099e8;
+    text-decoration: none;
+    text-align: right;
+    margin-top: 5px;
+  }
 }
 
 // 販売手数料枠
@@ -204,14 +212,17 @@ body{
   height: 220px;
   width: 456px;
   margin: auto;
-  margin-top: 45px;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  &__menu{
+  .menu{
     height: 12px;
     width: 456px;
     font-size: 12px;
     text-align: center; 
+
 
     a{
     color: #333333;
@@ -227,7 +238,6 @@ body{
   
   .logo2{
     margin-top: 40px;
-    margin-left: 188px;
   }
   p{
     text-align: center; 
@@ -235,3 +245,4 @@ body{
     color: #333333;
   }
 }
+

@@ -7,12 +7,12 @@
     商品の情報を入力
 
   .registrationForm
-    - y = "必須"
+    - hissu = "必須"
     = form_for "#" do |f|
       .contents.image
         .formGroup
-          %p.x 出品画像
-          %span.y #{y}
+          %p.fontBorder 出品画像
+          %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           = f.label :image do
             .imageUp
@@ -26,13 +26,13 @@
 
       .contents
         .formGroup
-          %p.x 商品名
-          %span.y #{y}
+          %p.fontBorder 商品名
+          %span.hissuBtn #{hissu}
           .form
             = f.text_field :text2, placeholder: "商品名（必須40文字まで）", class: "form__name"
         .formGroup
-          %p.x 商品の説明
-          %span.y #{y}
+          %p.fontBorder 商品の説明
+          %span.hissuBtn #{hissu}
           .form
             = f.text_area :text3, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "form__info"
       .contents.clearfix
@@ -41,8 +41,8 @@
             商品の詳細
         .rightContent
           .formGroup
-            %p.x カテゴリー
-            %span.y #{y}
+            %p.fontBorder カテゴリー
+            %span.hissuBtn #{hissu}
             .form
               = f.select :category,
                 [["---", "---"],
@@ -63,8 +63,8 @@
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.x 商品の状態
-            %span.y #{y}
+            %p.fontBorder 商品の状態
+            %span.hissuBtn #{hissu}
             .form
               = f.select :status,
                 [["---", "---"],
@@ -81,10 +81,12 @@
         .leftContent
           .formGroup
             配送について
+            = link_to '#', class: 'link questionLink' do
+              = icon('fas', 'question-circle', class: 'question')
         .rightContent
           .formGroup
-            %p.x 配送料の負担
-            %span.y #{y}
+            %p.fontBorder 配送料の負担
+            %span.hissuBtn #{hissu}
             .form
               = f.select :delivery_charge,
                 [["---", "---"],
@@ -94,8 +96,8 @@
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.x 発送元の地域
-            %span.y #{y}
+            %p.fontBorder 発送元の地域
+            %span.hissuBtn #{hissu}
             .form
               = f.select :region,
                 [["---", "---"],
@@ -151,8 +153,8 @@
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.x 発送までの日数
-            %span.y #{y}
+            %p.fontBorder 発送までの日数
+            %span.hissuBtn #{hissu}
             .form
               = f.select :delivery_charge,
                 [["---", "---"],
@@ -166,11 +168,13 @@
         .leftContent
           .formGroup
             販売価格(300~9,999,999)
+            = link_to '#', class: 'link questionLink' do
+              = icon('fas', 'question-circle', class: 'question')
         .rightContent
           .formGroup.clearfix
             .leftSmallForm
-              %p.x 価格
-              %span.y #{y}
+              %p.fontBorder 価格
+              %span.hissuBtn #{hissu}
             .rightSmallForm
               ¥
               = f.text_field :text, placeholder: "例) 300", class: "rightSmallForm__price"
@@ -202,8 +206,8 @@
           = f.submit "出品する", class: "exhibition__btn"
           = link_to "もどる", "#" ,class: "exhibition__back"
 
-.ItemRegistrationFooter
-  .footer__menu
+.itemRegistrationFooter
+  .menu
     =link_to('#', class:'privacybtn') do
       プライバシーポリシー
     =link_to('#', class:'rulebtn') do
