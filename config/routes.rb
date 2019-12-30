@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   #  root to: "items#productDetails" 
 
   # クレジットカード情報登録ページ
-  root to: "card_register#index"
-  # root to: "cardRegisterDone#index"
+  # root to: "card_register#index"
+  root to: "card_register#index2"
 end
