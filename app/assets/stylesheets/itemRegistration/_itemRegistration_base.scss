@@ -1,0 +1,58 @@
+@mixin centralContent() {
+  width: 700px;
+  background-color: white;
+  margin: 0 auto;
+}
+
+@mixin formarea() {
+  width: 343px;
+  height: 48px;
+  border-radius: 5px;
+  border: 1px solid #dbd6d6;
+  box-shadow: none;
+  margin-top: 8px;
+  padding: 10px 16px 8px;
+  box-sizing: border-box;
+}
+
+// 太字
+@mixin x() {
+  font-size: 14px;
+  font-weight: bolder;
+  display: inline-block;
+}
+
+// 必須ボタン
+@mixin y() {
+  width: 32px;
+  height: 22px;
+  border-radius: 3px;
+  background-color: #ea352d;
+  color: white;
+  font-size: 12px;
+  margin-left: 8px;
+  padding: 4px 4px;
+  box-sizing: border-box;
+  line-height: 15px;
+  vertical-align: top;
+}
+
+
+// フォーム
+@mixin itemForm() {
+  line-height: 1.5;
+  border:1px solid #ccc;
+  box-shadow: none;
+  font-size: 16px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+
+@mixin clearfix() {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
