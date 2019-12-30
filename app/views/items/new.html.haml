@@ -1,0 +1,215 @@
+.itemRegistrationHeader
+  =link_to('#', class:'imag') do
+    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+
+.itemRegistrationMain
+  .registrationHeader
+    商品の情報を入力
+
+  .registrationForm
+    - y = "必須"
+    = form_for "#" do |f|
+      .contents.image
+        .formGroup
+          %p.x 出品画像
+          %span.y #{y}
+          %p 最大10枚までアップロードできます
+          = f.label :image do
+            .imageUp
+              .previewField
+                %img(id="preview")
+              .imageUpField
+                %p
+                ドラッグアンドドロップ
+                %br またはクリックしてファイルをアップロード
+              = f.file_field :image, multiple: true, class: "hidden"
+
+      .contents
+        .formGroup
+          %p.x 商品名
+          %span.y #{y}
+          .form
+            = f.text_field :text2, placeholder: "商品名（必須40文字まで）", class: "form__name"
+        .formGroup
+          %p.x 商品の説明
+          %span.y #{y}
+          .form
+            = f.text_area :text3, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "form__info"
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            商品の詳細
+        .rightContent
+          .formGroup
+            %p.x カテゴリー
+            %span.y #{y}
+            .form
+              = f.select :category,
+                [["---", "---"],
+                ["レディース", "レディース"], 
+                ["メンズ", "メンズ"],
+                ["ベビー・キッズ", "ベビー・キッズ"],
+                ["インテリア・住まい・小物", "インテリア・住まい・小物"],
+                ["本・音楽・ゲーム", "本・音楽・ゲーム"],
+                ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"],
+                ["コスメ・香水・美容", "コスメ・香水・美容"],
+                ["家電・スマホ・カメラ", "家電・スマホ・カメラ"],
+                ["スポーツ・レジャー", "スポーツ・レジャー"],
+                ["ハンドメイド", "ハンドメイド"],
+                ["チケット", "チケット"],
+                ["自動車・オートバイ", "自動車・オートバイ"],
+                ["その他", "その他"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+          .formGroup
+            %p.x 商品の状態
+            %span.y #{y}
+            .form
+              = f.select :status,
+                [["---", "---"],
+                ["新品・未使用", "新品・未使用"], 
+                ["未使用に近い", "未使用に近い"],
+                ["目立った傷や汚れなし", "目立った傷や汚れなし"],
+                ["やや傷や汚れあり", "やや傷や汚れあり"],
+                ["傷や汚れあり", "傷や汚れあり"],
+                ["全体的に状態が悪い", "全体的に状態が悪い"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            配送について
+        .rightContent
+          .formGroup
+            %p.x 配送料の負担
+            %span.y #{y}
+            .form
+              = f.select :delivery_charge,
+                [["---", "---"],
+                ["送料込み(出品者負担)", "送料込み(出品者負担)"], 
+                ["着払い(購入者負担)", "着払い(購入者負担)"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+          .formGroup
+            %p.x 発送元の地域
+            %span.y #{y}
+            .form
+              = f.select :region,
+                [["---", "---"],
+                ["北海道", "北海道"], 
+                 ["青森県", "青森県"],
+                ["岩手県", "岩手県"],
+                ["宮城県", "宮城県"],
+                ["秋田県", "秋田県"],
+                ["山形県", "山形県"],
+                ["福島県", "福島県"],
+                ["茨城県", "茨城県"],
+                ["栃木県", "栃木県"],
+                ["群馬県", "群馬県"],
+                ["埼玉県", "埼玉県"],
+                ["千葉県", "千葉県"],
+                ["東京都", "東京都"],
+                ["神奈川県", "神奈川県"],
+                ["新潟県", "新潟県"],
+                ["富山県", "富山県"],
+                ["石川県", "石川県"],
+                ["福井県", "福井県"],
+                ["山梨県", "山梨県"],
+                ["長野県", "長野県"],
+                ["岐阜県", "岐阜県"],
+                ["静岡県", "静岡県"],
+                ["愛知県", "愛知県"],
+                ["三重県", "三重県"],
+                ["滋賀県", "滋賀県"],
+                ["京都府", "京都府"],
+                ["大阪府", "大阪府"],
+                ["兵庫県", "兵庫県"],
+                ["奈良県", "奈良県"],
+                ["和歌山県", "和歌山県"],
+                ["鳥取県", "鳥取県"],
+                ["島根県", "島根県"],
+                ["岡山県", "岡山県"],
+                ["広島県", "広島県"],
+                ["山口県", "山口県"],
+                ["徳島県", "徳島県"],
+                ["香川県", "香川県"],
+                ["愛媛県", "愛媛県"],
+                ["高知県", "高知県"],
+                ["福岡県", "福岡県"],
+                ["佐賀県", "佐賀県"],
+                ["長崎県", "長崎県"],
+                ["熊本県", "熊本県"],
+                ["大分県", "大分県"],
+                ["宮崎県", "宮崎県"],
+                ["鹿児島県", "鹿児島県"],
+                ["沖縄県", "沖縄県"],
+                ["未定", "未定"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+          .formGroup
+            %p.x 発送までの日数
+            %span.y #{y}
+            .form
+              = f.select :delivery_charge,
+                [["---", "---"],
+                ["1~2日で発送", "1~2日で発送"], 
+                ["2~3日で発送", "2~3日で発送"], 
+                ["4~7日で発送", "4~7日で発送"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            販売価格(300~9,999,999)
+        .rightContent
+          .formGroup.clearfix
+            .leftSmallForm
+              %p.x 価格
+              %span.y #{y}
+            .rightSmallForm
+              ¥
+              = f.text_field :text, placeholder: "例) 300", class: "rightSmallForm__price"
+          .formGroup.commission.clearfix
+            .leftSmallForm
+              %p.leftSmallForm__commissionLabel 販売手数料(10%)
+            .rightSmallForm
+              %p.rightSmallForm__commissionPrice -
+          .formGroup.clearfix
+            .leftSmallForm
+              %p.leftSmallForm__profitLabel 販売利益
+            .rightSmallForm
+              %p.rightSmallForm__profitPrice -
+      .contents
+        .exhibition
+          %p 
+            = link_to "禁止されている出品", "#"
+            、
+            = link_to "行為", "#"
+            を必ずご確認ください。         
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", "#"
+            は犯罪であり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            = link_to "加盟店規約","#"
+            に同意したことになります。
+          = f.submit "出品する", class: "exhibition__btn"
+          = link_to "もどる", "#" ,class: "exhibition__back"
+
+.ItemRegistrationFooter
+  .footer__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.
