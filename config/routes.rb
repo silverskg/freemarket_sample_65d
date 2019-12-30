@@ -20,4 +20,6 @@ Rails.application.routes.draw do
 
   # 商品詳細ページ
   #  root to: "items#productDetails" 
+  # マイページ
+  # root to: "my_page#index"
 end
