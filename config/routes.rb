@@ -16,5 +16,8 @@ Rails.application.routes.draw do
   # root to: "registration#index_6"
 
   # 商品詳細ページ
-  #  root to: "items#productDetails" 
+  # root to: "items#productDetails" 
+
+  #購入内容確認ページ
+  #root to: "items#productConfirmation"
 end
