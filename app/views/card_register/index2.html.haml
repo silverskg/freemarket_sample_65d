@@ -1,0 +1,24 @@
+.cardRegisteredHeader
+  ヘッダー
+
+.cardRegisteredMain
+  .sideBar
+    サイドバー
+  .mainContainer
+    .cardRegisteredTitle
+      支払い方法
+    .cardRegisteredInfo
+      %p クレジットカード一覧
+      .detailInfo
+        .left
+          .cardImage
+            = image_tag 'visa.svg', width: '49px', height: '16px', class: 'visa'
+          .cardNumber
+            *************0000
+          .date
+            00 / 00
+        .right
+          .deleteButton
+            削除する
+    .linkAboutPay
+      = link_to "支払い方法について >", "#", class: "aboutPay"
