@@ -23,190 +23,201 @@ body{
     line-height: 97px;
     font-weight: bold;
   }
+
   .registrationForm {
     @include centralContent();
     font-size: 14px;
     height: auto;
-  }
-  .contents {
-    border-bottom: 1px solid #f1f1f1;
-    padding: 20px 40px;
-    box-sizing: border-box;
 
-    .leftContent {
-      font-size: 14px;
-      color: #888888;
-      float: left;
-    }
+    .contents {
+      border-bottom: 1px solid #f1f1f1;
+      padding: 20px 40px;
+      box-sizing: border-box;
 
-    .rightContent {
-      width: 400px;
-      float: right;
-    }
+      .formGroup {
+        width: 100%;
+        padding:20px 0;
 
-    .exhibition {
-      width: 100%;
-      padding: 20px 0;
-      p {
-        a {
+        .imageUp{
+          display: flex;
+      
+          .imageUpField {
+            width: 100%;
+            height: 162px;
+            padding: 40px;
+            margin-top: 20px;
+            background-color: #f5f5f5;
+            border:1px dashed #ccc;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+          }
+        }
+      
+        .hidden {
+          display: none;
+        }
+
+        .form {
+          position: relative;
+
+          &__name {
+            @include itemForm();
+            width: 100%;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+          }
+
+          &__info {
+            @include itemForm();
+            width: 100%;
+            height: 108px;
+            padding: 10px;
+          }
+
+          &__select {
+            @include itemForm();
+            cursor: pointer;
+            position: relative;
+            width: 100%;
+            height: 48px;
+            padding: 0 16px ;
+            -webkit-appearance: none;
+          }
+
+          &__arrowIcon {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            pointer-events: none;
+            
+            .image {
+              font-size: 20px;
+              color: #888;
+            }
+          }
+        }
+      
+        .leftSmallForm {
+          float: left;
+          width: 50%;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          
+          &__profitLabel {
+            font-size: 16px;
+            font-weight: bold;
+          }
+        }
+
+        .rightSmallForm {
+          float: right;
+          width: 50%;
+          height: 48px;
+          display: flex;
+          align-items: center;
+          
+          &__price {
+            @include itemForm();
+            width: 100%;
+            height: 100%;
+            padding: 0 16px ;
+            margin: 0 0 0 10px;
+            text-align: right;
+          }
+      
+          &__commissionPrice {
+            margin: 0 0 0 auto;
+          }
+      
+          &__profitPrice {
+            margin: 0 0 0 auto;
+            font-size: 34px;
+            font-weight: bold;
+          }
+        }
+      
+        .link {
           color: #0099e8;
           text-decoration: none;
+          text-align: right;
+          margin-top: 5px;
         }
-     }
-      &__btn {
+      }
+  
+      .leftContent {
+        font-size: 14px;
+        color: #888888;
+        float: left;
+      }
+  
+      .rightContent {
+        width: 400px;
+        float: right;
+      }
+  
+      .exhibition {
         width: 100%;
-        line-height: 48px;
-        display: block;
-        margin-top: 40px;
-        color: #fff;
-        background-color: #ea352d;
-        border: 1px solid  #ea352d;
-        cursor: pointer;
-      }
+        padding: 20px 0;
 
-      &__back {
-        width: 45%;
-        line-height: 48px;
-        display: block;
-        margin: 24px auto 0;
-        text-align: center;
-        color: #fff;
-        background-color: #aaa;
-        border: 1px solid  #aaa;
-        text-decoration: none;
-      }
-    }
+        p {
+          a {
+            color: #0099e8;
+            text-decoration: none;
+          }
+       }
 
-    .fontBolder {
-      @include fontBolder();
-    }
-    .hissuBtn{
-      @include hissuBtn();
-    }
-  } 
-}
-
-.clearfix {
-  @include clearfix();
-}
-
-.formGroup {
-  width: 100%;
-  padding:20px 0;
-  .imageUp{
-    display: flex;
-
-    .imageUpField {
-      width: 100%;
-      height: 162px;
-      padding: 40px;
-      margin-top: 20px;
-      background-color: #f5f5f5;
-      border:1px dashed #ccc;
-      box-sizing: border-box;
+        &__btn {
+          width: 100%;
+          line-height: 48px;
+          display: block;
+          margin-top: 40px;
+          color: #fff;
+          background-color: #ea352d;
+          border: 1px solid  #ea352d;
+          cursor: pointer;
+        }
   
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-weight: bold;
-    }
-  }
-  
-
-  .hidden {
-    display: none;
-  }
-  .form {
-    position: relative;
-    &__name {
-      @include itemForm();
-      width: 100%;
-      height: 48px;
-      padding: 10px 16px 8px;
-      border-radius: 4px;
-    }
-    &__info {
-      @include itemForm();
-      width: 100%;
-      height: 108px;
-      padding: 10px;
-    }
-    &__select {
-      @include itemForm();
-      cursor: pointer;
-      position: relative;
-      width: 100%;
-      height: 48px;
-      padding: 0 16px ;
-      -webkit-appearance: none;
-    }
-    &__arrowIcon {
-      position: absolute;
-      top: 14px;
-      right: 14px;
-      pointer-events: none;
-      
-      .image {
-        font-size: 20px;
-        color: #888;
+        &__back {
+          width: 45%;
+          line-height: 48px;
+          display: block;
+          margin: 24px auto 0;
+          text-align: center;
+          color: #fff;
+          background-color: #aaa;
+          border: 1px solid  #aaa;
+          text-decoration: none;
+        }
       }
-    }
-  }
+  
+      .fontBolder {
+        @include fontBolder();
+      }
 
-  .leftSmallForm {
-    float: left;
-    width: 50%;
-    height: 48px;
-    display: flex;
-    align-items: center;
+      .hissuBtn{
+        @include hissuBtn();
+      }
+
+      // 販売手数料枠
+      .commission {
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        padding: 4px 0;
+      }
+    } 
     
-    &__profitLabel {
-      font-size: 16px;
-      font-weight: bold;
+    .clearfix {
+      @include clearfix();
     }
-  }
-  .rightSmallForm {
-    float: right;
-    width: 50%;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    
-    &__price {
-      @include itemForm();
-      width: 100%;
-      height: 100%;
-      padding: 0 16px ;
-      margin: 0 0 0 10px;
-      text-align: right;
-    }
-
-    &__commissionPrice {
-      margin: 0 0 0 auto;
-    }
-
-    &__profitPrice {
-      margin: 0 0 0 auto;
-      font-size: 34px;
-      font-weight: bold;
-    }
-  }
-
-  .link {
-    color: #0099e8;
-    text-decoration: none;
-    text-align: right;
-    margin-top: 5px;
   }
 }
 
-// 販売手数料枠
-.commission {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  padding: 4px 0;
-}
 
 .itemRegistrationFooter{
   height: 220px;
