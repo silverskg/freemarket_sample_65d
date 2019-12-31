@@ -1,4 +1,9 @@
 $(function() {
+  //カテゴリ選択時にブランドフォームを追加
+  $("#_category").on("change", function(){
+    $("#brand").show();
+  })
+
   // 販売手数料の表示
   $(".rightSmallForm__price").on("keyup", function(){
     let input = $(this).val();
