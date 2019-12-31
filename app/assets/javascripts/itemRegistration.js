@@ -1,6 +1,7 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   //カテゴリ選択時にブランドフォームを追加
   $("#_category").on("change", function(){
+    console.log("発火");
     $("#brand").show();
   })
 
@@ -22,4 +23,4 @@ $(function() {
     else
       $(".rightSmallForm__profitPrice").text("-");
   })
-});
+}); 
