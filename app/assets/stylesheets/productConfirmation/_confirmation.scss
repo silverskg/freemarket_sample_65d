@@ -1,8 +1,8 @@
-body{
+.confirmationbody{
   background-color: #f5f5f5;
   font-size:14px;
   font-weight: normal;
-  height: 1065px;
+  font-variation-settings: normal;
 }
 
 .confirmationHeader{
@@ -62,7 +62,7 @@ body{
                 }
                 //商品の値段
                 .nedan1{
-                  margin-left:90px;
+                  margin-left:140px;
                 }
                 }
               &__box{
@@ -103,18 +103,18 @@ body{
           border-bottom: 1px solid #f1f1f1;
           width: 343px;
           font-weight: normal;
-            &__change{
+              &__change{
               display:flex;
               margin-top: 30px;
                 .Delivery{
                   font-weight: bold;
                 }
-                .Change{
+                .Change1{
                   color:#0099E8;
                   text-decoration: none;
-                  margin-left: 70%;
+                  margin-left: 65%;
                 }
-                .Change:hover{
+                .Change1:hover{
                   text-decoration: underline;
                 }
             }
@@ -168,7 +168,7 @@ body{
     }
   }
   .mercarirogo{
-    margin-top: 10px;
+    margin-top: 20px;
     margin-left: 180px;
   }
   p{
