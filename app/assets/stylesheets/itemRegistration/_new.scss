@@ -141,15 +141,6 @@ body{
       padding: 0 16px ;
       -webkit-appearance: none;
     }
-    #_prefecture_id {
-      @include itemForm();
-      cursor: pointer;
-      position: relative;
-      width: 100%;
-      height: 48px;
-      padding: 0 16px ;
-      -webkit-appearance: none;
-    }
     &__arrowIcon {
       position: absolute;
       top: 14px;
