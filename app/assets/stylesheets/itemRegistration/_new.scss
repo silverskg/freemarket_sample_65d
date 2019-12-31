@@ -200,8 +200,12 @@ body{
         @include fontBolder();
       }
 
-      .hissuBtn{
+      .hissuBtn {
         @include hissuBtn();
+      }
+
+      .ninniBtn {
+        @include ninniBtn();
       }
 
       // 販売手数料枠
@@ -209,6 +213,10 @@ body{
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         padding: 4px 0;
+      }
+
+      #clothesSize, #shoesSize {
+        // display: none;
       }
     } 
     
