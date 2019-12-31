@@ -62,6 +62,59 @@
                 {},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            
+          .formGroup#clothesSize
+            %p.fontBolder サイズ
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :clothesSize,
+                [["---", "---"],
+                ["XXS以下", "XXS以下"],
+                ["XS(SS)", "XS(SS)"],
+                ["S", "S"],
+                ["M", "M"],
+                ["L", "L"],
+                ["XL(LL)", "XL(LL)"],
+                ["2XL(3L)", "2XL(3L)"],
+                ["3XL(4L)", "3XL(4L)"],
+                ["4XL(5L以上)", "4XL(5L以上)"],
+                ["FREE SIZE", "FREE SIZE"]],
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+            
+          .formGroup#shoesSize
+            %p.fontBolder サイズ
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :shoesSize,
+                [["---", "---"],
+                ["23.5cm以下", "23.5cm以下"], 
+                ["24cm", "24cm"], 
+                ["24.5cm", "24.5cm"], 
+                ["25cm", "25cm"], 
+                ["25.5cm", "25.5cm"], 
+                ["26cm", "26cm"], 
+                ["26.5cm", "26.5cm"], 
+                ["27cm", "27cm"], 
+                ["27.5cm", "27.5cm"], 
+                ["28cm", "28cm"], 
+                ["28.5cm", "28.5cm"], 
+                ["29cm", "29cm"], 
+                ["29.5cm", "29.5cm"], 
+                ["30cm", "30cm"], 
+                ["30.5cm", "30.5cm"], 
+                ["31cm以上", "31cm以上"]],
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+
+          .formGroup#shoesSize
+            %p.fontBolder ブランド
+            %span.ninniBtn #{"任意"}
+            = f.text_field :text3, placeholder: "例）シャネル", class: "form__name"
+
+            .form
           .formGroup
             %p.fontBolder 商品の状態
             %span.hissuBtn #{hissu}
