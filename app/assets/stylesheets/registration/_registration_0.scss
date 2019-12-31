@@ -1,4 +1,4 @@
-body{
+.newUserbody{
   background-color: #F5F5F5;
 }
 
@@ -37,12 +37,12 @@ body{
     font-size: 14px;
     display:block;
     text-decoration: none;
+    display: table; 
     }
     .mail{
       font-size:20px;
-      position:absolute;
-      left: 570px;
-      top:280px
+      display: table-cell; 
+      text-align: left; 
     }
     &__facebook{
       text-decoration: none;
@@ -52,13 +52,13 @@ body{
       color: #FFFFFF;
       border-radius: 5px;
       margin-top:16px;
-      display:block
+      display:block;
+      text-align: center;
     }
     .facebook{
       font-size:28px;
-      position:absolute;
-      left: 570px;
-      top:344px
+      display: table-cell; 
+      text-align: left; 
     }
     &__google{
       background-color: #FFFFFF;
@@ -70,12 +70,12 @@ body{
       display:block;
       text-decoration: none;
       margin-top: 16px;
+      display: table; 
     }
     .google{
       font-size:25px;
-      position:absolute;
-      left: 570px;
-      top:411px
+      display: table-cell; 
+      text-align: left; 
     }
   p1,p2,p3{
     line-height: 50px;
