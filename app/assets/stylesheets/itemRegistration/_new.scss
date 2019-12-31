@@ -77,8 +77,8 @@ body{
       }
     }
 
-    .fontBorder {
-      @include fontBorder();
+    .fontBolder {
+      @include fontBolder();
     }
     .hissuBtn{
       @include hissuBtn();

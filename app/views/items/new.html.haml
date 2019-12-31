@@ -11,7 +11,7 @@
     = form_for "#" do |f|
       .contents.image
         .formGroup
-          %p.fontBorder 出品画像
+          %p.fontBolder 出品画像
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           = f.label :image do
@@ -26,12 +26,12 @@
 
       .contents
         .formGroup
-          %p.fontBorder 商品名
+          %p.fontBolder 商品名
           %span.hissuBtn #{hissu}
           .form
             = f.text_field :text2, placeholder: "商品名（必須40文字まで）", class: "form__name"
         .formGroup
-          %p.fontBorder 商品の説明
+          %p.fontBolder 商品の説明
           %span.hissuBtn #{hissu}
           .form
             = f.text_area :text3, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "form__info"
@@ -41,7 +41,7 @@
             商品の詳細
         .rightContent
           .formGroup
-            %p.fontBorder カテゴリー
+            %p.fontBolder カテゴリー
             %span.hissuBtn #{hissu}
             .form
               = f.select :category,
@@ -63,7 +63,7 @@
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.fontBorder 商品の状態
+            %p.fontBolder 商品の状態
             %span.hissuBtn #{hissu}
             .form
               = f.select :status,
@@ -85,7 +85,7 @@
               = icon('fas', 'question-circle', class: 'question')
         .rightContent
           .formGroup
-            %p.fontBorder 配送料の負担
+            %p.fontBolder 配送料の負担
             %span.hissuBtn #{hissu}
             .form
               = f.select :delivery_charge,
@@ -96,14 +96,14 @@
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.fontBorder 発送元の地域
+            %p.fontBolder 発送元の地域
             %span.hissuBtn #{hissu}
             .form
               = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
           .formGroup
-            %p.fontBorder 発送までの日数
+            %p.fontBolder 発送までの日数
             %span.hissuBtn #{hissu}
             .form
               = f.select :delivery_date,
@@ -123,7 +123,7 @@
         .rightContent
           .formGroup.clearfix
             .leftSmallForm
-              %p.fontBorder 価格
+              %p.fontBolder 価格
               %span.hissuBtn #{hissu}
             .rightSmallForm
               ¥
