@@ -9,20 +9,29 @@
   .registrationForm
     - hissu = "必須"
     = form_for "#" do |f|
-      .contents.image
+      .contents
         .formGroup
           %p.fontBolder 出品画像
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
-          = f.label :image do
-            .imageUp
-              .previewField
-                %img(id="preview")
+          -# 画像UP数が１〜５の場合
+          .imageUp
+            .previewField#pf1
+            = f.label :images1, {id: "images1"} do
               .imageUpField
+                = f.file_field :images1, class: "imageUpField__hidden1"
                 %p
                 ドラッグアンドドロップ
                 %br またはクリックしてファイルをアップロード
-              = f.file_field :image, multiple: true, class: "hidden"
+          -# 画像UP数が6〜10の場合
+          .imageUp
+            .previewField#pf2
+            = f.label :images2, {id: "images2"} do
+              .imageUpField
+                = f.file_field :images2, class: "imageUpField__hidden2"
+                %p
+                ドラッグアンドドロップ
+                %br またはクリックしてファイルをアップロード
 
       .contents
         .formGroup
@@ -151,7 +160,7 @@
             = link_to "禁止されている出品", "#"
             、
             = link_to "行為", "#"
-            を必ずご確認ください。         
+            を必ずご確認ください。
           %p
             またブランド品でシリアルナンバー等がある場合はご記載ください。
             = link_to "偽ブランドの販売", "#"
