@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # トップページ
+  #トップページ
   root to: "items#index"
   resources :items, only: [:index, :new, :create]
 
