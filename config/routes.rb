@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # トップページ
-  # resources :items, only: [:index, :new]
+  #トップページ
+  root to: "items#index"
+  resources :items, only: [:index, :new]
 
   # ログイン画面表示
   # root to: "login#index"
@@ -26,7 +27,7 @@ Rails.application.routes.draw do
   # root to: "items#productDetails" 
 
   # 本人情報確認ページ
-  root to: "information#index" 
+  # root to: "information#index" 
 
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
