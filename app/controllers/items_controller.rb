@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 
   def create
     item = Item.create(item_params)
-    
+    redirect_to root_path
   end
 
   private
@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
       :status, 
       :body, 
       :deliver_fee, 
-      :delivery_data, 
+      :delivery_date, 
       :how_to_deliver, 
       :region, 
       :price, 
@@ -27,5 +27,5 @@ class ItemsController < ApplicationController
       :brand_id
     ).merge(user_id: 1)
   end
-  
+
 end
