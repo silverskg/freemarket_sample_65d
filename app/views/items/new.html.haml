@@ -61,7 +61,9 @@
             %p.fontBolder ブランド
             %span.hissuBtn #{hissu}
             .form
-              = f.text_field :brand, placeholder: "例）シャネル", class: "form__name"
+              = f.collection_select :brand_id, Brand.all, :id, :name, {include_blank: "---"}, {class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
 
           .formGroup
             %p.fontBolder 商品の状態
