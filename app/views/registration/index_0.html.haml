@@ -1,30 +1,30 @@
 .newUserbody
-.newUserheader
-  =link_to('#', class:'image') do
-    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo"
+  .newUserheader
+    =link_to('#', class:'image') do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo"
 
-.newUsermain
-  .newUsermain__title
-    新規会員登録
-  .newUsermain__contents
-    =link_to('#', class:'newUsermain__contents__mail') do
-      = icon('far', 'envelope', class: 'mail')
-      %p1 メールアドレスで登録する
-    =link_to('#', class:'newUsermain__contents__facebook') do
-      = icon('fab', 'facebook-square', class: 'facebook')
-      %p2 Facebookで登録する
-    =link_to('#', class:'newUsermain__contents__google') do
-      = icon('fab', 'google', class: 'google')
-      %p3 Googleで登録する
+  .newUsermain
+    .newUsermain__title
+      新規会員登録
+    .newUsermain__contents
+      =link_to('#', class:'newUsermain__contents__mail') do
+        = icon('far', 'envelope', class: 'mail')
+        %p1 メールアドレスで登録する
+      =link_to('#', class:'newUsermain__contents__facebook') do
+        = icon('fab', 'facebook-square', class: 'facebook')
+        %p2 Facebookで登録する
+      =link_to('#', class:'newUsermain__contents__google') do
+        = icon('fab', 'google', class: 'google')
+        %p3 Googleで登録する
 
-.footer
-  .footer__menu
-    =link_to('#', class:'privacybtn') do
-      プライバシーポリシー
-    =link_to('#', class:'rulebtn') do
-      メルカリ利用規約
-    =link_to('#', class:'transactionbtn') do
-      特定商取引に関する表記
-  =link_to('#', class:'image2') do
-    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
-  %p © Mercari, Inc.
+  .footer
+    .footer__menu
+      =link_to('#', class:'privacybtn') do
+        プライバシーポリシー
+      =link_to('#', class:'rulebtn') do
+        メルカリ利用規約
+      =link_to('#', class:'transactionbtn') do
+        特定商取引に関する表記
+    =link_to('#', class:'image2') do
+      = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+    %p © Mercari, Inc.

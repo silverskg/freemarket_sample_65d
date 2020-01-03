@@ -1,50 +1,50 @@
-.registration2header
+.registration2body
+  .registration2header
+    .progress-bar
+      =link_to('#', class:'image') do
+        = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+      %ol.clearfix
+        %li1--gray
+          会員情報
+          .maru1red
+        %li2--red
+          電話番号認証
+          .maru2red
+        %li3--gray
+          お届け先住所入力
+          .maru3gray
+        %li4--gray
+          支払い方法
+          .maru4gray
+        %li5--gray
+          完了
+          .maru5gray
+        .grayline2
+        .redline2
 
-  .progress-bar
-    =link_to('#', class:'image') do
-      = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
-    %ol.clearfix
-      %li1--gray
-        会員情報
-        .maru1red
-      %li2--red
-        電話番号認証
-        .maru2red
-      %li3--gray
-        お届け先住所入力
-        .maru3gray
-      %li4--gray
-        支払い方法
-        .maru4gray
-      %li5--gray
-        完了
-        .maru5gray
-      .grayline2
-      .redline2
-
-.main
-  .registerPhoneNumberHeader
-    電話番号の確認
-  .registrationForm
-    = form_for "#" do |f|
-      .formPhoneNumber
-        %p.titleBold 携帯電話の番号
-        = f.text_field :text, placeholder: "携帯電話の番号を入力", class: "phonenumber formareaBig"
-        %p.small 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-        = f.submit "SMSを送信する", class: "submitbtn"
-        %p.small ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-    .ReasonsAboutPhoneNumberRegistration
-      = link_to "電話番号の確認が必要な理由>", "#", class: "PhoneNumberRegistration"
+  .main
+    .registerPhoneNumberHeader
+      電話番号の確認
+    .registrationForm
+      = form_for "#" do |f|
+        .formPhoneNumber
+          %p.titleBold 携帯電話の番号
+          = f.text_field :text, placeholder: "携帯電話の番号を入力", class: "phonenumber formareaBig"
+          %p.small 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+          = f.submit "SMSを送信する", class: "submitbtn"
+          %p.small ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+      .ReasonsAboutPhoneNumberRegistration
+        = link_to "電話番号の確認が必要な理由>", "#", class: "PhoneNumberRegistration"
 
 
-.footer
-  .footer__menu
-    =link_to('#', class:'privacybtn') do
-      プライバシーポリシー
-    =link_to('#', class:'rulebtn') do
-      メルカリ利用規約
-    =link_to('#', class:'transactionbtn') do
-      特定商取引に関する表記
-  =link_to('#', class:'imag2') do
-    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
-  %p © Mercari, Inc.
+  .footer
+    .footer__menu
+      =link_to('#', class:'privacybtn') do
+        プライバシーポリシー
+      =link_to('#', class:'rulebtn') do
+        メルカリ利用規約
+      =link_to('#', class:'transactionbtn') do
+        特定商取引に関する表記
+    =link_to('#', class:'imag2') do
+      = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+    %p © Mercari, Inc.
