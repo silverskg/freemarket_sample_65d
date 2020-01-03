@@ -7,9 +7,12 @@ Rails.application.routes.draw do
   # ログイン画面表示
   # root to: "login#index"
 
+  # ログアウト画面
+  # root to: "logout#index"
+
   # ユーザー新規登録ページ表示
-  # root to: "registration#index_0"
-  # root to: "registration#index_1"
+  #root to: "registration#index_0"
+  #  root to: "registration#index_1"
   # root to: "registration#index_2"
   # root to: "registration#index_3"
   # root to: "registration#index_4"
@@ -26,3 +29,17 @@ Rails.application.routes.draw do
     root to: "information#index" 
   
 end
+
+  # クレジットカード情報登録ページ
+  # root to: "card_register#index"
+  # root to: "card_register#index2"
+
+  # マイページ
+  # root to: "my_page#index"
+
+
+  #購入内容確認ページ
+  #root to: "items#productConfirmation"
+
+end
+

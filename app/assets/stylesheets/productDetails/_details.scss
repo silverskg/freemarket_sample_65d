@@ -1,4 +1,4 @@
-body{
+.confirmationBody{
   background-color: #f5f5f5;
   font-size:14px;
   font-weight: normal;
@@ -11,8 +11,7 @@ body{
     width: 700px;
     background-color: #ffffff;
     text-align: center; 
-    margin-left: 370px;
-    top:40px;
+    margin: 30px auto 0;
     padding:24px 40px 40px;
 
       &__product-name{
@@ -173,7 +172,7 @@ body{
       width: 620px;
       font-size:18px;
       text-align: left;
-      height: 300px;
+      margin-bottom: 20px;
       font-weight: normal;
     }
     &__botom{
