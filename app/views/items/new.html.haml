@@ -1,0 +1,185 @@
+.itemRegistrationHeader
+  =link_to('#', class:'imag') do
+    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+
+.itemRegistrationMain
+  .registrationHeader
+    商品の情報を入力
+
+  .registrationForm
+    - hissu = "必須"
+    = form_for "#" do |f|
+      .contents
+        .formGroup
+          %p.fontBolder 出品画像
+          %span.hissuBtn #{hissu}
+          %p 最大10枚までアップロードできます
+          -# 画像UP数が１〜５の場合
+          .imageUp
+            .previewField#pf1
+            = f.label :images1, {id: "images1"} do
+              .imageUpField
+                = f.file_field :images1, class: "imageUpField__hidden1"
+                %p
+                ドラッグアンドドロップ
+                %br またはクリックしてファイルをアップロード
+          -# 画像UP数が6〜10の場合
+          .imageUp
+            .previewField#pf2
+            = f.label :images2, {id: "images2"} do
+              .imageUpField
+                = f.file_field :images2, class: "imageUpField__hidden2"
+                %p
+                ドラッグアンドドロップ
+                %br またはクリックしてファイルをアップロード
+
+      .contents
+        .formGroup
+          %p.fontBolder 商品名
+          %span.hissuBtn #{hissu}
+          .form
+            = f.text_field :text2, placeholder: "商品名（必須40文字まで）", class: "form__name"
+        .formGroup
+          %p.fontBolder 商品の説明
+          %span.hissuBtn #{hissu}
+          .form
+            = f.text_area :text3, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "form__info"
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            商品の詳細
+        .rightContent
+          .formGroup
+            %p.fontBolder カテゴリー
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :category,
+                [["---", "---"],
+                ["レディース", "レディース"], 
+                ["メンズ", "メンズ"],
+                ["ベビー・キッズ", "ベビー・キッズ"],
+                ["インテリア・住まい・小物", "インテリア・住まい・小物"],
+                ["本・音楽・ゲーム", "本・音楽・ゲーム"],
+                ["おもちゃ・ホビー・グッズ", "おもちゃ・ホビー・グッズ"],
+                ["コスメ・香水・美容", "コスメ・香水・美容"],
+                ["家電・スマホ・カメラ", "家電・スマホ・カメラ"],
+                ["スポーツ・レジャー", "スポーツ・レジャー"],
+                ["ハンドメイド", "ハンドメイド"],
+                ["チケット", "チケット"],
+                ["自動車・オートバイ", "自動車・オートバイ"],
+                ["その他", "その他"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+
+          .formGroup#brand
+            %p.fontBolder ブランド
+            %span.ninniBtn #{"任意"}
+            = f.text_field :text4, placeholder: "例）シャネル", class: "form__name"
+
+            .form
+          .formGroup
+            %p.fontBolder 商品の状態
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :status,
+                [["---", "---"],
+                ["新品・未使用", "新品・未使用"], 
+                ["未使用に近い", "未使用に近い"],
+                ["目立った傷や汚れなし", "目立った傷や汚れなし"],
+                ["やや傷や汚れあり", "やや傷や汚れあり"],
+                ["傷や汚れあり", "傷や汚れあり"],
+                ["全体的に状態が悪い", "全体的に状態が悪い"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            配送について
+            = link_to '#', class: 'link questionLink' do
+              = icon('fas', 'question-circle', class: 'question')
+        .rightContent
+          .formGroup
+            %p.fontBolder 配送料の負担
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :delivery_charge,
+                [["---", "---"],
+                ["送料込み(出品者負担)", "送料込み(出品者負担)"], 
+                ["着払い(購入者負担)", "着払い(購入者負担)"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+          .formGroup
+            %p.fontBolder 発送元の地域
+            %span.hissuBtn #{hissu}
+            .form
+              = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {}, {class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+          .formGroup
+            %p.fontBolder 発送までの日数
+            %span.hissuBtn #{hissu}
+            .form
+              = f.select :delivery_date,
+                [["---", "---"],
+                ["1~2日で発送", "1~2日で発送"], 
+                ["2~3日で発送", "2~3日で発送"], 
+                ["4~7日で発送", "4~7日で発送"]], 
+                {},{class: "form__select"}
+              = f.label :image, class: "form__arrowIcon" do
+                = icon("fas", "chevron-down", class: "image")
+      .contents.clearfix
+        .leftContent
+          .formGroup
+            販売価格(300~9,999,999)
+            = link_to '#', class: 'link questionLink' do
+              = icon('fas', 'question-circle', class: 'question')
+        .rightContent
+          .formGroup.clearfix
+            .leftSmallForm
+              %p.fontBolder 価格
+              %span.hissuBtn #{hissu}
+            .rightSmallForm
+              ¥
+              = f.text_field :text, placeholder: "例) 300", class: "rightSmallForm__price"
+          .formGroup.commission.clearfix
+            .leftSmallForm
+              %p.leftSmallForm__commissionLabel 販売手数料(10%)
+            .rightSmallForm
+              %p.rightSmallForm__commissionPrice -
+          .formGroup.clearfix
+            .leftSmallForm
+              %p.leftSmallForm__profitLabel 販売利益
+            .rightSmallForm
+              %p.rightSmallForm__profitPrice -
+      .contents
+        .exhibition
+          %p 
+            = link_to "禁止されている出品", "#"
+            、
+            = link_to "行為", "#"
+            を必ずご確認ください。
+          %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            = link_to "偽ブランドの販売", "#"
+            は犯罪であり処罰される可能性があります。
+          %p 
+            また、出品をもちまして
+            = link_to "加盟店規約","#"
+            に同意したことになります。
+          = f.submit "出品する", class: "exhibition__btn"
+          = link_to "もどる", "#" ,class: "exhibition__back"
+
+.itemRegistrationFooter
+  .menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.

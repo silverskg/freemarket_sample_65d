@@ -1,15 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users
-    root to: "items#index"
-  resources :items, only: [:index]
+
+  # トップページ
+  root to: "items#index"
+  resources :items, only: [:index, :new]
 
   # ログイン画面表示
   # root to: "login#index"
 
+  # ログアウト画面
+  # root to: "logout#index"
+
   # ユーザー新規登録ページ表示
-  #root to: "registration#index_0"
-  #  root to: "registration#index_1"
-  #  root to: "registration#index_2"
+  # root to: "registration#index_0"
+  # root to: "registration#index_1"
+  # root to: "registration#index_2"
   # root to: "registration#index_3"
   # root to: "registration#index_4"
   # root to: "registration#index_5"
@@ -19,19 +24,20 @@ Rails.application.routes.draw do
   # root to: "edit_profile#index"
 
   # 商品詳細ページ
-  #  root to: "items#productDetails" 
+  # root to: "items#productDetails" 
 
+  # 本人情報確認ページ
+  # root to: "information#index" 
 
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
   # root to: "card_register#index2"
+  # root to: "card_register#index3"
 
   # マイページ
   # root to: "my_page#index"
-
 
   #購入内容確認ページ
   #root to: "items#productConfirmation"
 
 end
-
