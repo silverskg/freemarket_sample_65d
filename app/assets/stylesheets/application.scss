@@ -3,7 +3,9 @@
 @import "./toppage/body";
 @import "./toppage/footer";
 @import "login/login";
+@import "logout/logout";
 @import "productDetails/details";
+@import "productConfirmation/confirmation";
 @import "registration/register_base";
 @import "registration/registration_0";
 @import "registration/registration_1";
@@ -13,6 +15,14 @@
 @import "registration/registration_5";
 @import "registration/registration_6";
 @import "editProfile/editProfile";
-@import "information/information";
+
+
+@import "cardRegister/cardRegister";
+@import "cardRegister/cardRegister_2";
+@import "side_bar/side_bar.scss";
+@import "my_page/my_page.scss";
+@import "bread_bar/bread.scss";
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "information/information";
