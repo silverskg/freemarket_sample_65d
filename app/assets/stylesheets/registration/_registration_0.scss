@@ -65,9 +65,11 @@
       padding-left: 10px;
 
         .facebook{
-          font-size:19px;
+          font-size:22px;
           width: 100px;
           text-align: left;
+          display: table-cell;
+          margin:11px
         }
     }
 
