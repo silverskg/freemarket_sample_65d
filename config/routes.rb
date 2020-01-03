@@ -41,7 +41,6 @@ Rails.application.routes.draw do
   #購入内容確認ページ
   #root to: "items#productConfirmation"
 
-　 # 本人情報確認ページ
-   #root to: "information#index" 
+
 
 end
