@@ -89,17 +89,39 @@ $(document).on('turbolinks:load', function() {
   })
 
   //配送料の負担選択時に発送方法フォームを追加
-  $("#item_deliver_fee").on("change", function(){
-    let select = $(this).val();
-    if (select == "送料込み(出品者負担)") {
-      $("#komikomi").show();
-      $("#chaku").hide();
-    }
-    else if (select == "着払い(購入者負担)") {
-      $("#chaku").show();
-      $("#komikomi").hide();
-    }
-  })
+   $("#item_deliver_fee").on("change", function(){
+      let select = $(this).val();
+      if (select == "送料込み(出品者負担)") {
+        let url = `<option value="---">---</option>
+                   <option value="未定">未定</option>
+                   <option value="らくらくメルカリ便">らくらくメルカリ便</option>
+                   <option value="ゆうメール">ゆうメール</option>
+                   <option value="レターパック">レターパック</option>
+                   <option value="普通郵便(定形、定形外)">普通郵便(定形、定形外)</option>
+                   <option value="クロネコヤマト">クロネコヤマト</option>
+                   <option value="ゆうパック">ゆうパック</option>
+                   <option value="クリックポスト">クリックポスト</option>
+                   <option value="ゆうパケット">ゆうパケット</option>
+                  `;
+        $("#how_to_deliver").show();
+        $("#item_how_to_deliver").empty();
+        $("#item_how_to_deliver").append(url);
+      }
+      else if (select == "着払い(購入者負担)") {
+        let url = `<option value="---">---</option>
+                   <option value="未定">未定</option>
+                   <option value="クロネコヤマト">クロネコヤマト</option>
+                   <option value="ゆうパック">ゆうパック</option>
+                   <option value="ゆうメール">ゆうメール</option>
+                  `;
+        $("#how_to_deliver").show();
+        $("#item_how_to_deliver").empty();
+        $("#item_how_to_deliver").append(url);
+      }
+      else {
+        $("#how_to_deliver").hide();
+      }
+   })
 
   // 販売手数料の表示
   $(".rightSmallForm__price").on("keyup", function(){
