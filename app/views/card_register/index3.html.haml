@@ -1,0 +1,17 @@
+.cardRegisteredHeader
+  ヘッダー
+
+.cardRegisteredMain
+  .sideBar
+    サイドバー
+  .mainContainer
+    .cardRegisteredTitle
+      支払い方法
+    .cardRegisteredInfo
+      %p クレジットカード一覧
+      .cardLink
+        = link_to "#", class: 'link addCreditCard' do
+          = icon('far', 'credit-card', class: 'credit')
+          クレジットカードを追加する
+    .linkAboutPay
+      = link_to "支払い方法について >", "#", class: "aboutPay"
