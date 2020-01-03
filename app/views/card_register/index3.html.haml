@@ -36,25 +36,23 @@
             = link_to do
               = icon('far', 'circle')
               マイページ    
+
 %nav.bread
   %ul.bread__list
-  
-.editProfileMain
+
+.cardRegisteredMain
   = render 'shared/side_bar'
   .mainContainer
-    .profileTitle
-      プロフィール
-    .editProfileForm
-      = form_for "#" do |f|
-        .userProfile
-          .iconAndName
-            .userIcon
-              = image_tag 'eto_nezumi_fukubukuro.png', class: 'editUserIcon'
-            .userName
-              = f.text_field :text, class: "editUserName"
-        .editBody
-          = f.text_area :text, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "editBodyTextarea"
-          = f.submit "変更する", class: "editButton"
+    .cardRegisteredTitle
+      支払い方法
+    .cardRegisteredInfo
+      %p クレジットカード一覧
+      .cardLink
+        = link_to "#", class: 'link addCreditCard' do
+          = icon('far', 'credit-card', class: 'credit')
+          クレジットカードを追加する
+    .linkAboutPay
+      = link_to "支払い方法について >", "#", class: "aboutPay"
 
 %footer
   .images

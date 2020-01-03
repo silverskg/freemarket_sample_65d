@@ -38,23 +38,12 @@
               マイページ    
 %nav.bread
   %ul.bread__list
-  
-.editProfileMain
+
+.logoutMain
   = render 'shared/side_bar'
   .mainContainer
-    .profileTitle
-      プロフィール
-    .editProfileForm
-      = form_for "#" do |f|
-        .userProfile
-          .iconAndName
-            .userIcon
-              = image_tag 'eto_nezumi_fukubukuro.png', class: 'editUserIcon'
-            .userName
-              = f.text_field :text, class: "editUserName"
-        .editBody
-          = f.text_area :text, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "editBodyTextarea"
-          = f.submit "変更する", class: "editButton"
+    .logoutButton
+      = link_to "ログアウト", "#", class: "submitbtn"
 
 %footer
   .images

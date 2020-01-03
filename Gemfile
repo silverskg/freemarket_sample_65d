@@ -77,4 +77,5 @@ gem "font-awesome-sass"
 gem 'active_hash'
 gem 'devise'
 gem 'omniauth'
+gem 'jquery-rails'
 gem 'erb2haml'

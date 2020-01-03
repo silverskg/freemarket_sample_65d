@@ -26,31 +26,20 @@
       p {
         font-weight: 600;
       }
-      .detailInfo {
-        width: 320px;
-        height: 64.09px;
-        margin-top: 24px;
-        display: flex;
-        justify-content: space-between;
-        .left {
-          .cardNumber {
-            margin-top: 8px;
-          }
-          .date {
-            margin-top: 8px;
-          }
-        }
-        .right {
-          .deleteButton {
-            color: #ea352d;
-            width: 70px;
-            height: 24px;
-            padding: 4px 6px;
-            border: 1px solid #ea352d;
-            border-radius: 3px;
-            font-size: 14px;
-            line-height: 14px;
-          }
+      a {
+        display: inline-block;
+        width: 343px;
+        height: 50px;
+        font-size: 13px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        background-color: #EA352D;
+        color: white;
+        margin-top: 32px;
+        border-style: none;
+        .credit {
+          margin-right: 10px;
         }
       }
     }

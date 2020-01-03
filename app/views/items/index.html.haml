@@ -1,10 +1,3 @@
-!!!
-%html(lang="ja")
-  %head
-    %title Haml test
-    %meta(charset="UTF-8")
-
-
 -# header
 
 
@@ -689,7 +682,7 @@
         %p.name
           @Fmarket
         -#  出品ボタン      
-= link_to "#", class: "logo-btn" do      
+= link_to new_item_path, class: "logo-btn" do      
   .exhibition-btn
     .fixed_btn
       %span.btn-name
