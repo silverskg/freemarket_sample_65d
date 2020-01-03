@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
-  # devise_for :users
-  #   root to: "items#index"
-  # resources :items, only: [:index]
+  devise_for :users
+    root to: "items#index"
+  resources :items, only: [:index, :new]
+
 
   # ログイン画面表示
   # root to: "login#index"
@@ -10,8 +11,8 @@ Rails.application.routes.draw do
   # root to: "logout#index"
 
   # ユーザー新規登録ページ表示
-  #  root to: "registration#index_0"
-  # root to: "registration#index_1"
+  #root to: "registration#index_0"
+  #  root to: "registration#index_1"
   # root to: "registration#index_2"
   # root to: "registration#index_3"
   # root to: "registration#index_4"
@@ -28,7 +29,7 @@ Rails.application.routes.draw do
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
   # root to: "card_register#index2"
-  root to: "card_register#index3"
+  # root to: "card_register#index3"
 
   # マイページ
   # root to: "my_page#index"
