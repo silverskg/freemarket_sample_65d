@@ -88,6 +88,19 @@ $(document).on('turbolinks:load', function() {
     $("#brand").show();
   })
 
+  //配送料の負担選択時に発送方法フォームを追加
+  $("#item_deliver_fee").on("change", function(){
+    let select = $(this).val();
+    if (select == "送料込み(出品者負担)") {
+      $("#komikomi").show();
+      $("#chaku").hide();
+    }
+    else if (select == "着払い(購入者負担)") {
+      $("#chaku").show();
+      $("#komikomi").hide();
+    }
+  })
+
   // 販売手数料の表示
   $(".rightSmallForm__price").on("keyup", function(){
     let input = $(this).val();
