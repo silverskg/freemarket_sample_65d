@@ -1,4 +1,7 @@
-
+.registration3body{
+  background-color: #f5f5f5;
+  //height: 100vh;
+}
 
 .registration3header{
   background-color: #f5f5f5;
@@ -80,6 +83,7 @@ li1--gray, li3--gray, li4--gray, li5--gray {
 
 .registration3main{
   background-color: #f5f5f5;
+  margin-bottom: 60px;
   .certificatePhoneNumber {
     @include centralContent();
     border-bottom: 1px solid #f1f1f1;
