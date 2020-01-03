@@ -1,0 +1,74 @@
+.cardRegisteredHeader {
+  width: 100%;
+  height: 149px;
+  background-color: white;
+}
+
+.cardRegisteredMain {
+  margin: 40px 193px 0px;
+  padding-bottom: 40px;
+  display: flex;
+  .sideBar {
+    width: 280px;
+    height: 1252px;
+    margin-right: 40px;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  .mainContainer {
+    width: 700px;
+    height: 398.08px;
+    background-color: white;
+    color: #333333;
+    box-sizing: border-box;
+    .cardRegisteredTitle {
+      background-color: white;
+      padding: 8px 24px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 600;
+      border-bottom: 1px solid #f1f1f1;
+    }
+    .cardRegisteredInfo {
+      @include centralContent();
+      height: auto;
+      padding: 64px;
+      padding-left: 190px;
+      box-sizing: border-box;
+      font-size: 16px;
+      p {
+        font-weight: 600;
+      }
+      a {
+        display: inline-block;
+        width: 343px;
+        height: 50px;
+        font-size: 13px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+        background-color: #EA352D;
+        color: white;
+        margin-top: 32px;
+        border-style: none;
+        .credit {
+          margin-right: 10px;
+        }
+      }
+    }
+    .linkAboutPay {
+      width: 572px;
+      height: 56.09px;
+      margin-left: 64px;
+      padding-top: 40px;
+      padding-bottom: 64px;
+      border-top: 1px solid #f1f1f1;
+      text-align: right;
+      a {
+        color: #0099e8;
+        text-decoration: none; 
+      }
+    }
+  }
+}
+
