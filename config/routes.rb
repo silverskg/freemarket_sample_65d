@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  # トップページ
+  # root to: "items#index"
     root to: "items#index"
   resources :items, only: [:index, :new]
 
@@ -24,6 +27,8 @@ Rails.application.routes.draw do
   # 商品詳細ページ
   #  root to: "items#productDetails" 
 
+  # 本人情報確認ページ
+    root to: "information#index" 
 
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
@@ -36,5 +41,6 @@ Rails.application.routes.draw do
   #購入内容確認ページ
   #root to: "items#productConfirmation"
 
-end
 
+
+end
