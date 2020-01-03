@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # root to: "registration#index_2"
   # root to: "registration#index_3"
   # root to: "registration#index_4"
-  # root to: "registration#index_5"
+  #  root to: "registration#index_5"
   # root to: "registration#index_6"
 
   # ユーザーマイページ編集画面(マイページ完成次第ルーティング編集)
