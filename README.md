@@ -1,5 +1,4 @@
 ## usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
 |nickname|string|null: false|
@@ -15,7 +14,6 @@
 - has_many :items
 - has_many :likes
 - has_many :comments
-- has_one : payment
 - has_one : address
 
 ## itemsテーブル
@@ -45,11 +43,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|brand_id|references|foreign_key: true|
 
 ### Association
 - has_many :items
-- belongs_to :brand
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -79,18 +75,6 @@
 
 ### Association
 - belongs_to: item
-
-## paymentsテーブル
-|column|Type|Options|
-|-------|---------|-----------|
-|user_id|reference|foreign_key: true|
-|card_number|string|null: false unique: true|
-|year|integer|null: false|
-|month|integer|null: false|
-|security_number|integer|null: false|
-
-### Association
-- belongs_to :user
 
 ## addressテーブル
 |column|Type|Option|
