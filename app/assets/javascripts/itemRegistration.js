@@ -84,7 +84,7 @@ $(document).on('turbolinks:load', function() {
   })
 
   //カテゴリ選択時にブランドフォームを追加
-  $("#item_category").on("change", function(){
+  $("#item_category_id").on("change", function(){
     $("#brand").show();
   })
 
