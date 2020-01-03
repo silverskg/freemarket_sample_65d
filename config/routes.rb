@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   #トップページ
   root to: "items#index"
-  resources :items, only: [:index, :new]
+  resources :items, only: [:index, :new, :create]
 
   # ログイン画面表示
   # root to: "login#index"
