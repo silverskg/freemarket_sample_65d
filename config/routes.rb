@@ -2,15 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
 
   # トップページ
-  # root to: "items#index"
-  # resources :items, only: [:index, :new]
+  root to: "items#index"
+  resources :items, only: [:index, :new]
 
 
   # ログイン画面表示
   # root to: "login#index"
 
   # ログアウト画面
-  root to: "logout#index"
+  # root to: "logout#index"
 
   # ユーザー新規登録ページ表示
   # root to: "registration#index_0"
