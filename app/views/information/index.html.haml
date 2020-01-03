@@ -1,0 +1,57 @@
+.InformationHeader
+  ヘッダー
+
+.InformationMain
+  .sideBar
+    サイドバー
+  .mainbox
+    .InformationTitle
+      本人情報の登録
+    .InformationForm
+      %div.Description
+        %p お客さまの本人情報をご登録ください。
+        %p.text 登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+        = link_to do
+          本人確認書類のアップロードについて
+          = icon('fas', 'angle-right')
+
+      .form_group
+        %label お名前
+        %p 山田太郎
+      .form_group
+        %label お名前カナ
+        %p ヤマダタロウ
+      .form_group
+        %label 生年月日
+        %p 1997/05/04
+      .addressForm
+        = form_for "#" do |f|
+          .form_group
+            %label 郵便番号 
+            %span 任意
+            = f.text_field :post_number, placeholder:"例)1234567"
+          .form_prefectures
+            %label 都道府県
+            %span 任意
+            = f.collection_select :prefecture, Prefecture.all, :id, :name
+          .form_group
+            %label 市区町村 
+            %span 任意
+            = f.text_field :city, placeholder:"例)横浜市緑区"
+          .form_group
+            %label 番地 
+            %span 任意
+            = f.text_field :address_banchi, placeholder:"例)青山1-1-1"
+          .form_group
+            %label 建物名
+            %span 任意
+            = f.text_field :build_name, placeholder:"例)柳ビル103"
+
+
+      .editProfileForm
+        = form_for "#" do |f|
+          .editBody
+            = f.submit "登録する", class: "editButton"
+            = link_to do
+              本人情報の登録について
+              = icon('fas', 'angle-right')
