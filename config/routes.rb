@@ -27,8 +27,6 @@ Rails.application.routes.draw do
 
   # 本人情報確認ページ
     root to: "information#index" 
-  
-end
 
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
@@ -41,5 +39,7 @@ end
   #購入内容確認ページ
   #root to: "items#productConfirmation"
 
-end
+　 # 本人情報確認ページ
+   #root to: "information#index" 
 
+end
