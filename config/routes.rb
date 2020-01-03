@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root to: "items#index"
   resources :items, only: [:index, :new]
 
+
   # ログイン画面表示
   # root to: "login#index"
 
@@ -33,6 +34,7 @@ Rails.application.routes.draw do
   # クレジットカード情報登録ページ
   # root to: "card_register#index"
   # root to: "card_register#index2"
+  # root to: "card_register#index3"
 
   # マイページ
   # root to: "my_page#index"
