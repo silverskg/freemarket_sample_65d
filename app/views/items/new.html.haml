@@ -15,12 +15,12 @@
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           -# 画像UP数が１〜５の場合
-          =f.fields_for :images do |image|
+          = f.fields_for :images do |image|
             .imageUp
               .previewField#pf1
               = image.label :image, {id: "images1"} do
                 .imageUpField
-                  = image.file_field :image, multiple: true, class: "imageUpField__hidden1"
+                  = image.file_field :image, multiple: true, name: "images[image][]", class: "imageUpField__hidden1"
                   %p
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
