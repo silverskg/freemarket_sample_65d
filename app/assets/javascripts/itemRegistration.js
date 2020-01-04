@@ -19,12 +19,10 @@ $(document).on('turbolinks:load', function() {
     //画像UP処理(top)
     if(top_image_num < 4) {
       $(".previewField#pf1").append(url);
-      $(this).val("");
       top_image_num += 1;
     }
     else if(top_image_num == 4) {
       $(".previewField#pf1").append(url);
-      $(this).val("");
       top_image_num += 1;
       $("#images1").hide();
       $("#images2").show();
@@ -62,12 +60,10 @@ $(document).on('turbolinks:load', function() {
     //画像UP処理(bottom)
     if(bottom_image_num < 4) {
       $(".previewField#pf2").append(url);
-      $(this).val("");
       bottom_image_num += 1;
     }
     else if(bottom_image_num == 4) {
       $(".previewField#pf2").append(url);
-      $(this).val("");
       bottom_image_num += 1;
       $("#images2").hide();
     }
