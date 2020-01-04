@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function() {
+$(function() {
   //アップロード画像枚数
   let top_image_num = 0;
   let bottom_image_num = 0;
@@ -102,6 +102,9 @@ $(document).on('turbolinks:load', function() {
       preview.remove();
       bottom_image_num -= 1;
   })
+});
+
+$(document).on('turbolinks:load', function() {
 
   //カテゴリ選択時にブランドフォームを追加
   $("#item_category_id").on("change", function(){
