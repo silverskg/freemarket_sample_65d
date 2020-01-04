@@ -13,8 +13,7 @@ $(document).on('turbolinks:load', function() {
                     <div class="editBtnTop">編集</div>
                     <div class="deleteBtnTop">削除</div>
                   </div>
-                </div>
-              `;
+                </div>`;
 
     //画像UP処理(top)
     if(top_image_num < 4) {
@@ -27,6 +26,10 @@ $(document).on('turbolinks:load', function() {
       $("#images1").hide();
       $("#images2").show();
     }
+
+    //file_fieldの追加
+    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" type="file">`;
+    $(".imageUpField").prepend(fileFieldUrl);
   })
 
   //画像の削除(top)
@@ -54,8 +57,7 @@ $(document).on('turbolinks:load', function() {
                     <div class="editBtnBottom">編集</div>
                     <div class="deleteBtnBottom">削除</div>
                   </div>
-                </div>
-              `;
+                </div>`;
 
     //画像UP処理(bottom)
     if(bottom_image_num < 4) {
@@ -97,8 +99,7 @@ $(document).on('turbolinks:load', function() {
                    <option value="クロネコヤマト">クロネコヤマト</option>
                    <option value="ゆうパック">ゆうパック</option>
                    <option value="クリックポスト">クリックポスト</option>
-                   <option value="ゆうパケット">ゆうパケット</option>
-                  `;
+                   <option value="ゆうパケット">ゆうパケット</option>`;
         $("#how_to_deliver").show();
         $("#item_how_to_deliver").empty();
         $("#item_how_to_deliver").append(url);
@@ -108,8 +109,7 @@ $(document).on('turbolinks:load', function() {
                    <option value="未定">未定</option>
                    <option value="クロネコヤマト">クロネコヤマト</option>
                    <option value="ゆうパック">ゆうパック</option>
-                   <option value="ゆうメール">ゆうメール</option>
-                  `;
+                   <option value="ゆうメール">ゆうメール</option>`;
         $("#how_to_deliver").show();
         $("#item_how_to_deliver").empty();
         $("#item_how_to_deliver").append(url);
