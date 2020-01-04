@@ -33,6 +33,8 @@ $(document).on('turbolinks:load', function() {
     //file_fieldの追加
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
     $(".imageUpField").prepend(fileFieldUrl);
+    $(".imageUpField").children(":first").show();
+    $(this).hide();
   })
 
   //画像の削除(top)
