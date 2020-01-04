@@ -47,7 +47,11 @@ $(document).on('turbolinks:load', function() {
     if(top_image_num == 5 && bottom_image_num > 0) {
       $("#images1").show();
     }
-    $(this).parent().parent().remove();
+      //プレビューとフォームを削除
+      let preview = $(this).parent().parent();
+      let index = preview.attr("id").split("-")[1];
+      $(`#top_image_form-${index}`).remove();
+      preview.remove();
       top_image_num -= 1;
   })
 
