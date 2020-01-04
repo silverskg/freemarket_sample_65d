@@ -1,13 +1,15 @@
 $(document).on('turbolinks:load', function() {
-  //アップロードされた画像の数
+  //アップロード画像枚数
   let top_image_num = 0;
+  //アップロード画像の番号
+  let top_image_index =0;
   let bottom_image_num = 0;
 
   //アップロードした画像のプレビュー(top)
-  $(".imageUpField__hidden1").on("change", function(e){
+  $(document).on("change", ".imageUpField__hidden1", function(e){
     let file = e.target.files[0];
     let bolbUrl = window.URL.createObjectURL(file);
-    let url = `<div class="preview">
+    let url = `<div class="preview" id="top_image_preview-${top_image_index}">
                   <img src=${bolbUrl}>
                   <div class="preview__buttons">
                     <div class="editBtnTop">編集</div>
@@ -19,6 +21,7 @@ $(document).on('turbolinks:load', function() {
     if(top_image_num < 4) {
       $(".previewField#pf1").append(url);
       top_image_num += 1;
+      top_image_index += 1;
     }
     else if(top_image_num == 4) {
       $(".previewField#pf1").append(url);
@@ -28,7 +31,7 @@ $(document).on('turbolinks:load', function() {
     }
 
     //file_fieldの追加
-    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" type="file">`;
+    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
     $(".imageUpField").prepend(fileFieldUrl);
   })
 
@@ -42,7 +45,6 @@ $(document).on('turbolinks:load', function() {
     if(top_image_num == 5 && bottom_image_num > 0) {
       $("#images1").show();
     }
-
     $(this).parent().parent().remove();
       top_image_num -= 1;
   })
