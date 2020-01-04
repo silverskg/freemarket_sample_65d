@@ -25,7 +25,8 @@ class ItemsController < ApplicationController
       :region, 
       :price, 
       :category_id, 
-      :brand_id
+      :brand_id,
+      images_attributes: {image: []}
     ).merge(user_id: 1)
   end
 
