@@ -4,11 +4,19 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new 
+    #ネストしたテーブルを作成
     @item.images.build
   end
 
   def create
     item = Item.create(item_params)
+    if item.save
+      #file_fieldのparams(name属性)に含まれる複数のimageを分解
+      params[:images][:image].each do |image|
+        #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
+        item.images.create(image: image, item_id: item.id)
+      end
+    end
     redirect_to root_path
   end
 
@@ -26,6 +34,7 @@ class ItemsController < ApplicationController
       :price, 
       :category_id, 
       :brand_id,
+      #field_forで設定した値+_attributesで受け取る。複数の為{file_field属性名: []}で受け取る。
       images_attributes: {image: []}
     ).merge(user_id: 1)
   end
