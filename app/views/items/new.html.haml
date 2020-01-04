@@ -15,23 +15,24 @@
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           -# 画像UP数が１〜５の場合
-          .imageUp
-            .previewField#pf1
-            = f.label :images1, {id: "images1"} do
-              .imageUpField
-                = f.file_field :images1, class: "imageUpField__hidden1"
-                %p
-                ドラッグアンドドロップ
-                %br またはクリックしてファイルをアップロード
-          -# 画像UP数が6〜10の場合
-          .imageUp
-            .previewField#pf2
-            = f.label :images2, {id: "images2"} do
-              .imageUpField
-                = f.file_field :images2, class: "imageUpField__hidden2"
-                %p
-                ドラッグアンドドロップ
-                %br またはクリックしてファイルをアップロード
+          =f.fields_for :images do |image|
+            .imageUp
+              .previewField#pf1
+              = image.label :image, {id: "images1"} do
+                .imageUpField
+                  = image.file_field :image, multiple: true, class: "imageUpField__hidden1"
+                  %p
+                  ドラッグアンドドロップ
+                  %br またはクリックしてファイルをアップロード
+            -# 画像UP数が6〜10の場合
+            -# .imageUp
+            -#   .previewField#pf2
+            -#   = image.label :images, {id: "images2"} do
+            -#     .imageUpField
+            -#       = image.file_field :images, multiple: true, class: "imageUpField__hidden2"
+            -#       %p
+            -#       ドラッグアンドドロップ
+            -#       %br またはクリックしてファイルをアップロード
 
       .contents
         .formGroup
