@@ -19,20 +19,20 @@
             .imageUp
               .previewField#pf1
               = image.label :image, {id: "images1"} do
-                .imageUpField
+                .imageUpField#iuf1
                   = image.file_field :image, multiple: true, name: "images[image][]", class: "imageUpField__hidden1", id: "top_image_form-0"
                   %p
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
             -# 画像UP数が6〜10の場合
-            -# .imageUp
-            -#   .previewField#pf2
-            -#   = image.label :images, {id: "images2"} do
-            -#     .imageUpField
-            -#       = image.file_field :images, multiple: true, class: "imageUpField__hidden2"
-            -#       %p
-            -#       ドラッグアンドドロップ
-            -#       %br またはクリックしてファイルをアップロード
+            .imageUp
+              .previewField#pf2
+              = image.label :image, {id: "images2"} do
+                .imageUpField#iuf2
+                  = image.file_field :image, multiple: true, name: "images[image][]", class: "imageUpField__hidden2", id: "bottom_image_form-0"
+                  %p
+                  ドラッグアンドドロップ
+                  %br またはクリックしてファイルをアップロード
 
       .contents
         .formGroup

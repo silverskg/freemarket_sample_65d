@@ -1,9 +1,11 @@
 $(document).on('turbolinks:load', function() {
   //アップロード画像枚数
   let top_image_num = 0;
-  //アップロード画像の番号
-  let top_image_index =0;
   let bottom_image_num = 0;
+
+  //アップロード画像の番号
+  let top_image_index = 0;
+  let bottom_image_index = 0;
 
   //アップロードした画像のプレビュー(top)
   $(document).on("change", ".imageUpField__hidden1", function(e){
@@ -26,14 +28,15 @@ $(document).on('turbolinks:load', function() {
     else if(top_image_num == 4) {
       $(".previewField#pf1").append(url);
       top_image_num += 1;
+      top_image_index += 1;
       $("#images1").hide();
       $("#images2").show();
     }
 
-    //file_fieldの追加
+    //file_fieldの追加(top)
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
-    $(".imageUpField").prepend(fileFieldUrl);
-    $(".imageUpField").children(":first").show();
+    $(".imageUpField#iuf1").prepend(fileFieldUrl);
+    $(".imageUpField#iuf1").children(":first").show();
     $(this).hide();
   })
 
@@ -47,7 +50,7 @@ $(document).on('turbolinks:load', function() {
     if(top_image_num == 5 && bottom_image_num > 0) {
       $("#images1").show();
     }
-      //プレビューとフォームを削除
+      //プレビューとフォームを削除(top)
       let preview = $(this).parent().parent();
       let index = preview.attr("id").split("-")[1];
       $(`#top_image_form-${index}`).remove();
@@ -56,10 +59,10 @@ $(document).on('turbolinks:load', function() {
   })
 
   //アップロードした画像のプレビュー(bottom)
-  $(".imageUpField__hidden2").on("change", function(e){
+  $(document).on("change", ".imageUpField__hidden2", function(e){
     let file = e.target.files[0];
     let bolbUrl = window.URL.createObjectURL(file);
-    let url = `<div class="preview">
+    let url = `<div class="preview" id="bottom_image_preview-${bottom_image_index}">
                   <img src=${bolbUrl}>
                   <div class="preview__buttons">
                     <div class="editBtnBottom">編集</div>
@@ -71,12 +74,20 @@ $(document).on('turbolinks:load', function() {
     if(bottom_image_num < 4) {
       $(".previewField#pf2").append(url);
       bottom_image_num += 1;
+      bottom_image_index += 1;
     }
     else if(bottom_image_num == 4) {
       $(".previewField#pf2").append(url);
       bottom_image_num += 1;
+      bottom_image_index += 1;
       $("#images2").hide();
     }
+
+    //file_fieldの追加(bottom)
+    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
+    $(".imageUpField#iuf2").prepend(fileFieldUrl);
+    $(".imageUpField#iuf2").children(":first").show();
+    $(this).hide();
   })
 
   //画像の削除(bottom)
@@ -84,8 +95,11 @@ $(document).on('turbolinks:load', function() {
     if(bottom_image_num == 5) {
       $("#images2").show();
     }
-
-    $(this).parent().parent().remove();
+      //プレビューとフォームを削除(bottom)
+      let preview = $(this).parent().parent();
+      let index = preview.attr("id").split("-")[1];
+      $(`#bottom_image_form-${index}`).remove();
+      preview.remove();
       bottom_image_num -= 1;
   })
 
