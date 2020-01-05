@@ -24,6 +24,11 @@
                   %p
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:include_image).each do |message|
+                  %li= message
+                  
             -# 画像UP数が6〜10の場合
             .imageUp
               .previewField#pf2
