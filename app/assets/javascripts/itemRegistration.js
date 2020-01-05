@@ -105,11 +105,21 @@ $(function() {
 });
 
 $(document).on('turbolinks:load', function() {
+  //カテゴリ選択状態で遷移した場合
+  if ($("#item_category_id").val()){
+    $("#brand").show();
+  }
 
   //カテゴリ選択時にブランドフォームを追加
   $("#item_category_id").on("change", function(){
     $("#brand").show();
   })
+
+  //配送方法選択状態で遷移した場合
+  if ($("#item_deliver_fee").val()){
+    $("#how_to_deliver").show();
+    console.log("発火");
+  }
 
   //配送料の負担選択時に発送方法フォームを追加
    $("#item_deliver_fee").on("change", function(){
