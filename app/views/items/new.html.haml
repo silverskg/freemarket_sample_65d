@@ -40,11 +40,21 @@
           %span.hissuBtn #{hissu}
           .form
             = f.text_field :name, placeholder: "商品名（必須40文字まで）", class: "form__name"
+          - if @item.errors.any?
+            %ul.errorMessages
+              - @item.errors.full_messages_for(:name).each do |message|
+                %li= message
+
         .formGroup
           %p.fontBolder 商品の説明
           %span.hissuBtn #{hissu}
           .form
             = f.text_area :body, placeholder: "商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。", class: "form__info"
+          - if @item.errors.any?
+            %ul.errorMessages
+              - @item.errors.full_messages_for(:body).each do |message|
+                %li= message
+
       .contents.clearfix
         .leftContent
           .formGroup
@@ -57,6 +67,10 @@
               = f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"}, {class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:category_id).each do |message|
+                  %li= message
 
           .formGroup#brand
             %p.fontBolder ブランド
@@ -65,6 +79,10 @@
               = f.collection_select :brand_id, Brand.all, :id, :name, {include_blank: "---"}, {class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:brand_id).each do |message|
+                  %li= message
 
           .formGroup
             %p.fontBolder 商品の状態
@@ -80,6 +98,11 @@
                 {include_blank: "---"},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:status).each do |message|
+                  %li= message
+
       .contents.clearfix
         .leftContent
           .formGroup
@@ -97,6 +120,10 @@
                 {include_blank: "---"},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:deliver_fee).each do |message|
+                  %li= message
                 
           .formGroup#how_to_deliver
             %p.fontBolder 配送の方法
@@ -105,6 +132,10 @@
               = f.select :how_to_deliver,[],{include_blank: "---"},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:how_to_deliver).each do |message|
+                  %li= message
 
           .formGroup
             %p.fontBolder 発送元の地域
@@ -113,6 +144,11 @@
               = f.collection_select :region, Prefecture.all, :id, :name, {include_blank: "---"}, {class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:region).each do |message|
+                  %li= message
+
           .formGroup
             %p.fontBolder 発送までの日数
             %span.hissuBtn #{hissu}
@@ -124,6 +160,11 @@
                 {include_blank: "---"},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
+              - if @item.errors.any?
+                %ul.errorMessages
+                  - @item.errors.full_messages_for(:delivery_date).each do |message|
+                    %li= message
+
       .contents.clearfix
         .leftContent
           .formGroup
@@ -138,6 +179,11 @@
             .rightSmallForm
               ¥
               = f.text_field :price, placeholder: "例) 300", class: "rightSmallForm__price"
+            - if @item.errors.any?
+              %ul.errorMessages
+                - @item.errors.full_messages_for(:price).each do |message|
+                  %li= message
+
           .formGroup.commission.clearfix
             .leftSmallForm
               %p.leftSmallForm__commissionLabel 販売手数料(10%)
