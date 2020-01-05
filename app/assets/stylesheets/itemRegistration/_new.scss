@@ -193,6 +193,16 @@ body{
           text-align: right;
           margin-top: 5px;
         }
+
+        .errorMessages {
+          color: #ea352d;
+          line-height: 1.5;
+          font-size: 14px;
+          
+          li {
+            margin-top: 8px;
+          }
+        }
       }
   
       .leftContent {
