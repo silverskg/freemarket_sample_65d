@@ -7,13 +7,15 @@ class Item < ApplicationRecord
     has_many :comments
     has_many :likes
 
-    validates :name, presence: true, length:{ maximum: 40 }
-    validates :status, presence: true
-    validates :body, presence: true, length:{ maximum: 999 }
-    validates :deliver_fee, presence: true
-    validates :delivery_date, presence: true
-    validates :how_to_deliver, presence: true
-    validates :region, presence: true
-    validates :price, presence: true, numericality: {only_integer: true, greater_than: 300, less_than: 10000000 }
-    validates :include_image, presence: true
+    validates :name, presence: { message: "入力してください" }, length:{ maximum: 40, message: "40字以内で入力してください" }
+    validates :status, presence: { message: "選択してください" }
+    validates :body, presence: { message: "入力してください" }, length:{ maximum: 1000, message: "1000字以内で入力してください" }
+    validates :deliver_fee, presence: { message: "選択してください" }
+    validates :delivery_date, presence: { message: "選択してください" }
+    validates :how_to_deliver, presence: { message: "選択してください" }
+    validates :region, presence: { message: "選択してください" }
+    validates :price, numericality: { message: "300以上9999999以下で入力してください", only_integer: true, greater_than: 300, less_than: 10000000 }
+    validates :category_id, presence: { message: "選択してください" }
+    validates :brand_id, presence: { message: "選択してください" }
+    validates :include_image, presence: { message: "画像がありません" }
 end
