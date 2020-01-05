@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
   gem 'pry-rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -81,4 +82,3 @@ gem 'omniauth'
 gem 'jquery-rails'
 gem 'erb2haml'
 gem 'rails-i18n'
-gem 'rspec-rails'
