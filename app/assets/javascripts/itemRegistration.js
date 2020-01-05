@@ -118,7 +118,6 @@ $(document).on('turbolinks:load', function() {
   //配送方法選択状態で遷移した場合
   if ($("#item_deliver_fee").val()){
     $("#how_to_deliver").show();
-    console.log("発火");
   }
 
   //配送料の負担選択時に発送方法フォームを追加
@@ -153,6 +152,24 @@ $(document).on('turbolinks:load', function() {
         $("#how_to_deliver").hide();
       }
    })
+
+  //価格入力状態で遷移した場合
+  let input = $(".rightSmallForm__price").val();
+  if (input) {
+    if (input > 300) {
+      $(".rightSmallForm__commissionPrice").text(`¥${Math.floor(input * 0.1)}`);
+    }
+    else
+      $(".rightSmallForm__commissionPrice").text("-");
+  }
+
+  if (input) {
+    if (input > 300) {
+      $(".rightSmallForm__profitPrice").text(`¥${Math.floor(input * 0.1)}`);
+    }
+    else
+      $(".rightSmallForm__profitPrice").text("-");
+  }
 
   // 販売手数料の表示
   $(".rightSmallForm__price").on("keyup", function(){
