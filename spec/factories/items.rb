@@ -1,6 +1,7 @@
 FactoryBot.define do
 
   factory :item do
+    id                    {"1"}
     name                  {"abe"}
     status                {"新品・未使用"}
     body                  {"edf"}
@@ -9,10 +10,9 @@ FactoryBot.define do
     how_to_deliver        {"らくらくメルカリ便"}
     region                {"2"}
     price                 {"1000"}
-    category_id           {"1"}
-    brand_id              {"1"}
-    user_id               {"1"}
     include_image         {"include"}
+    created_at            {"2020-01-01 10:10:10"}
+    updated_at            {"2020-01-01 10:10:10"}
   end
 
 end
