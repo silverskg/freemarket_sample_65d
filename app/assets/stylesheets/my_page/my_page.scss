@@ -51,11 +51,9 @@
     .mypage-tabs{
       border: 0;
       display: flex;
-      a{
-        font-weight: bold;
-        color: #000;
-        font-size: 16px;
-      }
+      font-weight: bold;
+      color: #000;
+      font-size: 16px;
       .active{
         font-size: 22px;
         font-weight:bold;
@@ -64,14 +62,16 @@
         height: 72px;
         line-height: 330%;
         border: none;
+        overflow: hidden;
         cursor: default;
         vertical-align: top;
         border-top:2px solid #ea352d;
+        background-color: #fff;
         &:hover{
           color:#fafafa;
         }
       }
-      .active-right{
+      li{
         font-size: 22px;
         width: 50%;
         text-align: center;
@@ -165,11 +165,9 @@
       border: 0;
       background: #eee;
       display: flex;
-      a{
-        color: #000;
-        font-weight: bold;
-        font-size: 16px;
-      }
+      color: #000;
+      font-weight: bold;
+      font-size: 16px;
       .present{
         font-size: 22px;
         font-weight:bold;
@@ -178,17 +176,20 @@
         height: 74px;
         line-height: 330%;
         border: none;
-        cursor: default;
+        cursor: auto;
         vertical-align: top;
         border-top:2px solid #ea352d;
         background: #fff;
+        &:hover{
+          color:#fafafa;
+        }
       }
-      .past{
+      li {
         font-size: 22px;
         width: 50%;
         text-align: center;
-        height: 74px;
         line-height: 330%;
+        background-color:#eee;
       }
     }
     .box-content{
