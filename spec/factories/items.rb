@@ -13,6 +13,11 @@ FactoryBot.define do
     include_image         {"include"}
     created_at            {"2020-01-01 10:10:10"}
     updated_at            {"2020-01-01 10:10:10"}
+    category_id {1}
+    brand_id {1}
+    category
+    brand
+    # user
   end
 
 end

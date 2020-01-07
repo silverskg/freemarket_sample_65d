@@ -9,20 +9,21 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @item = Item.new(item_params)
-
     #imageがアップされている場合
     if params[:images]
       @item.include_image = "include"
     end
-
+    
+    
     if @item.save
       #file_fieldのparams(name属性)に含まれる複数のimageを分解
       params[:images][:image].each do |image|
         #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
         @item.images.create(image: image, item_id: @item.id)
       end
-    redirect_to root_path
+      redirect_to root_path
     else
       @item.images.build
       render :new
