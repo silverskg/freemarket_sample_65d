@@ -2,6 +2,7 @@
   background-color: #f5f5f5;
   font-size:14px;
   font-weight: normal;
+  //height: 100vh;
 }
 .footer1{
   height: 40px;
@@ -224,7 +225,7 @@
     background: #f5f5f5;
     width: 700px;
     height: 28px;
-    margin:24px 370px;
+    margin:24px auto;
     font-size:14px;
   
   //カテゴリーリンク指定  
@@ -245,7 +246,7 @@
   height: 100px;
   background-color: #ffffff;
   text-align: center; 
-  margin-left: 370px;
+  margin: auto;
   font-size:14px;
   padding:24px 30px;
   margin-bottom: 40px;
@@ -301,20 +302,23 @@
   font-size:22px;
   text-decoration: none;
   color:#0099EB;
-  margin-left:360px;
+  margin-top: 24px;
   font-weight: bold;
-  margin-top:24px;
+
 }
 .link6:hover{
   text-decoration:underline;
 }
 
+.other{
+  width: 700px;
+  margin: 0 auto;
+}
+
 .other__list{
   width: 700px;
   height: 700px;
-  margin-top: 8px;
-  margin-left: 370px;
-  margin-bottom: 8px;
+  margin: 8px auto;
 }
   .itemsBox {
     width: 700px;
@@ -341,6 +345,7 @@
           background-color: white;
           padding: 16px;
           box-sizing: border-box;
+
           .title {
             font-size: 16px;
             color: #333333;
@@ -368,20 +373,21 @@
     .itemLine{
       height: 40px;
     }
-
+.otherCategory{
+  width: 700px;
+  margin: 0 auto;
+}
 .otherCategory__list{
   width: 700px;
   height: 700px;
-  margin-top: 8px;
-  margin-left: 370px;
-  margin-bottom: 8px;
+  margin:  8px auto;
 }
 
 .botom{
   height: 49px;
   width: 100%;
   border-top: solid 1px #e8e7e7;
-  margin-top: 60px;
+  margin: 60px 0 auto ;
   font-size:14px;
   
 

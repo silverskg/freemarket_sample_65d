@@ -39,6 +39,6 @@ Rails.application.routes.draw do
   # root to: "my_page#index"
 
   #購入内容確認ページ
-  #root to: "items#productConfirmation"
+  # root to: "items#productConfirmation"
 
 end
