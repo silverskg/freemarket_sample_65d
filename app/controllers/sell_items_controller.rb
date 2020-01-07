@@ -13,5 +13,6 @@ class SellItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
+    redirect_to action: 'index'
   end
 end
