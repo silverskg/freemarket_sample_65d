@@ -42,6 +42,6 @@ Rails.application.routes.draw do
   resources :card_register3, only: :index
 
   # 出品商品確認ページ
-  resources :sell_items, only: :index
+  resources :sell_items, only: [:index, :show, :edit, :destroy]
 
 end

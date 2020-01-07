@@ -1,0 +1,6 @@
+%p
+  商品出品画面
+
+.itemInformation
+  = link_to "商品の編集", "/sell_items/#{@item.id}/edit", method: :edit
+  = link_to "この商品を削除する", "/sell_items/#{@item.id}", method: :delete
