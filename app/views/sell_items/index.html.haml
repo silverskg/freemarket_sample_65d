@@ -1,0 +1,7 @@
+%p
+  出品した商品-出品中
+
+.sellItems
+  - @items.each do |item|
+    .linkToEachItems
+      = link_to item.name, 'sell_items#show'
