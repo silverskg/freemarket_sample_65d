@@ -8,7 +8,7 @@
 |last_name_kana|string|null: false|
 |birthday|string|null: false|
 |email|string|null: false, unique: true|
-|password|string|null: false|
+|encrypted_password|string|null: false|
 
 ### Association
 - has_many :items
@@ -30,6 +30,7 @@
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
+|include_image|string|null: false|
 
 ### Association
 - belongs_to :user
