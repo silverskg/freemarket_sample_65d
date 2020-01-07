@@ -1,0 +1,43 @@
+.registration6header
+  .progress-bar
+    =link_to('#', class:'image') do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+    %ol.clearfix
+      %li1--gray
+        会員情報
+        .maru1red
+      %li2--gray
+        電話番号認証
+        .maru2red
+      %li3--gray
+        お届け先住所入力
+        .maru3red
+      %li4--gray
+        支払い方法
+        .maru4red
+      %li5--red
+        完了
+        .maru5red
+      .grayline5
+      .redline5
+
+.main-complete
+  .main-complete__title
+    会員登録完了
+  .main-complete__contents
+    %ul ありがとうございます。
+    %ul2 会員登録が完了しました。
+    =link_to('#', class:'main__contents__start text') do
+      メルカリをはじめる 
+    
+.footer
+  .footer__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'image2') do  
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.

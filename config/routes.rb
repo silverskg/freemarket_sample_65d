@@ -5,40 +5,40 @@ Rails.application.routes.draw do
   root to: "items#index"
   resources :items, only: [:index, :new, :create]
 
+  #トップページ以外は仮のルーティング設定
   # ログイン画面表示
-  # root to: "login#index"
+  resources :login, only: :index
 
   # ログアウト画面
-  # root to: "logout#index"
+  resources :logout, only: :index
 
   # ユーザー新規登録ページ表示
-  # root to: "registration#index_0"
-  # root to: "registration#index_1"
-  # root to: "registration#index_2"
-  # root to: "registration#index_3"
-  # root to: "registration#index_4"
-  # root to: "registration#index_5"
-  # root to: "registration#index_6"
-
-
-  # ユーザーマイページ編集画面(マイページ完成次第ルーティング編集)
-  # root to: "edit_profile#index"
+  resources :registration0, only: :index
+  resources :registration1, only: :index
+  resources :registration2, only: :index
+  resources :registration3, only: :index
+  resources :registration4, only: :index
+  resources :registration5, only: :index
+  resources :registration6, only: :index
 
   # 商品詳細ページ
-  # root to: "items#productDetails" 
-
-  # 本人情報確認ページ
-  # root to: "information#index" 
-
-  # クレジットカード情報登録ページ
-  # root to: "card_register#index"
-  # root to: "card_register#index2"
-  # root to: "card_register#index3"
-
-  # マイページ
-  # root to: "my_page#index"
+  resources :product_details, only: :index
 
   #購入内容確認ページ
-  # root to: "items#productConfirmation"
+  resources :product_confirmation, only: :index
+
+  # マイページ
+  resources :my_page, only: :index
+
+  # ユーザーマイページ編集画面
+  resources :edit_profile, only: :index
+
+  # 本人情報確認ページ
+  resources :information, only: :index
+
+  # クレジットカード情報登録ページ
+  resources :card_register1, only: :index
+  resources :card_register2, only: :index
+  resources :card_register3, only: :index
 
 end
