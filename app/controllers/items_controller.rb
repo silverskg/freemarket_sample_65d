@@ -9,14 +9,13 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
     #imageがアップされている場合
     if params[:images]
       @item.include_image = "include"
     end
     
-    
+
     if @item.save
       #file_fieldのparams(name属性)に含まれる複数のimageを分解
       params[:images][:image].each do |image|
