@@ -2,7 +2,8 @@ class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    @items = Item.includes(:images)
+    # user_idは仮設定
+    @items = Item.where(user_id: 1).includes(:images)
   end
 
   def show
