@@ -35,7 +35,7 @@ $(function() {
 
     //file_fieldの追加(top)
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
-    $(".imageUpField#iuf1").prepend(fileFieldUrl);
+    $(".imageUpField#iuf1").append(fileFieldUrl);
     $(".imageUpField#iuf1").children(":first").show();
     $(this).hide();
   })
@@ -85,7 +85,7 @@ $(function() {
 
     //file_fieldの追加(bottom)
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
-    $(".imageUpField#iuf2").prepend(fileFieldUrl);
+    $(".imageUpField#iuf2").append(fileFieldUrl);
     $(".imageUpField#iuf2").children(":first").show();
     $(this).hide();
   })

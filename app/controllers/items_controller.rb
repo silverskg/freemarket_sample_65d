@@ -15,7 +15,11 @@ class ItemsController < ApplicationController
     #imageがアップされている場合
     if params[:images]
       @item.include_image = "include"
-    end
+  end
+
+  def show
+    @item = Item.find(params[:id])
+  end
     
 
     if @item.save
