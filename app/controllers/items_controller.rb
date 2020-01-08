@@ -1,7 +1,6 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
-    # @items = Item.where(category_id: 2).includes(:images)
   end
 
   def new
