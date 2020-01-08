@@ -1,9 +1,64 @@
-%p
-  出品した商品-出品中
-
-.sellItems
-  -console
-  - @items.each do |item|
+%header
+  .topheader
+    .main
+      .main__top
+        %a(href="#")
+          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+        %label
+          .main__top--search
+            %input.card-nomber-form{placeholder:"何かお探しですか？"}
+            .icon
+              %a(href="#")
+                %i.fa.fa-search
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num3 
+            = link_to do
+              = icon('far', 'heart')
+              いいね！ 一覧
+          %li.num4 
+            = link_to do
+              = icon('far', 'bell')
+              お知らせ
+          %li.num5 
+            = link_to do
+              = icon('fas', 'check')
+              やることリスト
+          %li.num6 
+            = link_to do
+              = icon('far', 'circle')
+              マイページ    
+%nav.bread
+  %ul.bread__list
+.editProfileMain
+  = render 'shared/side_bar'
+  .sellItemsAll
+    .sellTabHeader
+      出品した商品
+    .sellTabs
+      = link_to "出品中", '#', class: "tab tab--white"
+      = link_to "取引中", '#', class: "tab"
+      = link_to "売却済み", '#', class: "tab"
     .linkToEachItems
-      = link_to item.name, "/sell_items/#{item.id}", method: :get
-      = image_tag item.images[0].image.url
+      - @items.each do |item|
+        .itemLink
+          = link_to sell_item_path(item.id), method: :get
+          .image
+            = image_tag item.images[0].image.url, width: '50px', height: '50px'
+          .information
+            .title
+              = item.name
+            .data
+              = icon('fa', 'heart')
+              %span 0
+              = icon('fa', 'comment-alt')
+              %span 0
+              %p 出品中
