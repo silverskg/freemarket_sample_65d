@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
   def index
-    @items = Item.all.order(id: "DESC").includes(:images)
+    # @items = Item.all.order(id: "DESC").includes(:images)
   end
 
   def new

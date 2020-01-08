@@ -1,90 +1,88 @@
--# header
-%html
-  %header
-    .topheader
-      .main
-        .main__top
-          = link_to do
-            = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
-          %label
-            .main__top--search
-              %input.card-nomber-form{placeholder:"何かお探しですか？"}
-              .icon
-                = link_to do
-                  %i.fa.fa-search
+%header
+  .topheader
+    .main
+      .main__top
+        = link_to do
+          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+        %label
+          .main__top--search
+            %input.card-nomber-form{placeholder:"何かお探しですか？"}
+            .icon
+              = link_to do
+                %i.fa.fa-search
 
-        -#  開発やりやすくする為、仮のフッター
-        .main__bottom
-          %ul 
-            %li.num1
-              = link_to do
-                = icon('fas', 'bars')
-                カテゴリーから探す
-            %li.num2 
-              = link_to do
-                = icon('fas', 'tag')
-                ブランドから探す
-            %li.num3 
-              = link_to do
-                = icon('far', 'heart')
-                いいね！ 一覧
-            %li.num4 
-              = link_to do
-                = icon('far', 'bell')
-                お知らせ
-            %li.num5 
-              = link_to do
-                = icon('fas', 'check')
-                やることリスト
-            %li.num6 
-              = link_to do
-                = icon('far', 'circle')
-                マイページ 
+      -#  開発やりやすくする為、仮のフッター
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num3 
+            = link_to do
+              = icon('far', 'heart')
+              いいね！ 一覧
+          %li.num4 
+            = link_to do
+              = icon('far', 'bell')
+              お知らせ
+          %li.num5 
+            = link_to do
+              = icon('fas', 'check')
+              やることリスト
+          %li.num6 
+            = link_to do
+              = icon('far', 'circle')
+              マイページ 
 
-                -# 本来はこっち
-        -# - if user_signed_in?
-        -#   .main__bottom
-        -#     %ul 
-        -#       %li.num1
-        -#         = link_to do
-        -#           = icon('fas', 'bars')
-        -#           カテゴリーから探す
-        -#       %li.num2 
-        -#         = link_to do
-        -#           = icon('fas', 'tag')
-        -#       %li.num3 
-        -#         = link_to do
-        -#           = icon('far', 'heart')
-        -#           いいね！ 一覧
-        -#       %li.num4 
-        -#         = link_to do
-        -#           = icon('far', 'bell')
-        -#           お知らせ
-        -#       %li.num5 
-        -#         = link_to do
-        -#           = icon('fas', 'check')
-        -#           やることリスト
-        -#       %li.num6 
-        -#         = link_to do
-        -#           = icon('far', 'circle')
-        -#           マイページ 
-        -# - else 
-        -#   .main__bottom
-        -#     %ul 
-        -#       %li.num1
-        -#         = link_to do
-        -#           = icon('fas', 'bars')
-        -#           カテゴリーから探す
-        -#       %li.num2 
-        -#         = link_to do
-        -#           = icon('fas', 'tag')
-        -#           ブランドから探す
-        -#       %li.num7 
-        -#         = link_to do
-        -#           %button.button8{:type => "submit"} 新規会員登録
-        -#       %li.num8
-        -#         = link_to do
-        -#           %button.button9{:type => "submit"} ログイン 
+              -# 本来はこっち
+      -# - if user_signed_in?
+      -#   .main__bottom
+      -#     %ul 
+      -#       %li.num1
+      -#         = link_to do
+      -#           = icon('fas', 'bars')
+      -#           カテゴリーから探す
+      -#       %li.num2 
+      -#         = link_to do
+      -#           = icon('fas', 'tag')
+      -#       %li.num3 
+      -#         = link_to do
+      -#           = icon('far', 'heart')
+      -#           いいね！ 一覧
+      -#       %li.num4 
+      -#         = link_to do
+      -#           = icon('far', 'bell')
+      -#           お知らせ
+      -#       %li.num5 
+      -#         = link_to do
+      -#           = icon('fas', 'check')
+      -#           やることリスト
+      -#       %li.num6 
+      -#         = link_to do
+      -#           = icon('far', 'circle')
+      -#           マイページ 
+      -# - else 
+      -#   .main__bottom
+      -#     %ul 
+      -#       %li.num1
+      -#         = link_to do
+      -#           = icon('fas', 'bars')
+      -#           カテゴリーから探す
+      -#       %li.num2 
+      -#         = link_to do
+      -#           = icon('fas', 'tag')
+      -#           ブランドから探す
+      -#       %li.num7 
+      -#         = link_to do
+      -#           %button.button8{:type => "submit"} 新規会員登録
+      -#       %li.num8
+      -#         = link_to do
+      -#           %button.button9{:type => "submit"} ログイン 
 
 
 %body
@@ -111,17 +109,17 @@
               = icon('fas', 'angle-right')
               -# 上の段の写真
         .women__up
-          %ul.item-boxes
-            - @items.each do |item|
-              - if item.category_id == 1
-                = link_to item_path(item) do
-                  %li.item-box
-                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                    %p.price 
-                      ¥
-                      =item.price 
-                    %p.name 
-                      =item.name
+          -# %ul.item-boxes
+          -#   - @items.each do |item|
+          -#     - if item.category_id == 1
+          -#       = link_to item_path(item) do
+          -#         %li.item-box
+          -#           = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+          -#           %p.price 
+          -#             ¥
+          -#             =item.price 
+          -#           %p.name 
+          -#             =item.name
       -# メンズカテゴリー
   .category__box
     .women
@@ -134,17 +132,17 @@
               = icon('fas', 'angle-right')
               -# 写真
         .women__up
-          %ul.item-boxes
-            - @items.each do |item|
-              - if item.category_id == 2
-                = link_to item_path(item) do
-                  %li.item-box
-                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                    %p.price 
-                      ¥
-                      =item.price 
-                    %p.name 
-                      =item.name
+          -# %ul.item-boxes
+          -#   - @items.each do |item|
+          -#     - if item.category_id == 2
+          -#       = link_to item_path(item) do
+          -#         %li.item-box
+          -#           = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+          -#           %p.price 
+          -#             ¥
+          -#             =item.price 
+          -#           %p.name 
+          -#             =item.name
     -# カメラカテゴリー
   .category__box
     .women
@@ -157,16 +155,16 @@
               = icon('fas', 'angle-right')
               -# 上の段の写真
         .women__up
-          %ul.item-boxes
-            - @items.each do |item|
-              - if item.category_id == 8
-                = link_to item_path(item) do
-                  %li.item-box
-                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                    %p.price 
-                      ¥
-                      =item.price 
-                    %p.name 
+          -# %ul.item-boxes
+          -#   - @items.each do |item|
+          -#     - if item.category_id == 8
+          -#       = link_to item_path(item) do
+          -#         %li.item-box
+          -#           = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+          -#           %p.price 
+          -#             ¥
+          -#             =item.price 
+          -#           %p.name 
     -# おもちゃカテゴリー
   .category__box
     .women
@@ -179,17 +177,17 @@
               = icon('fas', 'angle-right')
               -# 上の段の写真
         .women__up
-          %ul.item-boxes
-            - @items.each do |item|
-              - if item.category_id == 6
-                = link_to item_path(item) do
-                  %li.item-box
-                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                    %p.price 
-                      ¥
-                      =item.price 
-                    %p.name 
-                      =item.name
+          -# %ul.item-boxes
+          -#   - @items.each do |item|
+          -#     - if item.category_id == 6
+          -#       = link_to item_path(item) do
+          -#         %li.item-box
+          -#           = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+          -#           %p.price 
+          -#             ¥
+          -#             =item.price 
+          -#           %p.name 
+          -#             =item.name
   
 .bar
   %div 人気のカテゴリー
@@ -210,19 +208,19 @@
             もっと見る
             = icon('fas', 'angle-right')
             -# 上の段の写真
-      .chanel__up
-        %ul.item-boxes
-          = link_to do
-            - @items.each do |item|
-              - if item.brand_id == 1
-                = link_to item_path(item) do
-                  %li.item-box
-                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                    %p.price 
-                      ¥
-                      =item.price 
-                    %p.name 
-                      =item.name
+      -# .chanel__up
+      -#   %ul.item-boxes
+      -#     = link_to do
+      -#       - @items.each do |item|
+      -#         - if item.brand_id == 1
+      -#           = link_to item_path(item) do
+      -#             %li.item-box
+      -#               = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+      -#               %p.price 
+      -#                 ¥
+      -#                 =item.price 
+      -#               %p.name 
+      -#                 =item.name
       -# ビトンカテゴリー
   .category__box
     .chanel
@@ -233,18 +231,18 @@
             もっと見る
             = icon('fas', 'angle-right')
             -# 上の段の写真
-      .chanel__up
-        %ul.item-boxes
-          - @items.each do |item|
-            - if item.brand_id == 3
-              = link_to item_path(item) do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+      -# .chanel__up
+      -#   %ul.item-boxes
+      -#     - @items.each do |item|
+      -#       - if item.brand_id == 3
+      -#         = link_to item_path(item) do
+      -#           %li.item-box
+      -#             = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+      -#             %p.price 
+      -#               ¥
+      -#               =item.price 
+      -#             %p.name 
+      -#               =item.name
     -# シュプリームカテゴリー
   .category__box
     .chanel
@@ -255,18 +253,18 @@
             もっと見る
             = icon('fas', 'angle-right')
             -# 上の段の写真
-      .chanel__up
-        %ul.item-boxes
-          - @items.each do |item|
-            - if item.brand_id == 4
-              = link_to item_path(item) do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+      -# .chanel__up
+      -#   %ul.item-boxes
+      -#     - @items.each do |item|
+      -#       - if item.brand_id == 4
+      -#         = link_to item_path(item) do
+      -#           %li.item-box
+      -#             = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+      -#             %p.price 
+      -#               ¥
+      -#               =item.price 
+      -#             %p.name 
+      -#               =item.name
     -# ナイキカテゴリー
   .category__box
     .chanel
@@ -277,18 +275,18 @@
             もっと見る
             = icon('fas', 'angle-right')
             -# 上の段の写真
-      .chanel__up
-        %ul.item-boxes
-          - @items.each do |item|
-            - if item.brand_id == 2
-              = link_to item_path(item) do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+      -# .chanel__up
+      -#   %ul.item-boxes
+      -#     - @items.each do |item|
+      -#       - if item.brand_id == 2
+      -#         = link_to item_path(item) do
+      -#           %li.item-box
+      -#             = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+      -#             %p.price 
+      -#               ¥
+      -#               =item.price 
+      -#             %p.name 
+      -#               =item.name
 %footer
   .images
     = image_tag 'toppage/free-image-1.jpg', height: '260px', width: '100%', class: 'bottom-photo'
