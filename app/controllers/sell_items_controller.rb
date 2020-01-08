@@ -15,7 +15,8 @@ class SellItemsController < ApplicationController
     if @item.destroy
       redirect_to action: 'index'
     else
-      redirect_to action: 'index'
+      render 'layouts/notifications'
+      redirect_to action: 'show'
     end
   end
 
