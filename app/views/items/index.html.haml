@@ -65,14 +65,15 @@
         .women__up
           %ul.item-boxes
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+              - if item.category_id == 1
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
+                      =item.name
       -# メンズカテゴリー
   .category__box
     .women
@@ -87,14 +88,15 @@
         .women__up
           %ul.item-boxes
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+              - if item.category_id == 2
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
+                      =item.name
     -# カメラカテゴリー
   .category__box
     .women
@@ -109,13 +111,14 @@
         .women__up
           %ul.item-boxes
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
+              - if item.category_id == 8
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
     -# おもちゃカテゴリー
   .category__box
     .women
@@ -130,14 +133,15 @@
         .women__up
           %ul.item-boxes
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+              - if item.category_id == 6
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
+                      =item.name
   
 .bar
   %div 人気のカテゴリー
@@ -162,14 +166,15 @@
         %ul.item-boxes
           = link_to do
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+              - if item.brand_id == 1
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
+                      =item.name
       -# ビトンカテゴリー
   .category__box
     .chanel
@@ -183,14 +188,15 @@
       .chanel__up
         %ul.item-boxes
           - @items.each do |item|
-            = link_to do
-              %li.item-box
-                = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                %p.price 
-                  ¥
-                  =item.price 
-                %p.name 
-                  =item.name
+            - if item.brand_id == 3
+              = link_to do
+                %li.item-box
+                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                  %p.price 
+                    ¥
+                    =item.price 
+                  %p.name 
+                    =item.name
     -# シュプリームカテゴリー
   .category__box
     .chanel
@@ -204,14 +210,15 @@
       .chanel__up
         %ul.item-boxes
           - @items.each do |item|
-            = link_to do
-              %li.item-box
-                = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                %p.price 
-                  ¥
-                  =item.price 
-                %p.name 
-                  =item.name
+            - if item.brand_id == 4
+              = link_to do
+                %li.item-box
+                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                  %p.price 
+                    ¥
+                    =item.price 
+                  %p.name 
+                    =item.name
     -# ナイキカテゴリー
   .category__box
     .chanel
@@ -226,14 +233,15 @@
         %ul.item-boxes
           = link_to do
             - @items.each do |item|
-              = link_to do
-                %li.item-box
-                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
-                  %p.price 
-                    ¥
-                    =item.price 
-                  %p.name 
-                    =item.name
+              - if item.brand_id == 2
+                = link_to do
+                  %li.item-box
+                    = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                    %p.price 
+                      ¥
+                      =item.price 
+                    %p.name 
+                      =item.name
 %footer
   .images
     = image_tag 'toppage/free-image-1.jpg', height: '260px', width: '100%', class: 'bottom-photo'
