@@ -2,13 +2,13 @@
   .topheader
     .main
       .main__top
-        %a(href="#")
+        = link_to do
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
             %input.card-nomber-form{placeholder:"何かお探しですか？"}
             .icon
-              %a(href="#")
+              = link_to do
                 %i.fa.fa-search
       .main__bottom
         %ul 
@@ -47,18 +47,18 @@
       = link_to "出品中", '#', class: "tab tab--white"
       = link_to "取引中", '#', class: "tab"
       = link_to "売却済み", '#', class: "tab"
-    .linkToEachItems
+    %ul.linkToEachItems
       - @items.each do |item|
-        .itemLink
-          = link_to sell_item_path(item.id), method: :get
-          .image
-            = image_tag item.images[0].image.url, width: '50px', height: '50px'
-          .information
-            .title
-              = item.name
-            .data
-              = icon('fa', 'heart')
-              %span 0
-              = icon('fa', 'comment-alt')
-              %span 0
-              %p 出品中
+        = link_to sell_item_path(item), class: "links" do
+          %li.itemLink
+            .image
+              = image_tag item.images[0].image.url, width: '50px', height: '50px'
+            .information
+              .title
+                = item.name
+              .data
+                = icon('fa', 'heart')
+                %text 0
+                = icon('fa', 'comment-alt')
+                %text 0
+                %p 出品中
