@@ -67,59 +67,63 @@
               -# 上の段の写真
         .women__up
           %ul.item-boxes
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-              -# 下の段の写真
-        .women__down
-          %ul.item-boxes
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
-            = link_to do
-              %li.item-box
-                = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
-                %p.price ¥ 10,000
-                %p.name product-name
+            - @items.each do |item|
+              = link_to do
+                %li.item-box
+                  = image_tag item.images.first.image.to_s, height: '252px', width: '188px', class: 'box'
+                  %p.price 
+                    ¥
+                    =item.price 
+                  %p.name 
+                    =item.name
+            -# = link_to do
+            -#   %li.item-box
+            -#     = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+            -#     %p.price ¥ 10,000
+            -#     %p.name product-name
+            -# = link_to do
+            -#   %li.item-box
+            -#     = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+            -#     %p.price ¥ 10,000
+            -#     %p.name product-name
+            -# = link_to do
+            -#   %li.item-box
+            -#     = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+            -#     %p.price ¥ 10,000
+            -#     %p.name product-name
+            -# = link_to do
+            -#   %li.item-box
+            -#     = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+            -#     %p.price ¥ 10,000
+            -#     %p.name product-name
+            -#   -# 下の段の写真
+        -# .women__down
+        -#   %ul.item-boxes
+        -#     = link_to do
+        -#       %li.item-box
+        -#         = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+        -#         %p.price ¥ 10,000
+        -#         %p.name product-name
+        -#     = link_to do
+        -#       %li.item-box
+        -#         = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+        -#         %p.price ¥ 10,000
+        -#         %p.name product-name
+        -#     = link_to do
+        -#       %li.item-box
+        -#         = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+        -#         %p.price ¥ 10,000
+        -#         %p.name product-name
+        -#     = link_to do
+        -#       %li.item-box
+        -#         = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+        -#         %p.price ¥ 10,000
+        -#         %p.name product-name
+        -#     = link_to do
+        -#       %li.item-box
+        -#         = image_tag 'toppage/car.jpg', height: '252px', width: '188px', class: 'box'
+        -#         %p.price ¥ 10,000
+        -#         %p.name product-name
       -# メンズカテゴリー
   .category__box
     .women
