@@ -2,7 +2,7 @@ class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    @items = Item.all.includes(:images)
+    @items = Item.includes(:images)
   end
 
   def show
