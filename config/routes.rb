@@ -44,4 +44,6 @@ Rails.application.routes.draw do
   # 出品商品確認ページ
   resources :sell_items, only: [:index, :show, :edit, :destroy]
 
+  # カテゴリー
+  resources :category, only: [:index]
 end
