@@ -59,8 +59,15 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 box-sizing: border-box;
+                }
+                .picsmall1{
+                  opacity: 0.3;
+                }
 
-                } 
+                .picsmall1:hover{
+                  opacity: 1;
+                }
+              
         }
 
       &__data{
