@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   #トップページ
   root to: "items#index"
+
+  #商品登録画面
   resources :items, only: [:index, :new, :create, :update, :show]
 
   #トップページ以外は仮のルーティング設定
@@ -42,6 +44,6 @@ Rails.application.routes.draw do
   resources :card_register3, only: :index
 
   # 出品商品確認ページ
-  resources :sell_items, only: [:index, :show, :edit, :update, :destroy]
+  resources :sell_items, only: [:index, :show, :edit, :destroy]
 
 end
