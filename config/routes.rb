@@ -46,4 +46,7 @@ Rails.application.routes.draw do
 
   # カテゴリー
   resources :category, only: [:index]
+  member do
+    get 'search'
+  end
 end
