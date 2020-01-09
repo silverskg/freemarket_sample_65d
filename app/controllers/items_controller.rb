@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :update]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
       :category_id, 
       :brand_id,
       #field_forで設定した値+_attributesで受け取る。
-      images_attributes: [:image]
+      images_attributes: [:image, :_destroy, :id]
     ).merge(user_id: 1)
   end
 
