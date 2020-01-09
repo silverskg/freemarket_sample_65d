@@ -25,26 +25,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   def validates_step2
-    session[:user_params] = user_params
-    @user = User.new(session[:user_params])
-    # session[:nickname] = user_params[:nickname]
-    # session[:email] = user_params[:email]
-    # session[:password] = user_params[:password]
-    # session[:first_name_zenkaku] = user_params[:first_name_zenkaku]
-    # session[:last_name_zenkaku] = user_params[:last_name_zenkaku]
-    # session[:first_name_kana]  = user_params[:first_name_kana]
-    # session[:last_name_kana] = user_params[:last_name_kana]
-    # session[:birthday] = birthday_params[:year] + birthday_params[:month] + birthday_params[:day]
-    # @user = User.new(
-    #   nickname:             session[:nickname],
-    #   email:                session[:email],
-    #   password:             session[:password],
-    #   first_name_zenkaku:   session[:first_name_zenkaku],
-    #   last_name_zenkaku:    session[:last_name_zenkaku],
-    #   first_name_kana:      session[:first_name_kana],
-    #   last_name_kana:       session[:last_name_kana],
-    #   birthday:             session[:birthday]
-    # )
+    # session[:user_params] = user_params
+    # @user = User.new(session[:user_params])
+    session[:nickname] = user_params[:nickname]
+    session[:email] = user_params[:email]
+    session[:password] = user_params[:password]
+    session[:first_name_zenkaku] = user_params[:first_name_zenkaku]
+    session[:last_name_zenkaku] = user_params[:last_name_zenkaku]
+    session[:first_name_kana]  = user_params[:first_name_kana]
+    session[:last_name_kana] = user_params[:last_name_kana]
+    session[:birthday] = birthday_params[:year] + birthday_params[:month] + birthday_params[:day]
+    @user = User.new(
+      nickname:             session[:nickname],
+      email:                session[:email],
+      password:             session[:password],
+      first_name_zenkaku:   session[:first_name_zenkaku],
+      last_name_zenkaku:    session[:last_name_zenkaku],
+      first_name_kana:      session[:first_name_kana],
+      last_name_kana:       session[:last_name_kana],
+      birthday:             session[:birthday]
+    )
     binding.pry
    render :step1 unless @user.valid?
     @user.build_address
@@ -66,9 +66,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def validates_step5
-    @user = User.new(session[:user_params])
+    # @user = User.new(session[:user_params])
     session[:first_name_zenkaku] = user_params[:first_name_zenkaku]
-    session[:last_name_zenkaku] = user_params[:last_name_zernkaku]
+    session[:last_name_zenkaku] = user_params[:last_name_zenkaku]
     session[:first_name_kana]  = user_params[:first_name_kana]
     session[:last_name_kana] = user_params[:last_name_kana]
     session[:post_number] = user_params[:address_attributes][:post_number]
@@ -77,13 +77,17 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:addresses_banchi] = user_params[:address_attributes][:addresses_banchi]
     session[:build_name]  = user_params[:address_attributes][:build_name]
     session[:phone_number] = user_params[:address_attributes][:phone_number]
-    @user = User.new(
-      first_name_zenkaku:         session[:first_name_zenkaku],
-      last_name_zenkaku:          session[:last_name_zenkaku],
-      first_name_kana:            session[:first_name_kana],
-      last_name_kana:             session[:last_name_kana],
-    )
+    # @user = User.new(
+    #   first_name_zenkaku:         session[:first_name_zenkaku],
+    #   last_name_zenkaku:          session[:last_name_zenkaku],
+    #   first_name_kana:            session[:first_name_kana],
+    #   last_name_kana:             session[:last_name_kana],
+    # )
     @address = Address.new(
+      first_name_zenkaku:          session[:first_name_zenkaku],
+      last_name_zenkaku:           session[:last_name_zenkaku],
+      first_name_kana:             session[:first_name_kana],
+      last_name_kana:              session[:last_name_kana],
       post_number:                 session[:post_number],
       prefectures:                 session[:prefectures],
       city:                        session[:city],
@@ -92,7 +96,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       phone_number:                session[:phone_number]
     )
     binding.pry
-    render :step1 unless @user.valid? && @address.valid?
+    render :step1 unless @address.valid?
     @user = User.new
     @user.build_address
   end
@@ -108,13 +112,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def create
-    binding.pry
+    # binding.pry
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
       password: session[:password],
       # password_confirmation: session[:password_confirmation],
-      last_name_zernkaku: session[:last_name_zernkaku], 
+      last_name_zenkaku: session[:last_name_zenkaku], 
       first_name_zenkaku: session[:first_name_zenkaku], 
       last_name_kana: session[:last_name_kana], 
       first_name_kana: session[:first_name_kana], 
@@ -123,8 +127,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if @user.save
       # ログインするための情報を保管
+      binding.pry
       session[:id] = @user.id
       @address = Address.create(
+       first_name_zenkaku:          session[:first_name_zenkaku],
+       last_name_zenkaku:           session[:last_name_zenkaku],
+       first_name_kana:             session[:first_name_kana],
+       last_name_kana:              session[:last_name_kana],
        build_name:        session[:build_name],
        addresses_banchi:  session[:addresses_banchi],
        phone_number:      session[:phone_number],
