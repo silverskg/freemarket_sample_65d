@@ -35,7 +35,7 @@ $(function() {
 
     //file_fieldの追加(top)
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
-    $(".imageUpField#iuf1").prepend(fileFieldUrl);
+    $(".imageUpField#iuf1").append(fileFieldUrl);
     $(".imageUpField#iuf1").children(":first").show();
     $(this).hide();
   })
@@ -85,7 +85,7 @@ $(function() {
 
     //file_fieldの追加(bottom)
     let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
-    $(".imageUpField#iuf2").prepend(fileFieldUrl);
+    $(".imageUpField#iuf2").append(fileFieldUrl);
     $(".imageUpField#iuf2").children(":first").show();
     $(this).hide();
   })
@@ -156,7 +156,7 @@ $(document).on('turbolinks:load', function() {
   //価格入力状態で遷移した場合
   let input = $(".rightSmallForm__price").val();
   if (input) {
-    if (input > 300) {
+    if (input >= 300) {
       $(".rightSmallForm__commissionPrice").text(`¥${Math.floor(input * 0.1)}`);
     }
     else
@@ -164,7 +164,7 @@ $(document).on('turbolinks:load', function() {
   }
 
   if (input) {
-    if (input > 300) {
+    if (input >= 300) {
       $(".rightSmallForm__profitPrice").text(`¥${Math.floor(input * 0.1)}`);
     }
     else
@@ -174,7 +174,7 @@ $(document).on('turbolinks:load', function() {
   // 販売手数料の表示
   $(".rightSmallForm__price").on("keyup", function(){
     let input = $(this).val();
-    if (input > 300) {
+    if (input >= 300) {
       $(".rightSmallForm__commissionPrice").text(`¥${Math.floor(input * 0.1)}`);
     }
     else
@@ -183,7 +183,7 @@ $(document).on('turbolinks:load', function() {
   // 販売利益の表示
   $(".rightSmallForm__price").on("keyup", function(){
     let input = $(this).val();
-    if (input > 300) {
+    if (input >= 300) {
       $(".rightSmallForm__profitPrice").text(`¥ ${input - (Math.floor(input * 0.1))}`);
     }
     else

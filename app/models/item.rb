@@ -14,7 +14,7 @@ class Item < ApplicationRecord
     validates :delivery_date, presence: { message: "選択してください" }
     validates :how_to_deliver, presence: { message: "選択してください" }
     validates :region, presence: { message: "選択してください" }
-    validates :price, numericality: { message: "300以上9999999以下で入力してください", only_integer: true, greater_than: 300, less_than: 10000000 }
+    validates :price, numericality: { message: "300以上9999999以下で入力してください", only_integer: true, greater_than: 299, less_than: 10000000 }
     validates :category_id, presence: { message: "選択してください" }
     validates :brand_id, presence: { message: "選択してください" }
     validates :include_image, presence: { message: "画像がありません" }

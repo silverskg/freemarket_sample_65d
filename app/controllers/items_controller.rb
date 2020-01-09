@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show]
+
   def index
+    @items = Item.all.order(id: "DESC").includes(:images)
   end
 
   def new
@@ -13,7 +16,10 @@ class ItemsController < ApplicationController
     #imageがアップされている場合
     if params[:images]
       @item.include_image = "include"
-    end
+  end
+
+  def show
+  end
     
 
     if @item.save
@@ -46,6 +52,10 @@ class ItemsController < ApplicationController
       #field_forで設定した値+_attributesで受け取る。複数の為{file_field属性名: []}で受け取る。
       images_attributes: {image: []}
     ).merge(user_id: 1)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end
