@@ -11,16 +11,15 @@ class ItemsController < ApplicationController
     @item.images.build
   end
 
+  def show
+  end
+
   def create
     @item = Item.new(item_params)
     #imageがアップされている場合
     if params[:images]
       @item.include_image = "include"
-  end
-
-  def show
-  end
-    
+    end
 
     if @item.save
       #file_fieldのparams(name属性)に含まれる複数のimageを分解
