@@ -1,5 +1,5 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :set_item, only: [:show, :edit, :destroy]
 
   def index
     # user_idは仮設定
@@ -10,6 +10,7 @@ class SellItemsController < ApplicationController
   end
 
   def edit
+
   end
 
   def destroy
