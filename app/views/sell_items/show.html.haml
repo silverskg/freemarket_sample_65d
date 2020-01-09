@@ -2,7 +2,7 @@
   .topheader
     .main
       .main__top
-        = link_to do
+        = link_to root_path do
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
@@ -33,7 +33,7 @@
               = icon('fas', 'check')
               やることリスト
           %li.num6 
-            = link_to do
+            = link_to my_page_index_path do
               = icon('far', 'circle')
               マイページ    
 %nav.bread
