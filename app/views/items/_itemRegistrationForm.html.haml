@@ -15,7 +15,7 @@
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           -# 画像UP数が１〜５の場合
-          = f.fields_for :images, @item.images.new do |image|
+          = f.fields_for :images, item.images.new do |image|
             .imageUp
               .previewField#pf1
               = image.label :image, {id: "images1"} do
