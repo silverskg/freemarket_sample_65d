@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show]
+  before_action :set_item, only: [:show, :update]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -9,9 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.new 
     #ネストしたテーブルを作成
     @item.images.build
-  end
-
-  def show
   end
 
   def create
@@ -26,6 +23,33 @@ class ItemsController < ApplicationController
       params[:images][:image].each do |image|
         #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
         @item.images.create(image: image, item_id: @item.id)
+      end
+      redirect_to root_path
+    else
+      @item.images.build
+      render :new
+    end
+  end
+
+  def update
+    #imageがアップされている場合
+    if params[:images]
+      @item.include_image = "include"
+      binding.pry
+    else 
+      @item.include_image = ""
+    end
+
+
+    if @item.update(item_params)
+      #file_fieldのparams(name属性)に含まれる複数のimageを分解
+      params[:images][:image].each do |image|
+        #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
+        @image = Image.new(image: image, item_id: @item.id)
+
+        if @image.persisted?
+          @image.save
+        end
       end
       redirect_to root_path
     else

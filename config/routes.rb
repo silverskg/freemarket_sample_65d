@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   #トップページ
   root to: "items#index"
-  resources :items, only: [:index, :new, :create, :show]
+  resources :items, only: [:index, :new, :create, :update, :show]
 
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示
