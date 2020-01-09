@@ -71,8 +71,8 @@
         =  image_tag @item.images.first.image.to_s, size: "300x300", class: "picmain" 
         .picsmall
           -@images.each do |image| 
-            =  image_tag image.image.to_s, size: "60x60", class: "picsmall1"
-        //=image_tag "{@item.images.image.to_s}", size: "60x60", class: "picsmall2" 
+            =  image_tag image.image.to_s, size: "60x60", class: "picsmall1","data-image_id": image.id
+        // = image_tag image.image.to_s, size: "60x60", class: "picsmall2" 
         //=image_tag "03.gif", size: "60x60", class: "picsmall3"
         //=image_tag "03.gif", size: "60x60", class: "picsmall4"
         //=image_tag "03.gif", size: "60x60", class: "picsmall5"                
