@@ -45,8 +45,5 @@ Rails.application.routes.draw do
   resources :sell_items, only: [:index, :show, :edit, :destroy]
 
   # カテゴリー
-  resources :category, only: [:index]
-  member do
-    get 'search'
-  end
+  resources :category, only: [:index, :show]
 end
