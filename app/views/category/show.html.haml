@@ -2,18 +2,20 @@
   .topheader
     .main
       .main__top
-        %a(href="#")
+        = link_to do
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
             %input.card-nomber-form{placeholder:"何かお探しですか？"}
             .icon
-              %a(href="#")
+              = link_to do
                 %i.fa.fa-search
+
+      -#  開発やりやすくする為、仮のフッター
       .main__bottom
         %ul 
           %li.num1
-            = link_to do
+            = link_to category_index_path do
               = icon('fas', 'bars')
               カテゴリーから探す
           %li.num2 
@@ -22,7 +24,7 @@
               ブランドから探す
           %li.num3 
             = link_to do
-              = icon('far', '')
+              = icon('far', 'heart')
               いいね！ 一覧
           %li.num4 
             = link_to do
@@ -33,28 +35,42 @@
               = icon('fas', 'check')
               やることリスト
           %li.num6 
-            = link_to do
+            = link_to my_page_index_path do
               = icon('far', 'circle')
-              マイページ    
+              マイページ 
+
 %nav.bread
   %ul.bread__list
-  
-.editProfileMain
-  = render 'shared/side_bar'
-  .mainContainer
-    .profileTitle
-      プロフィール
-    .editProfileForm
-      = form_for "#" do |f|
-        .userProfile
-          .iconAndName
-            .userIcon
-              = image_tag 'eto_nezumi_fukubukuro.png', class: 'editUserIcon'
-            .userName
-              = f.text_field :text, class: "editUserName"
-        .editBody
-          = f.text_area :text, placeholder: "例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪", class: "editBodyTextarea"
-          = f.submit "変更する", class: "editButton"
+
+%body
+  .categoriesList
+    -# 中カテゴリーのテーブルがないため直打ち
+    = link_to "バッグ", '#', class: "middleCategoryLink"
+    = link_to "アクセサリー", '#', class: "middleCategoryLink"
+    = link_to "ワンピース", '#', class: "middleCategoryLink"
+  .categoryTitle
+    #{@category.name}の商品一覧
+  .itemsAllInCategory
+    - @items.each do |item|
+      = link_to item_path(item) do
+        .itemBox
+          = image_tag item.images.first.image.to_s, height: '188px', width: '188px', class: 'box'
+          .itemBoxDescription
+            %p.name
+              =item.name
+            .itemBoxDescription__bottom
+              %p.price
+                ¥#{item.price}
+              .like
+                = icon('fas', 'heart')
+                %p 10
+  = paginate(@items)
+  .categoryDescription
+    .categoryDescription__title
+      #{@category.name}
+    .categoryDescription__text
+      #{@category.name}の着ない服、いらない洋服を売るならメルカリへ。#{@category.name}の商品は100万点以上あります。#{@category.name}の買い取りやリサイクル処分、服の整理を検討中の方にお勧めです。
+
 
 %footer
   .images
@@ -146,3 +162,11 @@
       .about__bottom--name
         %p.name
           @Fmarket
+        -#  出品ボタン      
+= link_to new_item_path, class: "logo-btn" do      
+  .exhibition-btn
+    .fixed_btn
+      %span.btn-name
+      出品
+      %p.camera-icon
+        = icon('fas', 'camera')
