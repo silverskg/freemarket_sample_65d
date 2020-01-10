@@ -177,7 +177,7 @@
         -@user_items.each do |user_item| 
           -if user_item.id != @item.id 
             .itemSingle1.itemSingle
-              = link_to "/items/#{user_item.id}", class: "linkstyle" do
+              = link_to item_path(user_item.id), class: "linkstyle" do
                 .itemSinglePhoto
                   = image_tag user_item.images.first.image.to_s, class: 'itemPhoto'
                 .itemSingleBody
@@ -200,7 +200,7 @@
           -if brand_item.id != @item.id
 
             .itemSingle1.itemSingle
-              = link_to "/items/#{brand_item.id}", class: "linkstyle" do
+              = link_to item_path(brand_item.id), class: "linkstyle" do
                 .itemSinglePhoto
                   = image_tag brand_item.images.first.image.to_s, class: 'itemPhoto'
                 .itemSingleBody
