@@ -72,16 +72,7 @@
         .picsmall
           -@images.each do |image| 
             =  image_tag image.image.to_s, size: "60x60", class: "picsmall1","data-image_id": image.id
-        // = image_tag image.image.to_s, size: "60x60", class: "picsmall2" 
-        //=image_tag "03.gif", size: "60x60", class: "picsmall3"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall4"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall5"                
-        //%br/
-        //=image_tag "03.gif", size: "60x60", class: "picsmall6"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall7"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall8"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall9"
-        //=image_tag "03.gif", size: "60x60", class: "picsmall10"                                     
+                                    
       .main1__menu__data
         %table{border: "1",class:"box"}
           %tr
@@ -129,8 +120,7 @@
           %tr
             %th 配送元の地域
             %td 
-              =link_to('#', class:'link1') do
-                =@prefecture.name
+              =@prefecture.name
           %tr
             %th 配送日の目安
             %td 
@@ -317,11 +307,3 @@
       .about__bottom--name
         %p.name
           @Fmarket
-        -#  出品ボタン      
--# = link_to("new_item_path", class: "logo-btn") do
--#   .exhibition-btn
--#     .fixed_btn
--#       %span.btn-name
--#       出品
--#       %p.camera-icon
--#         = icon('fas', 'camera') 
