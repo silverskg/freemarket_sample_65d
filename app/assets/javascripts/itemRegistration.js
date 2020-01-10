@@ -24,6 +24,7 @@ $(function() {
       $(".previewField#pf1").append(url);
       top_image_num += 1;
       top_image_index += 1;
+
     }
     else if(top_image_num == 4) {
       $(".previewField#pf1").append(url);
@@ -34,10 +35,18 @@ $(function() {
     }
 
     //file_fieldの追加(top)
-    let fileFieldUrl =`<input name="item[images_attributes][${top_image_index}][image]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
+    let fileFieldUrl =`<input name="item[images_attributes][${top_image_index + bottom_image_index}][image]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
     $(".imageUpField#iuf1").append(fileFieldUrl);
     $(".imageUpField#iuf1").children(":first").show();
     $(this).hide();
+
+    //※＊file_fieldの追加(bottom)
+    if (top_image_num == 4) {
+      let fileFieldUrl =`<input name="item[images_attributes][${top_image_index + bottom_image_index}][image]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
+      $(".imageUpField#iuf2").append(fileFieldUrl);
+      $(".imageUpField#iuf2").children(":first").show();
+      $(this).hide();
+    }
   })
 
   //画像の削除(top)
@@ -84,7 +93,7 @@ $(function() {
     }
 
     //file_fieldの追加(bottom)
-    let fileFieldUrl =`<input name="item[images_attributes][${top_image_index}][image]" "class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
+    let fileFieldUrl =`<input name="item[images_attributes][${top_image_index + bottom_image_index}][image]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
     $(".imageUpField#iuf2").append(fileFieldUrl);
     $(".imageUpField#iuf2").children(":first").show();
     $(this).hide();
@@ -102,6 +111,29 @@ $(function() {
       preview.remove();
       bottom_image_num -= 1;
   })
+
+  //ページ遷移時にimageがすでにある状態の場合
+  $(document).on('turbolinks:load', function() {
+
+    //splitが別ページだとエラーを表示する為、条件分岐で回避
+    if ($(".imageUpField__hidden1").length) {
+      top_image_index = $(".imageUpField__hidden1").attr("id").split("-")[1];
+      top_image_index = Number(top_image_index);
+      top_image_num = top_image_index;
+      bottom_image_index = $(".imageUpField__hidden3").attr("id").split("-")[1];
+      bottom_image_index = Number(bottom_image_index);
+      bottom_image_num = bottom_image_index;
+    }
+
+    if(top_image_num == 5) {
+      $("#images1").hide();
+      $("#images2").show();
+    }
+    if(bottom_image_num == 5) {
+      $("#images2").hide();
+    }
+  })
+
 });
 
 $(document).on('turbolinks:load', function() {

@@ -1,3 +1,6 @@
+- top_image_index = 0
+- bottom_image_index = 0
+
 .itemRegistrationHeader
   =link_to(root_path, class:'imag') do
     = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
@@ -18,9 +21,21 @@
           = f.fields_for :images, item.images.new do |image|
             .imageUp
               .previewField#pf1
+                - if item.persisted?
+                  - item.images.each_with_index do |image, i|
+                    - if i < 5
+                      - if i == item.images.length - 1
+                        - break
+                      .preview{id: "top_image_preview-#{top_image_index}"}
+                        = image_tag image.image.to_s 
+                        .preview__buttons
+                          .editBtnTop 編集
+                          .deleteBtnTop 削除
+                          - top_image_index += 1
+
               = image.label :image, {id: "images1"} do
                 .imageUpField#iuf1
-                  = image.file_field :image, class: "imageUpField__hidden1", id: "top_image_form-0"
+                  = image.file_field :image, class: "imageUpField__hidden1", id: "top_image_form-#{top_image_index}"
                   %p
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
@@ -32,9 +47,21 @@
             -# 画像UP数が6〜10の場合
             .imageUp
               .previewField#pf2
+                - if item.persisted?
+                  - item.images.each_with_index do |image, i|
+                    - if i > 4
+                      - if i == item.images.length - 1
+                        - break
+                      .preview{id: "bottom_image_preview-#{bottom_image_index}"}
+                        = image_tag image.image.to_s 
+                        .preview__buttons
+                          .editBtnBottom 編集
+                          .deleteBtnBottom 削除
+                          - bottom_image_index += 1
+
               = image.label :image, {id: "images2"} do
                 .imageUpField#iuf2
-                  = image.file_field :image, class: "imageUpField__hidden2", id: "bottom_image_form-0"
+                  = image.file_field :image, class: "imageUpField__hidden3", id: "bottom_image_form-#{bottom_image_index}"
                   %p
                   ドラッグアンドドロップ
                   %br またはクリックしてファイルをアップロード
