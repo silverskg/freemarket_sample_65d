@@ -1,44 +1,89 @@
--# header
-%html
-  %header
-    .topheader
-      .main
-        .main__top
-          %a(href="#")
-            = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
-          %label
-            .main__top--search
-              %input.card-nomber-form{placeholder:"何かお探しですか？"}
-              .icon
-                %a(href="#")
-                  %i.fa.fa-search
-        .main__bottom
-          %ul 
-            %li.num1
+%header
+  .topheader
+    .main
+      .main__top
+        = link_to do
+          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+        %label
+          .main__top--search
+            %input.card-nomber-form{placeholder:"何かお探しですか？"}
+            .icon
               = link_to do
-                = icon('fas', 'bars')
-                カテゴリーから探す
-            %li.num2 
-              = link_to do
-                = icon('fas', 'tag')
-                ブランドから探す
-            %li.num3 
-              = link_to do
-                = icon('far', 'heart')
-                いいね！ 一覧
-            %li.num4 
-              = link_to do
-                = icon('far', 'bell')
-                お知らせ
-            %li.num5 
-              = link_to do
-                = icon('fas', 'check')
-                やることリスト
-            %li.num6 
-              = link_to do
-                = icon('far', 'circle')
-                マイページ    
+                %i.fa.fa-search
 
+      -#  開発やりやすくする為、仮のフッター
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num3 
+            = link_to do
+              = icon('far', 'heart')
+              いいね！ 一覧
+          %li.num4 
+            = link_to do
+              = icon('far', 'bell')
+              お知らせ
+          %li.num5 
+            = link_to do
+              = icon('fas', 'check')
+              やることリスト
+          %li.num6 
+            = link_to my_page_index_path do
+              = icon('far', 'circle')
+              マイページ 
+
+              -# 本来はこっち
+      -# - if user_signed_in?
+      -#   .main__bottom
+      -#     %ul 
+      -#       %li.num1
+      -#         = link_to do
+      -#           = icon('fas', 'bars')
+      -#           カテゴリーから探す
+      -#       %li.num2 
+      -#         = link_to do
+      -#           = icon('fas', 'tag')
+      -#       %li.num3 
+      -#         = link_to do
+      -#           = icon('far', 'heart')
+      -#           いいね！ 一覧
+      -#       %li.num4 
+      -#         = link_to do
+      -#           = icon('far', 'bell')
+      -#           お知らせ
+      -#       %li.num5 
+      -#         = link_to do
+      -#           = icon('fas', 'check')
+      -#           やることリスト
+      -#       %li.num6 
+      -#         = link_to do
+      -#           = icon('far', 'circle')
+      -#           マイページ 
+      -# - else 
+      -#   .main__bottom
+      -#     %ul 
+      -#       %li.num1
+      -#         = link_to do
+      -#           = icon('fas', 'bars')
+      -#           カテゴリーから探す
+      -#       %li.num2 
+      -#         = link_to do
+      -#           = icon('fas', 'tag')
+      -#           ブランドから探す
+      -#       %li.num7 
+      -#         = link_to do
+      -#           %button.button8{:type => "submit"} 新規会員登録
+      -#       %li.num8
+      -#         = link_to do
+      -#           %button.button9{:type => "submit"} ログイン 
+      
 %body
   .images
     = image_tag 'toppage/free.image-1.jpg', height: '390px', width: '100%', class: 'top-photo'
@@ -119,6 +164,7 @@
                       ¥
                       =item.price 
                     %p.name 
+                      =item.name
     -# おもちゃカテゴリー
   .category__box
     .women

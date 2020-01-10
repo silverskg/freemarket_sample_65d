@@ -1,5 +1,5 @@
 .itemRegistrationHeader
-  =link_to('#', class:'imag') do
+  =link_to(root_path, class:'imag') do
     = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
 
 .itemRegistrationMain
@@ -134,7 +134,17 @@
             %p.fontBolder 配送の方法
             %span.hissuBtn #{hissu}
             .form
-              = f.select :how_to_deliver,[],{include_blank: "---"},{class: "form__select"}
+              = f.select :how_to_deliver,
+               [["未定","未定"],
+                ["らくらくメルカリ便","らくらくメルカリ便"],
+                ["ゆうメール","ゆうメール"],
+                ["レターパック","レターパック"],
+                ["普通郵便(定形、定形外)","普通郵便(定形、定形外)"],
+                ["クロネコヤマト","クロネコヤマト"],
+                ["ゆうパック","ゆうパック"],
+                ["クリックポスト","クリックポスト"],
+                ["ゆうパケット","ゆうパケット"]],
+                {include_blank: "---"},{class: "form__select"}
               = f.label :image, class: "form__arrowIcon" do
                 = icon("fas", "chevron-down", class: "image")
             - if @item.errors.any?

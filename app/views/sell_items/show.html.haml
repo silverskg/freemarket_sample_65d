@@ -2,13 +2,13 @@
   .topheader
     .main
       .main__top
-        %a(href="#")
+        = link_to root_path do
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
             %input.card-nomber-form{placeholder:"何かお探しですか？"}
             .icon
-              %a(href="#")
+              = link_to do
                 %i.fa.fa-search
       .main__bottom
         %ul 
@@ -33,66 +33,100 @@
               = icon('fas', 'check')
               やることリスト
           %li.num6 
-            = link_to do
+            = link_to my_page_index_path do
               = icon('far', 'circle')
               マイページ    
 %nav.bread
   %ul.bread__list
 
-.cardRegisterMain
-  = render 'shared/side_bar'
-  .mainContainer
-    .cardRegisterTitle
-      クレジットカード情報入力
-    .cardRegisterForm
-      = form_for "#" do |f|
-        .cardInfo
-          - hissuTag = "必須"
-          = form_for "#" do |f|
-            .formCardNumber
-              %p.titleBold カード番号
-              %span.hissuTag #{hissuTag}
-              = f.text_field :text, placeholder: "半角数字のみ", class: "cardNumber formareaBig"
-              = image_tag 'cardimages.png', class: 'cardImages'
-            .formExpirationDate.topmargin
-              %p.titleBold 有効期限
-              %span.hissuTag #{hissuTag}
-              .flex
-                %select.select-default{name: "month", class: "month formareaMiddle"}
-                  %option{value: "01"} 01
-                  %option{value: "02"} 02
-                  %option{value: "03"} 03
-                  %option{value: "04"} 04
-                  %option{value: "05"} 05
-                  %option{value: "06"} 06
-                  %option{value: "07"} 07
-                  %option{value: "08"} 08
-                  %option{value: "09"} 09
-                  %option{value: "10"} 10
-                  %option{value: "11"} 11
-                  %option{value: "12"} 12
-                %p.date 月
-                %select.select-default{name: "year", class: "year formareaMiddle"}
-                  %option{value: "1"} 19
-                  %option{value: "2"} 20
-                  %option{value: "3"} 21
-                  %option{value: "4"} 22
-                  %option{value: "5"} 23
-                  %option{value: "6"} 24
-                  %option{value: "7"} 25
-                  %option{value: "8"} 26
-                  %option{value: "9"} 27
-                  %option{value: "10"} 28
-                  %option{value: "11"} 29
-                %p.date 年
-            .formSecurityCode.topmargin
-              %p.titleBold セキュリティコード
-              %span.hissuTag #{hissuTag}
-              = f.text_field :text, placeholder: "カード背面4桁もしくは3桁の番号", class: "securityNumber formareaBig"
-              = link_to '#', class: 'link questionLink' do
-                = icon('fas', 'question-circle', class: 'question')
-                カード裏面の番号とは？
-              = f.submit "追加する", class: "submitbtn"
+
+.itemInfo
+  .main1
+    .main1__product-name
+      商品名
+    .main1__menu
+      .main1__menu__picbig
+        =image_tag "03.gif", size: "300x300", class: "picmain" 
+        .picsmall
+          =image_tag "03.gif", size: "60x60", class: "picsmall1"
+          =image_tag "03.gif", size: "60x60", class: "picsmall2" 
+          =image_tag "03.gif", size: "60x60", class: "picsmall3"
+          =image_tag "03.gif", size: "60x60", class: "picsmall4"
+          =image_tag "03.gif", size: "60x60", class: "picsmall5"                
+          %br/
+          =image_tag "03.gif", size: "60x60", class: "picsmall6"
+          =image_tag "03.gif", size: "60x60", class: "picsmall7"
+          =image_tag "03.gif", size: "60x60", class: "picsmall8"
+          =image_tag "03.gif", size: "60x60", class: "picsmall9"
+          =image_tag "03.gif", size: "60x60", class: "picsmall10"                                     
+      .main1__menu__data
+        %table{border: "1",class:"box"}
+          %tr
+            %th 出品者
+            %td 
+              =link_to('#', class:'link1') do
+                出品者名
+              %br/
+              %i1.fas.fa-laugh-beam
+              %span 0
+              %i2.fas.fa-meh
+              %span 0
+              %i3.fas.fa-frown
+              %span 0
+          %tr
+            %th カテゴリー
+            %td 
+              =link_to('#', class:'link1') do
+                カテゴリー
+                %br/
+              =link_to('#', class:'link1') do
+                %i.fas.fa-chevron-right
+                カテゴリー
+                %br/
+              =link_to('#', class:'link1') do
+                %i.fas.fa-chevron-right
+                カテゴリー 
+          %tr
+            %th ブランド
+            %td 
+              =link_to('#', class:'link1') do
+                ブランド名
+          %tr
+            %th 商品サイズ
+            %td M
+          %tr
+            %th 商品状態
+            %td 目立った傷や汚れなし
+          %tr
+            %th 配送料負担
+            %td 送料込み
+          %tr
+            %th 配送元の地域
+            %td 
+              =link_to('#', class:'link1') do
+                都道府県
+          %tr
+            %th 配送日の目安
+            %td 1~2日で配送
+    .main1__price
+      %p ¥980   
+      %p1 (税込) 
+      %p2 送料込み
+    
+    .main1__text
+      即購入OKなどの商品説明がここに入ります！！
+
+.itemStatusChangeButtonsList
+  = link_to "商品の編集", edit_sell_item_path(@item.id), class: "editItemInfoButton"
+  %p or
+  = link_to "出品を一旦停止する", "#", class: "statusChangeButton"
+  = link_to "この商品を削除する", sell_item_path(@item.id), method: :delete, class: "statusChangeButton"
+
+.commentForm
+  %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  = form_for "#" do |f|
+    = f.text_area :body, class: "commentFormarea"
+    = f.submit "コメントする", class: "commentSubmit"
 
 %footer
   .images

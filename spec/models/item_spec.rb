@@ -99,7 +99,20 @@ describe Item do
       expect(item.errors[:price]).to include("300以上9999999以下で入力してください")
     end
 
-    it "価格が300以上で10000000以下の場合に登録できること" do
+    it "価格が300以上の場合に登録できること" do
+      category = create(:category)
+      brand = create(:brand)
+      user = create(:user)
+      item = build(:item,
+                    category_id: category.id,
+                    brand_id: brand.id,
+                    user_id: user.id,
+                    price: 300
+                    )
+      expect(item).to be_valid
+    end
+
+    it "価格が10000000以下の場合に登録できること" do
       category = create(:category)
       brand = create(:brand)
       user = create(:user)

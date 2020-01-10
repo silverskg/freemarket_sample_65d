@@ -1,12 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
-
 .topheader{
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  // position: relative;
   z-index: 3;
   
 
@@ -61,6 +55,8 @@
       padding-top: 10px;
       background-color: rgb(255, 255, 255);
 
+
+    
     }
 
     ul { 	
@@ -88,6 +84,14 @@
       margin-left: 3%;
     }
 
+    .num7{
+      margin-left: 50%;
+    }
+
+    .num8{
+      margin-left: 1%;
+    }
+
     .fa-bars:before {
       color: rgb(234, 53, 45);
     }
@@ -110,6 +114,31 @@
       font-weight: 600;
       color: black;
     }
+    button.button8 {
+      background-color: rgb(234, 53, 45);
+      color: rgb(255, 255, 255);
+      display: block;
+      font-size: 14px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(234, 53, 45);
+      border-image: initial;
+      border-radius: 4px;
+      padding: 8px 10px;
+  }
+  button.button9 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 238);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 149, 238);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 8px 10px;
+    transition: all 0.3s ease-out 0s;
+}
   }
 }
 }
