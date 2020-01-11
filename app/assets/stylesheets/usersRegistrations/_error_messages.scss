@@ -1,0 +1,43 @@
+// body{
+// text-align: right;
+// margin-top: 5px;
+// }
+
+.errorMessages5 {
+color: #ea352d;
+line-height: 1.5;
+font-size: 14px;
+  li {
+    margin-top: 8px; 
+    height: 21px;
+    width: 343px;
+    // color: #ea352d;
+  }
+  .aaa {
+    display: block!important;
+    // clear: both;
+  }
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+// .field_with_errors {
+//   display: contents;
+//   // もしくは diplay: inline;
+// }
+}
+.leftContent {
+ body{
+padding: 4px 0;
+}
+}
+
+
+// #brand{
+// display: none;
+// }
+
+// #how_to_deliver {
+// display: none;
+// }

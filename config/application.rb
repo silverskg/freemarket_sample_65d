@@ -9,6 +9,13 @@ Bundler.require(*Rails.groups)
 module FreemarketSample65d
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+    config.i18n.default_locale = :ja
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.yml').to_s]
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      %Q(#{html_tag}).html_safe
+    end
+    config.action_view.field_error_proc =  Proc.new { |html_tag, instance| %Q(#{html_tag}).html_safe }
+     
     config.load_defaults 5.2
     config.generators do |g|
       g.stylesheets false

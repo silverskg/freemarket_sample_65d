@@ -32,14 +32,30 @@
         %p.titleBold ニックネーム
         %span.hissuTag #{hissuTag}
         = f.text_field :nickname, placeholder: "例)メルカリ太郎", class: "nickname formareaBig"
+        - if @user.errors.any?
+          %ul.errorMessages5
+            - @user.errors.full_messages_for(:nickname).each do |message|
+              %li= message 
+
       .formEmail.topmargin
         %p.titleBold メールアドレス
         %span.hissuTag #{hissuTag}
         = f.text_field :email, placeholder: "PC・携帯どちらでも可", class: "email formareaBig"
+        - if @user.errors.any?
+          %ul.errorMessages5
+            - @user.errors.full_messages_for(:email).each do |message|
+              %li= message 
+              -# = render "shared/_error_messages"
+
       .formPassword.topmargin
         %p.titleBold パスワード
         %span.hissuTag #{hissuTag}
         = f.text_field :password, placeholder: "7文字以上の半角英数字", class: "password formareaBig"
+        - if @user.errors.any?
+          %ul.errorMessages5
+            - @user.errors.full_messages_for(:email).each do |message|
+              %li= message 
+
         %p.attentionText ※ 英字と数字の両方を含めて設定してください
         .showPassword
           .checkbox
@@ -47,22 +63,43 @@
       .formDescription.topmargin
         %p.big 本人確認
         %p.small 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+      
       .formNameZenkaku.topmargin
         %p.titleBold お名前(全角)
         %span.hissuTag #{hissuTag}
         .flex
           = f.text_field :first_name_zenkaku, placeholder: "例)山田", class: "zenkakuFirst formareaHalf"
           = f.text_field :last_name_zenkaku, placeholder: "例)彩", class: "zenkakuLast formareaHalf"
+        .clearfix
+          - if @user.errors.any?
+            %ul.errorMessages5
+              - @user.errors.full_messages_for(:first_name_zenkaku).each do |message|
+                %li= message 
+          - if @user.errors.any?
+            %ul.errorMessages5
+              - @user.errors.full_messages_for(:last_name_zenkaku).each do |message|
+                %li= message 
+
       .formNameKana.topmargin
         %p.titleBold お名前カナ(全角)
         %span.hissuTag #{hissuTag}
         .flex
           = f.text_field :first_name_kana, placeholder: "例)ヤマダ", class: "kanaFirst formareaHalf"
           = f.text_field :last_name_kana, placeholder: "例)アヤ", class: "kanaLast formareaHalf"
+        .kkk  
+          - if @user.errors.any?
+            %ul.errorMessages5
+              - @user.errors.full_messages_for(:first_name_kana).each do |message|
+                %li= message 
+          - if @user.errors.any?
+            %ul.errorMessages5
+              - @user.errors.full_messages_for(:last_name_kana).each do |message|
+                %li= message 
+
       .formBirthday.topmargin
         %p.titleBold 生年月日
         %span.hissuTag #{hissuTag}
-        .flex
+        .flex 
           %select.select-default{name: "year", class: "birthyear formareaSmall"}
             %option{value: ""} --
             %option{value: "2019"} 2019
@@ -185,6 +222,7 @@
             %option{value: "1902"} 1902
             %option{value: "1901"} 1901
             %option{value: "1900"} 1900
+          
           %p.date 年
           %select.select-default{name: "month", class: "birthmonth formareaSmall"}
             %option{value: ""} --
@@ -235,6 +273,11 @@
             %option{value: "30"} 30
             %option{value: "31"} 31
           %p.date 日
+        .k5
+          - if @user.errors.any?
+            %ul.errorMessages5
+              - @user.errors.full_messages_for(:birthday).each do |message|
+                %li= message
         %p.attentionText ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
       .formAttention
         「次へ進む」のボタンを押すことにより、
