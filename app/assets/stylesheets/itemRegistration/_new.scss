@@ -100,55 +100,44 @@ body{
             .edit {
               display: none;
             }
+            .dropText {
+              position: absolute;
+            }
+            .num_0, .num_1, .num_2 .num_5, .num_6, .num_7{
+              width: 100%
+            }
+            .num_3, .num_8 {
+              width: 180px;
+            }
+            .num_4, .num_9 {
+              width: 100px;
+            }
           }
 
           .hidden_destroy {
             display: none;
           }
 
-          .image_num_0 {
+          .image_num_0, .image_num_5 {
             width: 100%;
             height: 162px;
           }
-          .image_num_1 {
+          .image_num_1, .image_num_6 {
             width: 80%;
             height: 162px;
           }
 
-          .image_num_2 {
+          .image_num_2, .image_num_7 {
             width: 60%;
             height: 162px;
           }
 
-          .image_num_3 {
+          .image_num_3, .image_num_8 {
             width: 40%;
             height: 162px;
           }
 
-          .image_num_4 {
-            width: 20%;
-            height: 162px;
-          }
-
-          .image_num_5 {
-            width: 100%;
-            height: 162px;
-          }
-          .image_num_6 {
-            width: 80%;
-            height: 162px;
-          }
-          .image_num_7 {
-            width: 60%;
-            height: 162px;
-          }
-
-          .image_num_8 {
-            width: 40%;
-            height: 162px;
-          }
-
-          .image_num_9 {
+          .image_num_4, .image_num_9 {
             width: 20%;
             height: 162px;
           }
@@ -156,7 +145,6 @@ body{
           .image_num_10 {
             display: none;
           }
-
         }
 
         .form {

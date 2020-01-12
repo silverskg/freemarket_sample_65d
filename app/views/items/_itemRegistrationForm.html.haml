@@ -34,8 +34,14 @@
                     = image.check_box :_destroy, data: { index: image.index }, class: "hidden_destroy"
                   - else
                     = image.file_field :image, class: "imageUpField__hidden", "data-index": "#{image.index}"
+                    .dropText{ class: "num_#{image_num}" }
+                      ドラッグアンドドロップ
+                      %br またはクリックしてファイルをアップロード
                 - if @item.persisted?
                   = file_field_tag :image, "data-index": "#{@item.images.count}", name: "item[images_attributes][#{@item.images.count}][image]" ,class: "imageUpField__hidden"
+                  .dropText{ class: "num_#{image_num}" }
+                    ドラッグアンドドロップ
+                    %br またはクリックしてファイルをアップロード
           - if item.errors.any?
             %ul.errorMessages
               - item.errors.full_messages_for(:images).each do |message|
