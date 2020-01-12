@@ -5,7 +5,7 @@ $(function() {
   let image_num = 0;
 
   //アップロードした画像のプレビュー(top)
-  $(document).on("change", ".imageUpField__hidden1", function(e){
+  $(document).on("change", ".imageUpField__hidden", function(e){
     //HTML作成
     const targetIndex = $(this).data("index");
     let file = e.target.files[0];
@@ -13,8 +13,8 @@ $(function() {
     let html = `<div class="preview" data-index="${targetIndex}">
                   <img src=${bolbUrl}>
                   <div class="preview__buttons">
-                    <div class="editBtnTop">編集</div>
-                    <div class="deleteBtnTop">削除</div>
+                    <div class="editBtn">編集</div>
+                    <div class="deleteBtn">削除</div>
                   </div>
                 </div>`;
     
@@ -47,7 +47,7 @@ $(function() {
 
     //file_fieldの追加(top)
     let fileFieldHtml =`<input name="item[images_attributes][${fileIndex[0] + 1}][image]" 
-                        class="imageUpField__hidden1" 
+                        class="imageUpField__hidden" 
                         data-index="${fileIndex[0] + 1}"
                         type="file">`;
     fileIndex.shift();
@@ -59,16 +59,16 @@ $(function() {
   })
 
   //画像の削除(top)
-  $(document).on("click", ".deleteBtnTop", function(){
+  $(document).on("click", ".deleteBtn", function(){
     const targetIndex = $(this).parent().parent().data("index");
 
     //DBに保存されている画像を消す場合
-    if ($(`input[data-index="${targetIndex}"].imageUpField__hidden1`).hasClass("edit")){
+    if ($(`input[data-index="${targetIndex}"].imageUpField__hidden`).hasClass("edit")){
       fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
 
     //画像とfile_fieldの削除
-    $(`input[data-index="${targetIndex}"].imageUpField__hidden1`).remove();
+    $(`input[data-index="${targetIndex}"].imageUpField__hidden`).remove();
     $(this).parent().parent().remove();
 
     $(".imageUpField").removeClass(`image_num_${image_num}`);

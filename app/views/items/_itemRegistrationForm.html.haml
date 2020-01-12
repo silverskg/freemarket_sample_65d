@@ -17,25 +17,25 @@
           %span.hissuBtn #{hissu}
           %p 最大10枚までアップロードできます
           .imageUp
-            .previewField#pf1
+            .previewField
               - if item.persisted?
                 - item.images.each_with_index do |imageFiled, i|
                   .preview{data: { index: i }}
                     = image_tag imageFiled.image.url
                     .preview__buttons
-                      .editBtnTop 編集
-                      .deleteBtnTop 削除
+                      .editBtn 編集
+                      .deleteBtn 削除
                   - image_num += 1
 
               .imageUpField{ class: "image_num_#{image_num}" }
                 = f.fields_for :images do |image|
                   - if @item.persisted?
-                    = image.file_field :image, "data-index": "#{image.index}", class: "imageUpField__hidden1 edit"
+                    = image.file_field :image, "data-index": "#{image.index}", class: "imageUpField__hidden edit"
                     = image.check_box :_destroy, data: { index: image.index }, class: "hidden_destroy"
                   - else
-                    = image.file_field :image, class: "imageUpField__hidden1", "data-index": "#{image.index}"
+                    = image.file_field :image, class: "imageUpField__hidden", "data-index": "#{image.index}"
                 - if @item.persisted?
-                  = file_field_tag :image, "data-index": "#{@item.images.count}", name: "item[images_attributes][#{@item.images.count}][image]" ,class: "imageUpField__hidden1"
+                  = file_field_tag :image, "data-index": "#{@item.images.count}", name: "item[images_attributes][#{@item.images.count}][image]" ,class: "imageUpField__hidden"
           - if item.errors.any?
             %ul.errorMessages
               - item.errors.full_messages_for(:images).each do |message|
