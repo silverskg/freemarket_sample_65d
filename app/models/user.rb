@@ -19,7 +19,7 @@ class User < ApplicationRecord
   validates :password,              presence: { message: "を入力してください" },  length: {minimum: 7, maximum: 128}, format: { with: PASSWORD_VALIDATION }   
   validates :first_name_zenkaku,    presence: { message: "を入力してください" },  length: {maximum: 30, message: "30字以内で入力してください。" }
   validates :last_name_zenkaku,     presence: { message: "を入力してください" },  length: {maximum: 30, message: "30字以内で入力してください。" }
-  validates :first_name_kana,   format: { with: VALID_KANA_REGEX, message: "はカタカナで入力して下さい。" }
+  validates :first_name_kana,    format: { with: VALID_KANA_REGEX, message: "はカタカナで入力して下さい。" }
   validates :last_name_kana,    format: { with: VALID_KANA_REGEX, message: "はカタカナで入力して下さい。" }
   validates :birthday,              presence: { message: "を入力してください" }
   # validates :password_confirmation, presence: true, length: {minimum: 7, maximum: 128}      

@@ -79,3 +79,8 @@ gem 'devise'
 gem 'omniauth'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+group :test do
+  gem 'faker', "~> 2.8"
+end
