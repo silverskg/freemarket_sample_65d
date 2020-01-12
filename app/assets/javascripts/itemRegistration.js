@@ -1,5 +1,6 @@
 $(function() {
-  let fileIndex = [0,1,2,3,4,5,6,7,8,9];
+  //アップロード画像の番号
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10,11];
 
   //アップロード画像枚数
   let image_num = 0;
@@ -22,10 +23,13 @@ $(function() {
     $(".imageUpField").removeClass(`image_num_${image_num}`);
     $(".imageUpField").addClass(`image_num_${image_num + 1}`);
 
-    //画像の追加
+    $(".dropText").removeClass(`num_${image_num}`);
+    $(".dropText").addClass(`num_${image_num + 1}`);
+
+    // 画像の追加
     if ($(".preview").length) {
       let num = $(".preview").length; 
-      let i = 1;
+      let i = 0;
       while(true) {
         $(`div[data-index="${targetIndex - i}"].preview`).after(html);
         if ($(".preview").length == num + 1) {
@@ -33,11 +37,11 @@ $(function() {
         }
         i ++;
       }
-
     }
     else {
       $(".previewField").prepend(html);
     }
+
     image_num += 1;
 
     //previewFieldの調整
@@ -46,16 +50,15 @@ $(function() {
     }
 
     //file_fieldの追加(top)
-    let fileFieldHtml =`<input name="item[images_attributes][${fileIndex[0] + 1}][image]" 
+    let fileFieldHtml =`<input name="item[images_attributes][${fileIndex[0]}][image]" 
                         class="imageUpField__hidden" 
-                        data-index="${fileIndex[0] + 1}"
+                        data-index="${fileIndex[0]}"
                         type="file">`;
     fileIndex.shift();
     fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     $(".imageUpField").append(fileFieldHtml);
     $(".imageUpField").children(":last").show();
     $(this).hide();
-
   })
 
   //画像の削除(top)
@@ -71,8 +74,13 @@ $(function() {
     $(`input[data-index="${targetIndex}"].imageUpField__hidden`).remove();
     $(this).parent().parent().remove();
 
+    //file_fieldの大きさ変更
     $(".imageUpField").removeClass(`image_num_${image_num}`);
     $(".imageUpField").addClass(`image_num_${image_num - 1}`);
+
+    $(".dropText").removeClass(`num_${image_num}`);
+    $(".dropText").addClass(`num_${image_num - 1}`);
+
     image_num -= 1;
 
     //DBに保存されている画像をDBから削除するフラグをつける
