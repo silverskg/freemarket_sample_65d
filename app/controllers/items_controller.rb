@@ -7,16 +7,11 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new 
+    @item.images.new
   end
 
   def create
     @item = Item.new(item_params)
-
-    #画像ファイルがUPされている場合
-    if params[:item][:images_attributes]
-      @item.include_image = "include"
-    end
-
     if @item.save
       redirect_to root_path
     else
@@ -25,13 +20,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    #imageがアップされている場合
-    if params[:item][:images_attributes]
-      @item.include_image = "include"
-    else 
-      @item.include_image = ""
-    end
-
     if @item.update(item_params)
       redirect_to root_path
     else

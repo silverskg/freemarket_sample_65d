@@ -14,4 +14,4 @@ ja:
         price: ""
         category_id: ""
         brand_id: ""
-        include_image: ""
+        images: ""
