@@ -15,7 +15,7 @@
     margin: 30px auto 0;
     padding:24px 40px 40px;
 
-      &__product-name{
+      &__product{
         font-size: 24px;
         font-weight:  bold;
         width: 620px;
@@ -59,9 +59,19 @@
                 flex-direction: row;
                 flex-wrap: wrap;
                 box-sizing: border-box;
+                }
+                .picsmall1{
+                  opacity: 0.3;
+                }
 
-                } 
+                .picsmall1:hover{
+                  opacity: 1;
+                }
+              
         }
+                #Choice{
+                  opacity: 1;
+                }
 
       &__data{
         height: 360px;
@@ -321,10 +331,13 @@
   margin: 8px auto;
 }
   .itemsBox {
-    width: 700px;
-    height: 330px;
+    width: 720px;
+    height: 700px;
     display: flex;
     margin: 0 auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow:hidden;
     .itemSingle {
       width: 220px;
       height: 330px;
