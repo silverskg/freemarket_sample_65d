@@ -10,7 +10,7 @@ FactoryBot.define do
     how_to_deliver        {"らくらくメルカリ便"}
     region                {"2"}
     price                 {"1000"}
-    include_image         {"include"}
+    # include_image         {"include"}
     created_at            {"2020-01-01 10:10:10"}
     updated_at            {"2020-01-01 10:10:10"}
     category_id {1}
