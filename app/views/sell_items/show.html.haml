@@ -43,29 +43,21 @@
 .itemInfo
   .main1
     .main1__product-name
-      商品名
+      = @item.name
     .main1__menu
       .main1__menu__picbig
-        =image_tag "03.gif", size: "300x300", class: "picmain" 
+        = image_tag @item.images.first.image.to_s, size: "300x300", class: "picmain" 
         .picsmall
-          =image_tag "03.gif", size: "60x60", class: "picsmall1"
-          =image_tag "03.gif", size: "60x60", class: "picsmall2" 
-          =image_tag "03.gif", size: "60x60", class: "picsmall3"
-          =image_tag "03.gif", size: "60x60", class: "picsmall4"
-          =image_tag "03.gif", size: "60x60", class: "picsmall5"                
-          %br/
-          =image_tag "03.gif", size: "60x60", class: "picsmall6"
-          =image_tag "03.gif", size: "60x60", class: "picsmall7"
-          =image_tag "03.gif", size: "60x60", class: "picsmall8"
-          =image_tag "03.gif", size: "60x60", class: "picsmall9"
-          =image_tag "03.gif", size: "60x60", class: "picsmall10"                                     
+          -@images.each do |image| 
+            =  image_tag image.image.to_s, size: "60x60", class: "picsmall1","data-image_id": image.id
+
       .main1__menu__data
         %table{border: "1",class:"box"}
           %tr
             %th 出品者
             %td 
               =link_to('#', class:'link1') do
-                出品者名
+                = @user.nickname
               %br/
               %i1.fas.fa-laugh-beam
               %span 0
@@ -76,8 +68,8 @@
           %tr
             %th カテゴリー
             %td 
-              =link_to('#', class:'link1') do
-                カテゴリー
+              =link_to category_path(@category.id), class:'link1' do
+                = @category.name
                 %br/
               =link_to('#', class:'link1') do
                 %i.fas.fa-chevron-right
@@ -90,31 +82,37 @@
             %th ブランド
             %td 
               =link_to('#', class:'link1') do
-                ブランド名
-          %tr
-            %th 商品サイズ
-            %td M
+                = @brand.name
           %tr
             %th 商品状態
-            %td 目立った傷や汚れなし
+            %td
+              = @item.status
           %tr
             %th 配送料負担
-            %td 送料込み
+            %td
+              = @item.deliver_fee
+          %tr
+            %th 配送方法
+            %td
+              = @item.how_to_deliver
           %tr
             %th 配送元の地域
             %td 
-              =link_to('#', class:'link1') do
-                都道府県
+              = @prefecture.name
           %tr
             %th 配送日の目安
-            %td 1~2日で配送
+            %td
+              = @item.delivery_date
+
     .main1__price
-      %p ¥980   
+      %p
+        ¥
+        = @item.price
       %p1 (税込) 
       %p2 送料込み
     
     .main1__text
-      即購入OKなどの商品説明がここに入ります！！
+      = @item.body
 
 .itemStatusChangeButtonsList
   = link_to "商品の編集", edit_item_path(@item.id), class: "editItemInfoButton"
