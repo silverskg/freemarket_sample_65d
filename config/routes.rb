@@ -36,9 +36,6 @@ Rails.application.routes.draw do
   resources :registration5, only: :index
   resources :registration6, only: :index
 
-  # 商品詳細ページ
-  resources :product_details, only: :index
-
   #購入内容確認ページ
   resources :product_confirmation, only: :index
 
@@ -56,9 +53,15 @@ Rails.application.routes.draw do
   resources :card_register2, only: :index
   resources :card_register3, only: :index
 
+
+  #フッターメニューバー
+  resources :footermenu, only: :index
+
+
   # 出品商品確認ページ
   resources :sell_items, only: [:index, :show, :destroy]
 
   # カテゴリー
   resources :category, only: [:index, :show]
+
 end
