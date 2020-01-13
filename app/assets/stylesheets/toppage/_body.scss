@@ -165,7 +165,7 @@ margin: 0 auto;
 
   .item-boxes{
     width: 1065px;
-    height: 527px;
+    height: 531px;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
@@ -174,7 +174,7 @@ margin: 0 auto;
       margin-bottom: 17px;
       position: relative;
       margin-right: 25px;
-      
+      box-shadow: 2px 4px rgba(0,0,0,.18);
     }
     .price{
     background: rgba(0,0,0,.4);
