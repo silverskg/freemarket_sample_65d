@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
+  end
 
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示

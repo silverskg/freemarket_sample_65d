@@ -6,10 +6,11 @@
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
-            %input.card-nomber-form{placeholder:"何かお探しですか？"}
-            .icon
-              = link_to do
+            = form_with(local: true, method: :get) do |f|
+              = f.text_field :keyword, placeholder: "何かお探しですか？", class: "card-nomber-form"
+              = f.label :submit, items_path, class: 'icon' do
                 %i.fa.fa-search
+                = f.submit :submit, class: "hidden"
 
       -#  開発やりやすくする為、仮のフッター
       .main__bottom
