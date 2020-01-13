@@ -1,0 +1,39 @@
+$(document).on('turbolinks:load', function() {
+  //「カテゴリーから探す」にマウスが乗るとイベント発火
+  $('.num1').mouseover(function(){  
+  //カテゴリーのバー表示
+    $('.menuCategoryBar').show();
+  });
+  //カテゴリーバーにマウスが乗るとカテゴリーバー表示
+  $('.menuCategoryBar').mouseover(function(){
+    $('.menuCategoryBar').show();
+  });
+  //カテゴリーバーからマウスが離れるとカテゴリーバー非表示
+  $('.menuCategoryBar').mouseout(function(){
+    $('.menuCategoryBar').hide();
+  });
+  //「カテゴリーから探す」からマウスが離れるとカテゴリーバー非表示
+  $('.num1').mouseout(function(){  
+    $('.menuCategoryBar').hide();
+  });
+});
+
+$(document).on('turbolinks:load', function() {
+  //「ブランドから探す」にマウスが乗るとイベント発火
+  $('.num2').mouseover(function(){  
+  //ブランドのバー表示
+    $('.menuBrandBar').show();
+  });
+  //ブランドバーにマウスが乗るとブランド表示
+  $('.menuBrandBar').mouseover(function(){
+    $('.menuBrandBar').show();
+  });
+  //ブランドバーからマウスが離れるとブランドバー非表示
+  $('.menuBrandBar').mouseout(function(){
+    $('.menuBrandBar').hide();
+  });
+  //「ブランドから探す」からマウスが離れるとブランド非表示
+  $('.num2').mouseout(function(){  
+    $('.menuBrandBar').hide();
+  });
+});

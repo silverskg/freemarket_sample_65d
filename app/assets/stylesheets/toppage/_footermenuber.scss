@@ -1,4 +1,4 @@
-  .menuCategoryBer{
+  .menuCategoryBar{
     background:white;
     width: 200px;
     list-style: none;
@@ -7,6 +7,7 @@
     top:90px;
     display:none;
     box-shadow: 2px 2px 4px gray;
+    z-index: 10;
   }
   
     .categoryMenu{
@@ -27,7 +28,7 @@
     }  
   
   
-  .menuBroundBer{
+  .menuBrandBar{
     background:white;
     width: 200px;
     list-style: none;
@@ -37,6 +38,7 @@
     display:none;
     box-shadow: 2px 2px 4px gray;
     top:90px;
+    z-index: 10;
   }
 
       
