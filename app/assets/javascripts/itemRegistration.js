@@ -1,107 +1,114 @@
 $(function() {
-  //アップロード画像枚数
-  let top_image_num = 0;
-  let bottom_image_num = 0;
-
   //アップロード画像の番号
-  let top_image_index = 0;
-  let bottom_image_index = 0;
+  let fileIndex = [1,2,3,4,5,6,7,8,9,10,11];
+
+  //アップロード画像枚数
+  let image_num = 0;
 
   //アップロードした画像のプレビュー(top)
-  $(document).on("change", ".imageUpField__hidden1", function(e){
+  $(document).on("change", ".imageUpField__hidden", function(e){
+    //HTML作成
+    const targetIndex = $(this).data("index");
     let file = e.target.files[0];
     let bolbUrl = window.URL.createObjectURL(file);
-    let url = `<div class="preview" id="top_image_preview-${top_image_index}">
+    let html = `<div class="preview" data-index="${targetIndex}">
                   <img src=${bolbUrl}>
                   <div class="preview__buttons">
-                    <div class="editBtnTop">編集</div>
-                    <div class="deleteBtnTop">削除</div>
+                    <div class="editBtn">編集</div>
+                    <div class="deleteBtn">削除</div>
                   </div>
                 </div>`;
+    
+    //file_fieldの大きさ変更
+    $(".imageUpField").removeClass(`image_num_${image_num}`);
+    $(".imageUpField").addClass(`image_num_${image_num + 1}`);
 
-    //画像UP処理(top)
-    if(top_image_num < 4) {
-      $(".previewField#pf1").append(url);
-      top_image_num += 1;
-      top_image_index += 1;
+    $(".dropText").removeClass(`num_${image_num}`);
+    $(".dropText").addClass(`num_${image_num + 1}`);
+
+    // 画像の追加
+    if ($(".preview").length) {
+      let num = $(".preview").length; 
+      let i = 0;
+      while(true) {
+        $(`div[data-index="${targetIndex - i}"].preview`).after(html);
+        if ($(".preview").length == num + 1) {
+          break;
+        }
+        i ++;
+      }
     }
-    else if(top_image_num == 4) {
-      $(".previewField#pf1").append(url);
-      top_image_num += 1;
-      top_image_index += 1;
-      $("#images1").hide();
-      $("#images2").show();
+    else {
+      $(".previewField").prepend(html);
+    }
+
+    image_num += 1;
+
+    //previewFieldの調整
+    if (image_num > 4 ) {
+      $(".previewField").height("364px");
     }
 
     //file_fieldの追加(top)
-    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden1" id="top_image_form-${top_image_index}" type="file">`;
-    $(".imageUpField#iuf1").append(fileFieldUrl);
-    $(".imageUpField#iuf1").children(":first").show();
+    let fileFieldHtml =`<input name="item[images_attributes][${fileIndex[0]}][image]" 
+                        class="imageUpField__hidden" 
+                        data-index="${fileIndex[0]}"
+                        type="file">`;
+    fileIndex.shift();
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
+    $(".imageUpField").append(fileFieldHtml);
+    $(".imageUpField").children(":last").show();
     $(this).hide();
   })
 
   //画像の削除(top)
-  $(document).on("click", ".deleteBtnTop", function(){
-    if(top_image_num == 5 && bottom_image_num == 0) {
-      $("#images1").show();
-      $("#images2").hide();
+  $(document).on("click", ".deleteBtn", function(){
+    const targetIndex = $(this).parent().parent().data("index");
+
+    //DBに保存されている画像を消す場合
+    if ($(`input[data-index="${targetIndex}"].imageUpField__hidden`).hasClass("edit")){
+      fileIndex.push(fileIndex[fileIndex.length - 1] + 1);
     }
 
-    if(top_image_num == 5 && bottom_image_num > 0) {
-      $("#images1").show();
+    //画像とfile_fieldの削除
+    $(`input[data-index="${targetIndex}"].imageUpField__hidden`).remove();
+    $(this).parent().parent().remove();
+
+    //file_fieldの大きさ変更
+    $(".imageUpField").removeClass(`image_num_${image_num}`);
+    $(".imageUpField").addClass(`image_num_${image_num - 1}`);
+
+    $(".dropText").removeClass(`num_${image_num}`);
+    $(".dropText").addClass(`num_${image_num - 1}`);
+
+    image_num -= 1;
+
+    //DBに保存されている画像をDBから削除するフラグをつける
+    const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden_destroy`);
+    if (hiddenCheck) {
+      hiddenCheck.prop("checked", true);
     }
-      //プレビューとフォームを削除(top)
-      let preview = $(this).parent().parent();
-      let index = preview.attr("id").split("-")[1];
-      $(`#top_image_form-${index}`).remove();
-      preview.remove();
-      top_image_num -= 1;
+
+    //previewFieldの調整
+    if (image_num < 5 ) {
+      $(".previewField").height("162px");
+    }
   })
 
-  //アップロードした画像のプレビュー(bottom)
-  $(document).on("change", ".imageUpField__hidden2", function(e){
-    let file = e.target.files[0];
-    let bolbUrl = window.URL.createObjectURL(file);
-    let url = `<div class="preview" id="bottom_image_preview-${bottom_image_index}">
-                  <img src=${bolbUrl}>
-                  <div class="preview__buttons">
-                    <div class="editBtnBottom">編集</div>
-                    <div class="deleteBtnBottom">削除</div>
-                  </div>
-                </div>`;
+  //ページ遷移時にimageがすでにある状態の場合
+  $(document).on('turbolinks:load', function() {
+    if ($(".preview").length) {
+      let lastIndex = ($(".preview").last().data('index'));
+      fileIndex.splice(0, lastIndex + 1);
+      image_num = (lastIndex + 1);
 
-    //画像UP処理(bottom)
-    if(bottom_image_num < 4) {
-      $(".previewField#pf2").append(url);
-      bottom_image_num += 1;
-      bottom_image_index += 1;
+      //previewFieldの調整
+      if (image_num > 4 ) {
+        $(".previewField").height("364px");
+      }
     }
-    else if(bottom_image_num == 4) {
-      $(".previewField#pf2").append(url);
-      bottom_image_num += 1;
-      bottom_image_index += 1;
-      $("#images2").hide();
-    }
-
-    //file_fieldの追加(bottom)
-    let fileFieldUrl =`<input multiple="multiple" name="images[image][]" class="imageUpField__hidden2" id="bottom_image_form-${bottom_image_index}" type="file">`;
-    $(".imageUpField#iuf2").append(fileFieldUrl);
-    $(".imageUpField#iuf2").children(":first").show();
-    $(this).hide();
   })
 
-  //画像の削除(bottom)
-  $(document).on("click", ".deleteBtnBottom", function(){
-    if(bottom_image_num == 5) {
-      $("#images2").show();
-    }
-      //プレビューとフォームを削除(bottom)
-      let preview = $(this).parent().parent();
-      let index = preview.attr("id").split("-")[1];
-      $(`#bottom_image_form-${index}`).remove();
-      preview.remove();
-      bottom_image_num -= 1;
-  })
 });
 
 $(document).on('turbolinks:load', function() {

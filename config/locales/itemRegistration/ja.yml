@@ -14,10 +14,15 @@ ja:
         price: ""
         category_id: ""
         brand_id: ""
-        include_image: ""
+        images: ""
   views:
     pagination:
       first: "<<"
       last: ">>"
       previous: "<"
       next: ">"
+
+  helpers:
+    submit:
+      create: "出品する"
+      update: "更新する"
