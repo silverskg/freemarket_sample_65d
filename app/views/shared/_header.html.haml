@@ -1,13 +1,13 @@
 .topheader
   .main
     .main__top
-      %a(href= root_path)
+      = link_to root_path do
         = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
       %label
         .main__top--search
           %input.card-nomber-form{placeholder:"何かお探しですか？"}
           .icon
-            %a(href="#")
+            = link_to "" do
               %i.fa.fa-search
     .main__bottom
       %ul 
