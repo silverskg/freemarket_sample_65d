@@ -22,6 +22,7 @@ describe Item do
                     brand_id: brand.id,
                     user_id: user.id,
                     name: "０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９")
+      item.images.new
       expect(item).to be_valid
     end
 
@@ -54,6 +55,7 @@ describe Item do
                     user_id: user.id,
                     body: "０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９０１２３４５６７８９"
                   )
+      item.images.new
       expect(item).to be_valid
     end
 
@@ -99,7 +101,21 @@ describe Item do
       expect(item.errors[:price]).to include("300以上9999999以下で入力してください")
     end
 
-    it "価格が300以上で10000000以下の場合に登録できること" do
+    it "価格が300以上の場合に登録できること" do
+      category = create(:category)
+      brand = create(:brand)
+      user = create(:user)
+      item = build(:item,
+                    category_id: category.id,
+                    brand_id: brand.id,
+                    user_id: user.id,
+                    price: 300
+                    )
+      item.images.new
+      expect(item).to be_valid
+    end
+
+    it "価格が10000000以下の場合に登録できること" do
       category = create(:category)
       brand = create(:brand)
       user = create(:user)
@@ -109,6 +125,7 @@ describe Item do
                     user_id: user.id,
                     price: 9999999
                     )
+      item.images.new
       expect(item).to be_valid
     end
 
@@ -131,9 +148,9 @@ describe Item do
     end
 
     it "画像がない場合のバリデーション" do
-      item = build(:item, include_image: "")
+      item = build(:item)
       item.valid?
-      expect(item.errors[:include_image]).to include("画像がありません")
+      expect(item.errors[:images]).to include("画像がありません")
     end
 
     it "全てのパラメーターがある状態に登録できること" do
@@ -145,6 +162,7 @@ describe Item do
                     brand_id: brand.id,
                     user_id: user.id,
                     )
+      item.images.new
       expect(item).to be_valid
     end
 

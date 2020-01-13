@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   //小さい画像をクリックされた時のアクション
   $('.picsmall1').click(function(){
 

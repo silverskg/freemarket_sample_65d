@@ -1,0 +1,107 @@
+.sellItemsAll {
+  width: 700px;
+  height: auto;
+  color: #333333;
+  .sellTabHeader {
+    height: 72px;
+    padding: 0px 16px;
+    background-color: #fafafa;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 72px;
+    }
+  .sellTabs {
+    padding: 0px;
+    display: flex;
+    .tab {
+      width: calc(700px / 3);
+      height: 74px;
+      background-color: rgb(221, 220, 220);
+      padding: 0px 16px;
+      color: #333333;
+      font-weight: bold;
+      line-height: 74px;
+      text-align: center;
+      text-decoration: none;
+      &--white {
+        background-color: white;
+      }
+    }
+  }
+  .linkToEachItems {
+    .links {
+      text-decoration: none;
+      .itemLink {
+        width: 700px;
+        height: 83px;
+        background-color: white;
+        text-decoration: none;
+        padding: 16px;
+        display: flex;
+        position: relative;
+        .information {
+          margin: 0 40px 0 68px;
+          .title {
+            font-size: 14px;
+            color: #333333;
+          }
+          .data {
+            display: flex;
+            .fa {
+              vertical-align: middle;
+              color: #ccc;
+              font-size: 16px;
+              line-height: 40px;
+            }
+            text {
+              color: #888888;
+              margin-left: 5px;
+              margin-right: 5px;
+              font-size: 16px;
+              line-height: 40px;
+            }
+            p {
+              width: 48px;
+              height: 22px;
+              border-radius: 2px;
+              background-color: #0099E8;
+              padding: 5px 6px;
+              margin-top: 8px;
+              color: white;
+              font-size: 12px;
+              font-weight: bold;
+              line-height: 12px;
+              margin-left: 6px;
+            }
+          }
+        }
+        .arrow {
+          .fas {
+            position: absolute;
+            top: 40%;
+            right: 16px;
+            color: #333333;
+          }
+        }
+      }
+    }
+  }
+  .mypageHistoryButtons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    .btn {
+      width: 42px;
+      height: 42px;
+      display: inline-block;
+      background-color: white;
+      border: 1px #ccc solid;
+      border-radius: 2px;
+      .fas {
+        line-height: 42px;
+        margin-left: 15px;
+        color: #333333;
+      }
+    }
+  }
+}

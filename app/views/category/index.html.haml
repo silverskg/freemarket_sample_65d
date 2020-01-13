@@ -2,18 +2,20 @@
   .topheader
     .main
       .main__top
-        %a(href= root_path)
+        = link_to do
           = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
         %label
           .main__top--search
             %input.card-nomber-form{placeholder:"何かお探しですか？"}
             .icon
-              %a(href="#")
+              = link_to do
                 %i.fa.fa-search
+
+      -#  開発やりやすくする為、仮のフッター
       .main__bottom
         %ul 
           %li.num1
-            = link_to do
+            = link_to category_index_path do
               = icon('fas', 'bars')
               カテゴリーから探す
           %li.num2 
@@ -33,95 +35,21 @@
               = icon('fas', 'check')
               やることリスト
           %li.num6 
-            = link_to do
+            = link_to my_page_index_path do
               = icon('far', 'circle')
-              マイページ    
+              マイページ 
+
 %nav.bread
   %ul.bread__list
-.editProfileMain
-  = render 'shared/side_bar'
-  .l-content
-    %section.l-content__mypage-user-icon
-      = link_to "profile" do
-        %figure
-          = image_tag "my_page/サラリーマン.svg"
-        %h2.bold ユーザー
-        .mypage-number
-          .mypage-number__evaluation
-            評価 0
-          .mypage-number__items
-            出品数 0
-            
-    %section.l-content__mypage-tab-container-notification-todo
-      %ul.mypage-tabs
-        %li.active 
-          %h3
-            お知らせ
-        %li
-          %h3
-            やることリスト
 
-      %ul.tabs-content
-        %li.tabs-content-notification
-          %figure.logo_red
-            = image_tag "my_page/logo_red.svg"
-          .tabs-content-notification__body
-            ログイン通知るるるるるるるる
-          %time.time_field
-            %i.far.fa-clock
-          %i.fa.fa-chevron-right
-        %li.tabs-content-notification
-          %figure.logo_red
-            = image_tag "my_page/logo_red.svg"
-          .tabs-content-notification__body
-            ログイン通知るるるるるるるる
-          %time.time_field
-            %i.far.fa-clock
-          %i.fa.fa-chevron-right
-        %li.tabs-content-notification
-          %figure.logo_red
-            = image_tag "my_page/logo_red.svg"
-          .tabs-content-notification__body
-            ログイン通知るるるるるるるる
-          %time.time_field
-            %i.far.fa-clock
-          %i.fa.fa-chevron-right
-        %li.tabs-content-notification
-          %figure.logo_red
-            = image_tag "my_page/logo_red.svg"
-          .tabs-content-notification__body
-            ログイン通知るるるるるるるる
-          %time.time_field
-            %i.far.fa-clock
-          %i.fa.fa-chevron-right
-        %li.tabs-content-notification
-          %figure.logo_red
-            = image_tag "my_page/logo_red.svg"
-          .tabs-content-notification__body
-            ログイン通知るるるるるるるる
-          %time.time_field
-            %i.far.fa-clock
-          %i.fa.fa-chevron-right
-    .tabs-content-notification__see 
-      .tabs-content-notification__see_buttom
-        一覧を見る
+%body
+  .categoryIndexTitle
+    カテゴリー一覧
+  .categoryButtonList
+    - @categories.each do |category|
+      = link_to category.name, category_path(category.id), class: "categoryLink"
 
-    %section.l-content__purchase-box
-      .purchase-tab-head
-        購入した商品
-      %ul.purchase-tabs
-        %li.present
-          %h3
-            取引中
-        %li
-          %h3
-            過去の取引
-      .box-content
-        .box-content-block
-          .transaction
-            %figure
-              = image_tag "my_page/logo_gray.svg"
-            取引中の商品がありません
+
 %footer
   .images
     = image_tag 'toppage/free-image-1.jpg', height: '260px', width: '100%', class: 'bottom-photo'
@@ -212,3 +140,11 @@
       .about__bottom--name
         %p.name
           @Fmarket
+        -#  出品ボタン      
+= link_to new_item_path, class: "logo-btn" do      
+  .exhibition-btn
+    .fixed_btn
+      %span.btn-name
+      出品
+      %p.camera-icon
+        = icon('fas', 'camera')
