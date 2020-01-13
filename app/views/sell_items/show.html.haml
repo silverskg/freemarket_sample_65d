@@ -1,6 +1,11 @@
 %header
   = render 'shared/header'
 
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :sellItemShow
+    = render "layouts/breadcrumbs"
+
 .itemInfo
   .main1
     .main1__product-name

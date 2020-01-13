@@ -1,5 +1,10 @@
 %header
   = render 'shared/header'
+  
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :payment
+    = render "layouts/breadcrumbs"
 
 .cardRegisterMain
   = render 'shared/side_bar'

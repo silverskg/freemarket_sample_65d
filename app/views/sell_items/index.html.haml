@@ -1,6 +1,11 @@
 %header
   = render 'shared/header'
 
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :sellItem
+    = render "layouts/breadcrumbs"
+
 .editProfileMain
   = render 'shared/side_bar'
   .sellItemsAll

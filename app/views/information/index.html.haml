@@ -1,6 +1,11 @@
 %header
   = render 'shared/header'
 
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :profileInformation
+    = render "layouts/breadcrumbs"
+
 .InformationMain
   = render 'shared/side_bar' 
   .mainbox

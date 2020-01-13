@@ -1,6 +1,11 @@
 %header
   = render 'shared/header'
 
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :categories
+    = render "layouts/breadcrumbs"
+
 %body
   .categoryIndexTitle
     カテゴリー一覧

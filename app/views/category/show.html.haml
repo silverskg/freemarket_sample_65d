@@ -1,6 +1,11 @@
 %header
   = render 'shared/header'
 
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :category
+    = render "layouts/breadcrumbs"
+
 %body
   .categoriesList
     -# 中カテゴリーのテーブルがないため直打ち
