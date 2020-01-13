@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      item:
+    attributes:
+      item:
+        name: ""
+        status: ""
+        body: ""
+        deliver_fee: ""
+        delivery_date: ""
+        how_to_deliver: ""
+        region: ""
+        price: ""
+        category_id: ""
+        brand_id: ""
+        images: ""
+  views:
+    pagination:
+      first: "<<"
+      last: ">>"
+      previous: "<"
+      next: ">"
+
+  helpers:
+    submit:
+      create: "出品する"
+      update: "更新する"

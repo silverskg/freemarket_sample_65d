@@ -1,20 +1,24 @@
-body{
+.registration6body{
   background-color: #f5f5f5;
+  height: 100vh;
   }
   
-.header{
+.registration6header{
   text-align: center; 
   width: 100%;
   height: 128px;
   display: flex;
-  left: auto;
-  .logo{
-    margin-top: 40px;
-    margin-left: 340px;
-    margin-right: 60px;
+  padding:40px 0;
+  
+  .progress-bar{
+    text-align: center;
+    margin: auto;
+    display:flex;
   }
-  .clearfix{
-    margin-top: 38px;
+
+  .logo{
+    margin: 0 40px 0 0;
+    text-align: center;
   }
   
   //赤丸のクラス名を入力
@@ -47,7 +51,7 @@ body{
   .grayline5 {
     display: block;
     content: '';
-    width: 444px;
+    width: 434px;
     border-bottom: solid 3px #ccc;
     margin-top: -8px;
     margin-left: 30px;
@@ -55,7 +59,7 @@ body{
   
   //赤ラインのwidthの値を変更
   .redline5 {
-  width: 444px;
+  width: 434px;
   display: block;
   content: '';
   border-bottom: solid 3px #ea352d;
@@ -73,6 +77,7 @@ body{
   background-color: #ffffff;
   text-align: center; 
   margin: auto;
+  margin-bottom: 60px;
   &__title{
     font-size: 22px;
     padding: 32px;

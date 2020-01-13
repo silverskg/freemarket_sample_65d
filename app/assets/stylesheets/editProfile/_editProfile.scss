@@ -1,0 +1,97 @@
+.editProfileHeader {
+  width: 100%;
+  height: 149px;
+  background-color: white;
+}
+
+.editProfileMain {
+  margin: 40px 193px 0px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  .sideBar {
+    width: 280px;
+    height: 1252px;
+    margin-right: 40px;
+    background-color: white;
+    box-sizing: border-box;
+  }
+  .mainContainer {
+    width: 700px;
+    height: 568px;
+    background-color: white;
+    color: #333333;
+    box-sizing: border-box;
+    .profileTitle {
+      background-color: white;
+      padding: 8px 24px;
+      font-size: 24px;
+      text-align: center;
+      font-weight: 400;
+    }
+    .editProfileForm {
+      .userProfile {
+        width: 700px;
+        height: 156px;
+        background-color: white;
+        padding: 72px 16px 24px;
+        display: flex;
+        background-image: url(editProfileBackground.jpg);
+        .iconAndName {
+          margin: 0 auto;
+          display: flex;
+          background-color: transparent;
+          .userIcon {
+            background-color: transparent;
+            .editUserIcon {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+              background-color: white;
+            }
+          }
+          .userName {
+            background-color: transparent;
+            .editUserName {
+              width: 220px;
+              height: 48px;
+              padding: 10px 16px 8px;
+              margin: 6px 0px 6px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              line-height: 1.5;
+              font-size: 16px;
+              background-color: white;
+            }  
+          }
+        }
+      }
+      .editBody {
+        width: 700px;
+        height: 362px;
+        background-color: white;
+        padding: 40px 16px;
+        font-size: 16px;
+        box-sizing: border-box;
+        .editBodyTextarea {
+          width: 668px;
+          height: 216px;
+          padding: 10px;
+          background-color: white;
+          line-height: 1.5;
+          border: 1px solid #ccc;
+          font-weight: 100;
+        }
+        .editButton {
+          width: 668px;
+          height: 50px;
+          background-color: #EA352D;
+          color: white;
+          margin-top: 16px;
+          font-weight: 100;
+          border-style: none;
+        }
+      }
+    }
+  }
+}
