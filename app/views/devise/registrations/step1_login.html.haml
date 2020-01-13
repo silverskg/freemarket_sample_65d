@@ -6,8 +6,7 @@
   .newUsermain__title
     新規会員登録
   .newUsermain__contents
-    -# = form_for @user, url: step2_signup_index_path do |f|
-    =link_to step2_registrations_path, class:'newUsermain__contents__mail' do
+    =link_to step2_user_form_registrations_path, class:'newUsermain__contents__mail' do
       = icon('far', 'envelope', class: 'mail')
       %p1 メールアドレスで登録する
     =link_to('#', class:'newUsermain__contents__facebook') do

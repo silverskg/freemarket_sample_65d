@@ -25,7 +25,7 @@
   .certificatePhoneNumber
     電話番号認証
   .certificationForm
-    = form_for @user, url: step5_registrations_path do |f|
+    = form_for @user, url: step5_address_form_registrations_path do |f|
     
       .formPhoneNumber
         = f.fields_for :address do |a|

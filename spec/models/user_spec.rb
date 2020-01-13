@@ -1,6 +1,6 @@
 require 'rails_helper'
 describe User do
-  describe '#step2' 
+  describe '#step2_user_form' 
   # 1. nicknameとemail、passwordが存在すれば登録できること
     it "is valid with a nickname, email, password "  do
      user = build(:user)

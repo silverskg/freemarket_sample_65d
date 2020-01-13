@@ -1,16 +1,16 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :validates_step2, only: [:step3]
-  before_action :validates_step5, only: [:step6] 
+  before_action :validates_step5, only: [:step6_payjp] 
   
   def index
   end
 
 
-  def step1
+  def step1_login
     @user = User.new
   end
 
-  def step2
+  def step2_user_form
     @user = User.new # 新規インスタンス作成
   end
   
@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:last_name_zenkaku] = user_params[:last_name_zenkaku]
     session[:first_name_kana]  = user_params[:first_name_kana]
     session[:last_name_kana] = user_params[:last_name_kana]
-    session[:birthday] = birthday_params[:year] + birthday_params[:month] + birthday_params[:day]
+    session[:birthday] = params[:year] + params[:month] + params[:day]
     @user = User.new(
       nickname:             session[:nickname],
       email:                session[:email],
@@ -33,7 +33,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
       last_name_kana:       session[:last_name_kana],
       birthday:             session[:birthday]
     )
-   render :step2 unless @user.valid?
+    # binding.pry
+   render :step2_user_form unless @user.valid?
     @user.build_address
   end
 
@@ -45,7 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address
   end
 
-  def step5
+  def step5_address_form
     @address = Address.new
   end
 
@@ -72,15 +73,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
       build_name:                  session[:build_name],
       phone_number:                session[:phone_number]
     )
-    render :step5 unless @address.valid?
+    render :step5_address_form unless @address.valid?
   end
 
-  def step6
+  def step6_payjp
     @user = User.new
     @user.build_address
   end
 
-  def step7
+  def step7_done
     @user = User.new
   end
 
@@ -97,7 +98,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       birthday: session[:birthday],
     )
 
-    if @user.save
+    @user.save
       session[:id] = @user.id
       @address = Address.create(
        first_name_zenkaku:          session[:first_name_zenkaku],
@@ -113,15 +114,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
        user_id:           session[:id]
       )
       redirect_to  step7_registrations_path
-    else
-      render  :step1
-    end
   end
 
 
 
   # ストロングパラメータの許可
-  private
+  print
   def user_params
     params.require(:user).permit(
       :nickname, 
@@ -152,12 +150,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :first_name_kana,
       :last_name_kana
     )
-  end
-  
-  protected
-
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
   end
   
 end
