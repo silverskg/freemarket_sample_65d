@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   #トップページ
   root to: "items#index"
-
+  
   #商品登録画面
   resources :items, only: [:index, :new, :create, :edit, :update, :show]
 
