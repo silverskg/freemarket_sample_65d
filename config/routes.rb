@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   root to: "items#index"
 
   #商品登録画面
-  resources :items, only: [:index, :new, :create, :edit, :update, :show]
+  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
+    collection do
+      get 'search'
+    end
 
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示
