@@ -40,9 +40,15 @@ Rails.application.routes.draw do
   resources :card_register2, only: :index
   resources :card_register3, only: :index
 
+
+  #フッターメニューバー
+  resources :footermenu, only: :index
+
+
   # 出品商品確認ページ
   resources :sell_items, only: [:index, :show, :destroy]
 
   # カテゴリー
   resources :category, only: [:index, :show]
+
 end
