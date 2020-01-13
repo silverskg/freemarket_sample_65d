@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # ログイン画面表示
+  resources :login, only: :index
+
   devise_for :users, controllers: {
     registrations:  'users/registrations'
   }
