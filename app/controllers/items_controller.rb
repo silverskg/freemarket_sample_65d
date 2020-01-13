@@ -1,7 +1,5 @@
 class ItemsController < ApplicationController
-  
-  before_action :set_item, only: [:show]
-
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -9,31 +7,23 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new 
-    #ネストしたテーブルを作成
-    @item.images.build
+    @item.images.new
   end
 
   def create
     @item = Item.new(item_params)
-    #imageがアップされている場合
-    if params[:images]
-      @item.include_image = "include"
-  end
-
-  def show
-  end
-    
-
     if @item.save
-      #file_fieldのparams(name属性)に含まれる複数のimageを分解
-      params[:images][:image].each do |image|
-        #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
-        @item.images.create(image: image, item_id: @item.id)
-      end
       redirect_to root_path
     else
-      @item.images.build
       render :new
+    end
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to sell_item_path(@item)
+    else
+      render :edit
     end
   end
   
@@ -51,8 +41,8 @@ class ItemsController < ApplicationController
       :price, 
       :category_id, 
       :brand_id,
-      #field_forで設定した値+_attributesで受け取る。複数の為{file_field属性名: []}で受け取る。
-      images_attributes: {image: []}
+      #field_forで設定した値+_attributesで受け取る。
+      images_attributes: [:image, :_destroy, :id]
     ).merge(user_id: 1)
   end
 

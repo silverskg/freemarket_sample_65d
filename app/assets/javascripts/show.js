@@ -1,6 +1,8 @@
 $(document).on('turbolinks:load', function() {
+
   //小さい画像にマウス乗った時に発火
   $('.picsmall1').mouseover(function(){
+
 
     //下で追加する情報をリセット
     $('.picsmall1').removeAttr('id','Choice');

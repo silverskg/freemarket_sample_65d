@@ -1,0 +1,19 @@
+%header
+  = render 'shared/header'
+
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :categories
+    = render "layouts/breadcrumbs"
+
+%body
+  .categoryIndexTitle
+    カテゴリー一覧
+  .categoryButtonList
+    - @categories.each do |category|
+      = link_to category.name, category_path(category.id), class: "categoryLink"
+
+
+%footer
+  = render 'shared/footer'
+= render 'shared/exhibition-btn'

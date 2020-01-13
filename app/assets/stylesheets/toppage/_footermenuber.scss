@@ -1,0 +1,44 @@
+  .menuCategoryBar{
+    background:white;
+    width: 200px;
+    list-style: none;
+    font-size:13px;  
+    position: absolute;
+    top:90px;
+    display:none;
+    box-shadow: 2px 2px 4px gray;
+    z-index: 10;
+  }
+  
+    .categoryMenu{
+      color:black;
+      text-decoration: none;
+      height: 40px;
+      display: block;
+      padding-left: 8px;
+      padding-top: 11px;  
+    }
+  
+    .categoryMenu:hover{
+      color:white;
+      text-decoration: none;
+      background:#ea352d;
+      display: block;
+      height: 40px;
+    }  
+  
+  
+  .menuBrandBar{
+    background:white;
+    width: 200px;
+    list-style: none;
+    font-size:13px;  
+    position: absolute;
+    left:30%;
+    display:none;
+    box-shadow: 2px 2px 4px gray;
+    top:90px;
+    z-index: 10;
+  }
+
+      
