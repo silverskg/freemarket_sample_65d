@@ -1,14 +1,14 @@
 FactoryBot.define do
 
   factory :address do
-    first_name_zenkaku    {"山田"}
-    last_name_zenkaku     {"太郎"}
-    first_name_kana       {"ヤマダ"}
-    last_name_kana        {"タロウ"}
-    post_number           {"1234567"}
-    prefectures           {"1"}
-    city                  {"広島県広島市"}
-    addresses_banchi      {"1111"}
+    first_name_zenkaku    {Faker::Name.first_name}
+    last_name_zenkaku     {Faker::Name.last_name}
+    first_name_kana       {Gimei.first.katakana}
+    last_name_kana        {Gimei.last.katakana}
+    post_number           {Faker::Address.zip_code}
+    prefectures           {Faker::Number.between(from: 0, to: 48)}
+    city                  { Faker::Address.city}
+    addresses_banchi      {Faker::Address.building_number}
   
   end
 
