@@ -23,9 +23,6 @@ Rails.application.routes.draw do
   resources :registration5, only: :index
   resources :registration6, only: :index
 
-  # 商品詳細ページ
-  resources :product_details, only: :index
-
   #購入内容確認ページ
   resources :product_confirmation, only: :index
 
