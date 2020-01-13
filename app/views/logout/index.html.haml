@@ -38,6 +38,8 @@
               マイページ    
 %nav.bread
   %ul.bread__list
+    - breadcrumb :logout
+    = render "layouts/breadcrumbs"
 
 .logoutMain
   = render 'shared/side_bar'
