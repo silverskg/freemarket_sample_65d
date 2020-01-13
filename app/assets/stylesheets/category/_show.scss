@@ -54,52 +54,55 @@ body {
     width: 1020px;
     height: auto;
     margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    overflow: hidden;
-    .itemBox {
-      width: 188px;
-      height: 298px;
-      margin-bottom: 20px;
-      .box {
-        display: block;
-      }
-      .itemBoxDescription {
+    .itemBoxContent {
+      margin: 0px -20px -20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      .itemBox {
         width: 188px;
-        height: 110px;
-        background-color: white;
-        padding: 16px;
-        .name {
-          @include text();
-          height: 3em;
-          overflow: hidden;
-          display: inline-block;
-          position: relative;
-          &:after {
-            display: block;
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 50%;
-            height: 1.5em;
-            background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
-          }
+        height: 298px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        .box {
+          display: block;
         }
-        &__bottom {
-          display: flex;
-          justify-content: space-between;
-          .price {
+        .itemBoxDescription {
+          width: 188px;
+          height: 110px;
+          background-color: white;
+          padding: 16px;
+          .name {
             @include text();
-            font-weight: bold;
+            height: 3em;
+            overflow: hidden;
+            display: inline-block;
+            position: relative;
+            &:after {
+              display: block;
+              content: '';
+              position: absolute;
+              bottom: 0;
+              right: 0;
+              width: 50%;
+              height: 1.5em;
+              background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+            }
           }
-          .like {
-            @include text();
+          &__bottom {
             display: flex;
-            .fas {
-              line-height: 1.5;
-              color: #cccccc;
+            justify-content: space-between;
+            .price {
+              @include text();
+              font-weight: bold;
+            }
+            .like {
+              @include text();
+              display: flex;
+              .fas {
+                line-height: 1.5;
+                color: #cccccc;
+              }
             }
           }
         }
