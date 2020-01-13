@@ -1,6 +1,6 @@
-$(function() {
-  //小さい画像をクリックされた時のアクション
-  $('.picsmall1').click(function(){
+$(document).on('turbolinks:load', function() {
+  //小さい画像にマウス乗った時に発火
+  $('.picsmall1').mouseover(function(){
 
     //下で追加する情報をリセット
     $('.picsmall1').removeAttr('id','Choice');
@@ -11,7 +11,7 @@ $(function() {
   
     //大きい画像が表示してる所のURLを変更
     $(".picmain").attr('src',dataUrl);
-  
+
     //idを追加    
     $(this).attr('id', 'Choice');
 
