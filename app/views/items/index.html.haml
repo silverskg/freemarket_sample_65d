@@ -1,15 +1,107 @@
-%header
-  .topheader
-    .main
-      .main__top
-        = link_to do
-          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
-        %label
-          .main__top--search
-            %input.card-nomber-form{placeholder:"何かお探しですか？"}
-            .icon
+-# header
+%html
+  %header
+    .topheader
+      .main
+        .main__top
+          %a(href="#")
+            = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+          %label
+            .main__top--search
+              %input.card-nomber-form{placeholder:"何かお探しですか？"}
+              .icon
+                %a(href="#")
+                  %i.fa.fa-search
+        .main__bottom
+          %ul 
+            %li.num1{id: "menuber"}
               = link_to do
-                %i.fa.fa-search
+                = icon('fas', 'bars')
+                カテゴリーから探す
+            %li.num2 
+              = link_to do
+                = icon('fas', 'tag')
+                ブランドから探す
+            %li.num3 
+              = link_to do
+                = icon('far', 'heart')
+                いいね！ 一覧
+            %li.num4 
+              = link_to do
+                = icon('far', 'bell')
+                お知らせ
+            %li.num5 
+              = link_to do
+                = icon('fas', 'check')
+                やることリスト
+            %li.num6 
+              = link_to do
+                = icon('far', 'circle')
+                マイページ    
+        .menuCategoryBer{id: "menuber"}
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              レディース 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              メンズ 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ベビー・キッズ 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              インテリア・住まい・小物 
+          %li
+            =link_to('#', class: 'categoryMenu') do
+              本・音楽・ゲーム 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              おもちゃ・ホビー・グッズ 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              コスメ・香水・美容 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              家電・スマホ・カメラ 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              スポーツ・レジャー 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ハンドメイド 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              チケット 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              自動車・オートバイ 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              その他 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              カテゴリー一覧 
+        .menuBroundBer
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              シャネル
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ナイキ
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ルイ ヴィトン
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              シュプリーム
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              アディダス
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ブランド一覧
+
+
 
       -#  開発やりやすくする為、仮のフッター
       .main__bottom
