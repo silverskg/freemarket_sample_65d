@@ -1,43 +1,5 @@
-%html
-  %header
-    .topheader
-      .main
-        .main__top
-          %a(href="#")
-            = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
-          %label
-            .main__top--search
-              %input.card-nomber-form{placeholder:"何かお探しですか？"}
-              .icon
-                %a(href="#")
-                  %i.fa.fa-search
-        .main__bottom
-          %ul 
-            %li.num1
-              = link_to do
-                = icon('fas', 'bars')
-                カテゴリーから探す
-            %li.num2 
-              = link_to do
-                = icon('fas', 'tag')
-                ブランドから探す
-            %li.num3 
-              = link_to do
-                = icon('far', 'heart')
-                いいね！ 一覧
-            %li.num4 
-              = link_to do
-                = icon('far', 'bell')
-                お知らせ
-            %li.num5 
-              = link_to do
-                = icon('fas', 'check')
-                やることリスト
-            %li.num6 
-              = link_to do
-                = icon('far', 'circle')
-                マイページ    
-
+%header
+  = render 'shared/header'
 
 .confirmationBody
   .footer1
