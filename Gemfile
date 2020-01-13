@@ -44,6 +44,11 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -77,10 +82,16 @@ gem "font-awesome-sass"
 gem 'active_hash'
 gem 'devise'
 gem 'omniauth'
+
 gem 'pry-rails'
-gem 'rails-i18n'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 group :test do
   gem 'faker', "~> 2.8"
 end
+
+gem 'jquery-rails'
+gem 'erb2haml'
+gem 'rails-i18n'
+gem 'kaminari'
+

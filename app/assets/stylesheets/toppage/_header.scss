@@ -1,12 +1,12 @@
-.header{
+.topheader{
   background-color: rgb(255, 255, 255);
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-  position: relative;
   z-index: 3;
+  
 
   .main{
     width: 1020px;
-    margin-left: 200px;
+    margin: auto;
     height: 100px;
     padding: 0px;
 
@@ -15,20 +15,21 @@
       height: 50%;
       padding-top: 10px;
       display: flex;
+      background-color: rgb(255, 255, 255);
     }
 
     .free-logo{
       margin-top: -43px;
     }
 
-      &--search{
+      .main__top--search{
         position: relative;
       }
 
     .icon{
       position: absolute;
-      right: 200px;
-      top: 22px;
+      top: 13px;
+      right: 20px;
     }
 
     .fa-search:before {
@@ -43,7 +44,7 @@
     border-radius: 4px;
     padding: 0px 50px 0px 10px;
     height: 40px;
-    width: 875px;
+    width: 830px;
     margin-left: 20px;
     outline: none;
   }
@@ -52,6 +53,10 @@
       width: 104%;
       height: 50%;
       padding-top: 10px;
+      background-color: rgb(255, 255, 255);
+
+
+    
     }
 
     ul { 	
@@ -60,23 +65,31 @@
       line-height: 36px;
 
     .num2{
-      margin-left: 47px;
+      margin-left: 3%;
     }
 
     .num3{
-      margin-left: 200px;
+      margin-left: 20%;
     }
 
     .num4{
-      margin-left: 55px;     
+      margin-left: 5%;     
     }
 
     .num5{
-      margin-left: 50px;
+      margin-left: 4%;
     }
 
     .num6{
-      margin-left: 59px;
+      margin-left: 3%;
+    }
+
+    .num7{
+      margin-left: 50%;
+    }
+
+    .num8{
+      margin-left: 1%;
     }
 
     .fa-bars:before {
@@ -101,6 +114,31 @@
       font-weight: 600;
       color: black;
     }
+    button.button8 {
+      background-color: rgb(234, 53, 45);
+      color: rgb(255, 255, 255);
+      display: block;
+      font-size: 14px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: rgb(234, 53, 45);
+      border-image: initial;
+      border-radius: 4px;
+      padding: 8px 10px;
+  }
+  button.button9 {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 149, 238);
+    display: block;
+    font-size: 14px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(0, 149, 238);
+    border-image: initial;
+    border-radius: 4px;
+    padding: 8px 10px;
+    transition: all 0.3s ease-out 0s;
+}
   }
 }
 }

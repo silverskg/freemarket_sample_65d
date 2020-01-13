@@ -1,4 +1,75 @@
 class ItemsController < ApplicationController
+  
+  before_action :set_item, only: [:show]
+
+
   def index
+    @items = Item.all.order(id: "DESC").includes(:images)
   end
+
+  def new
+    @item = Item.new 
+    #ネストしたテーブルを作成
+    @item.images.build
+  end
+
+  def create
+    @item = Item.new(item_params)
+    #imageがアップされている場合
+    if params[:images]
+      @item.include_image = "include"
+  end
+
+  def show
+  end
+    
+
+    if @item.save
+      #file_fieldのparams(name属性)に含まれる複数のimageを分解
+      params[:images][:image].each do |image|
+        #アソシエーションを使い、itemテーブルを通してimageテーブルに作成
+        @item.images.create(image: image, item_id: @item.id)
+      end
+      redirect_to root_path
+    else
+      @item.images.build
+      render :new
+    end
+  end
+  
+  private
+  # ユーザーidは、ユーザー登録後に実装(現在は仮で1を挿入)
+  def item_params
+    params.require(:item).permit(
+      :name, 
+      :status, 
+      :body, 
+      :deliver_fee, 
+      :delivery_date, 
+      :how_to_deliver, 
+      :region, 
+      :price, 
+      :category_id, 
+      :brand_id,
+      #field_forで設定した値+_attributesで受け取る。複数の為{file_field属性名: []}で受け取る。
+      images_attributes: {image: []}
+    ).merge(user_id: 1)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
+
+    @user = User.find(@item.user_id)
+    @category = Category.find(@item.category_id)
+    @brand = Brand.find(@item.brand_id)
+    @prefecture = Prefecture.find(@item.region)
+
+
+    @brand_items = Item.where(brand_id: @item.brand_id)
+    @user_items = Item.where(user_id: @item.user_id)
+    @images = Image.where(item_id:  @item.id)
+
+  end
+
+
 end

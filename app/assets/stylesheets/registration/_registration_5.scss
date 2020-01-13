@@ -1,20 +1,24 @@
 body{
   background-color: #f5f5f5;
+  //height: 100vh;
 }
 
-.header{
+.registration5header{
   text-align: center; 
   width: 100%;
   height: 128px;
   display:flex;
-  left: auto;
-  .logo{
-    margin-top: 40px;
-    margin-left: 340px;
-    margin-right: 60px;
+  padding:40px 0;
+
+  .progress-bar{
+    text-align: center;
+    margin: auto;
+    display:flex;
   }
-  .clearfix{
-    margin-top: 38px;
+
+  .logo{
+    margin: 0 40px 0 0;
+    text-align: center;
   }
   
  //赤丸のクラス名を入力
@@ -57,7 +61,7 @@ margin-right: 40px;
 .grayline4 {
   display: block;
   content: '';
-  width: 444px;
+  width: 434px;
   border-bottom: solid 3px #ccc;
   margin-top: -8px;
   margin-left: 30px;
@@ -75,8 +79,9 @@ margin-left: 30px;
 
 }
 
-.main{
+.paymentmain{
   background-color: #f5f5f5;
+  margin-bottom: 60px;
   .paymentHeader {
     @include centralContent();
     border-bottom: 1px solid #f1f1f1;
