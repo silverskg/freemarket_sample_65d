@@ -5,11 +5,7 @@ Rails.application.routes.draw do
   root to: "items#index"
 
   #商品登録画面
-  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
-    collection do
-      get 'search'
-    end
-  end
+  resources :items, only: [:index, :new, :create, :edit, :update, :show]
 
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示
@@ -52,4 +48,7 @@ Rails.application.routes.draw do
 
   # カテゴリー
   resources :category, only: [:index, :show]
+
+  # キーワード検索
+  resources :search, only: [:index]
 end

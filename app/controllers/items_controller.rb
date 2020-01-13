@@ -26,10 +26,6 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
-
-  def search
-    @items = Item.search(params[:keyword])
-  end
   
   private
   # ユーザーidは、ユーザー登録後に実装(現在は仮で1を挿入)
