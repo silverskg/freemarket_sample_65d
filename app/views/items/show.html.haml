@@ -138,7 +138,7 @@
     - if @item.how_to_deliver == 2
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
     .main1__text
-      = @item.body
+      = simple_format(@item.body)
     .main1__botom
       =link_to('#', class:'link2') do
         .like

@@ -112,7 +112,7 @@
       %p2 送料込み
     
     .main1__text
-      = @item.body
+      = simple_format(@item.body)
 
 .itemStatusChangeButtonsList
   = link_to "商品の編集", edit_item_path(@item.id), class: "editItemInfoButton"
