@@ -1,0 +1,25 @@
+ja:
+  activerecord:
+    models:
+      user: 
+    attributes:
+      user:
+        nickname: ニックネーム
+        email: メールアドレス
+        password: パスワード
+        first_name_zenkaku: 姓
+        last_name_zenkaku: 名
+        first_name_kana: 姓カナ
+        last_name_kana: 名カナ
+        birthday: 生年月日
+      address:
+        first_name_zenkaku: 姓
+        last_name_zenkaku: 名
+        first_name_kana: 姓カナ
+        last_name_kana: 名カナ
+        post_number: 郵便番号
+        prefectures: 都道府県
+        city: 市町村
+        addresses_banchi: 番地
+        build_name: 建物名
+        phone_number: 電話番号

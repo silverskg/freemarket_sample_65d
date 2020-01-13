@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2020_01_12_123059) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name_zenkaku"
+    t.string "last_name_zenkaku"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 

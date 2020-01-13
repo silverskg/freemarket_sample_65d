@@ -1,0 +1,58 @@
+.header
+  =link_to('#', class:'image') do
+    = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+  %nav.progress-bar
+  %ol.clearfix
+    %li1--gray
+      会員情報
+      .maru1red
+    %li2--red
+      電話番号認証
+      .maru2red
+    %li3--gray
+      お届け先住所入力
+      .maru3gray
+    %li4--gray
+      支払い方法
+      .maru4gray
+    %li5--gray
+      完了
+      .maru5gray
+    .grayline2
+    .redline2
+
+.main
+  .certificatePhoneNumber
+    電話番号認証
+  .certificationForm
+    = form_for @user, url: step5_address_form_registrations_path do |f|
+    
+      .formPhoneNumber
+        = f.fields_for :address do |a|
+          %p.titleBold 認証番号
+          = a.text_field :phone_number, placeholder: "認証番号を入力", class: "certificationNumber formareaBig"
+        %p.small SMSで届いた認証番号を入力してください
+        = f.submit "認証して完了", class: "submitbtn"
+  .certificateWithPhonecall
+    %p.titleBold 30秒たっても認証番号が届かない方へ
+    %p.small 電話で認証番号を聞くこともできます。
+    = link_to "電話で認証番号を聞く（通話無料）", "#", class: "submitbtn"
+  .resendCertificationNumber
+    %p.titleBold 認証番号を再送することもできます。もう一度電話番号を入力して下さい。
+    = link_to "電話番号を再度入力する", "#", class: "rewriteNumber link"
+    .sms.small 
+      ※SMSが届かない場合は
+      = link_to "SMS受信設定", "#", class: "sms link"
+      を確認して、もう一度電話番号を入力してください。
+
+.footer
+  .footer__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.
