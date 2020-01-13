@@ -27,7 +27,6 @@
   .addressForm
     - hissuTag = "必須"
     = form_for @address, url:step6_registrations_path do |f|
-    
       .formNameZenkaku
         %p.titleBold お名前
         %span.hissuTag #{hissuTag}
@@ -63,14 +62,13 @@
             - @address.errors.full_messages_for(:post_number).each do |message|
               %li= message     
       .formPrefecture.topmargin
-        
         %p.titleBold 都道府県
         %span.hissuTag #{hissuTag}
-      = f.collection_select :prefectures, Prefecture.all, :id, :name
-      - if @address.errors.any?
-        %ul.errorMessages5
-          - @address.errors.full_messages_for(:prefectures).each do |message|
-            %li= message   
+        = f.collection_select :prefectures, Prefecture.all, :id , :name
+        - if @address.errors.any?
+          %ul.errorMessages5
+            - @address.errors.full_messages_for(:prefectures).each do |message|
+              %li= message   
       .formCity.topmargin
         
         %p.titleBold 市区町村

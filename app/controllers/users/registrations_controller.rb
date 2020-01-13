@@ -1,17 +1,7 @@
-# frozen_string_literal: true
-
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
   before_action :validates_step2, only: [:step3]
   before_action :validates_step5, only: [:step6] 
-  # before_action :configure_sign_up_params, only: [:new]
-  # before_action :configure_account_update_params, only: [:update]
-
-  # GET /resource/sign_up
   
-  # 許可するキーを設定します
-  
-
   def index
   end
 
@@ -25,8 +15,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
   
   def validates_step2
-    # session[:user_params] = user_params
-    # @user = User.new(session[:user_params])
     session[:nickname] = user_params[:nickname]
     session[:email] = user_params[:email]
     session[:password] = user_params[:password]
@@ -45,15 +33,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       last_name_kana:       session[:last_name_kana],
       birthday:             session[:birthday]
     )
-    # binding.pry
-    # render :step2 unless @user.valid?(:validates_step2)
    render :step2 unless @user.valid?
     @user.build_address
   end
 
   def step3
-    # @user = User.new
-    # @user.build_address
   end
 
   def step4
@@ -62,10 +46,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def step5
-    # @user = User.new
     @address = Address.new
-    # @user.build_address
-
   end
 
   def validates_step5
@@ -105,7 +86,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
 
   def create
-    # binding.pry
     @user = User.new(
       nickname: session[:nickname], # sessionに保存された値をインスタンスに渡す
       email: session[:email],
@@ -118,8 +98,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
 
     if @user.save
-      # ログインするための情報を保管
-      # binding.pry
       session[:id] = @user.id
       @address = Address.create(
        first_name_zenkaku:          session[:first_name_zenkaku],

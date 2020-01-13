@@ -2,7 +2,6 @@ class Address < ApplicationRecord
   belongs_to :user,  optional: true
 
   VALID_KANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
-  # VALID_KANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
   # # バリデーション
   validates :first_name_zenkaku,    presence: { message: "を入力してください" },  length: {maximum: 30, message: "30字以内で入力してください。" }
   validates :last_name_zenkaku,     presence: { message: "を入力してください" },  length: {maximum: 30, message: "30字以内で入力してください。" }
