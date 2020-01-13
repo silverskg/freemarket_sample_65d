@@ -94,4 +94,4 @@ gem 'jquery-rails'
 gem 'erb2haml'
 gem 'rails-i18n'
 gem 'kaminari'
-
+gem 'gretel'

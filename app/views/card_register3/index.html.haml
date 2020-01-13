@@ -39,6 +39,8 @@
 
 %nav.bread
   %ul.bread__list
+    - breadcrumb :payment
+    = render "layouts/breadcrumbs"
 
 .cardRegisteredMain
   = render 'shared/side_bar'

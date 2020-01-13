@@ -8,5 +8,26 @@
     width: 1020px;
     margin: 0 auto;
     padding: 16px 0;
+    a {
+      text-decoration: none;
+      color: #333333;
+      &:hover {
+        color: #888888;
+        text-decoration: underline;
+      }
+    }
   }
 }
+
+.breadcrumbs-list {
+  font-size: 14px;
+  line-height: 1.2;
+  .current {
+    font-weight: bold;
+  }
+  .fas {
+    font-size: 14px;
+    color: #888;
+    margin: 0 8px;
+  }
+} 
