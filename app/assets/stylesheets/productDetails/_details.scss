@@ -19,7 +19,7 @@
         font-size: 24px;
         font-weight:  bold;
         width: 620px;
-        height: 33px;
+        //height: 33px;
       }
 
       &__Introduction{
@@ -367,7 +367,9 @@
             width: 188px;
             display: block;
             font-weight: normal;
-            
+            display: flex;
+            flex-wrap: wrap;
+            overflow: hidden;
           }
           .price2 {
             font-size: 16px;
