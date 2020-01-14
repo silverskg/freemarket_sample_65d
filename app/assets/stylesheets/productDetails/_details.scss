@@ -155,7 +155,6 @@
     }
     
     &__btn{
-    background-color: #EA352D;
     height: 50px;
     width: 620px;
     color: #ffffff;
@@ -164,6 +163,12 @@
     margin-top:16px;
     font-size:24px;
     font-weight: bold;
+    &--red {
+      background-color: #EA352D;
+    }
+    &--grey {
+      background-color: grey;
+    }
   }  
 
       //購入画面進むのリンク編集

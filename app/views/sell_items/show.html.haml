@@ -75,7 +75,10 @@
         ¥
         = @item.price
       %p1 (税込) 
-      %p2 送料込み
+      - if @item.deliver_fee == "送料込み(出品者負担)"
+        %p2 送料込み
+      - else
+        %p2 送料別
     
     .main1__text
       = simple_format(@item.body)

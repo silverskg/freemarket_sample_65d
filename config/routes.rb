@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   #トップページ
   root to: "items#index"
   
-
-  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
+  ##商品ページ
+  resources :items do
     resources :purchase, only: [:index] do
       collection do
         get 'index', to: 'purchase#index'
@@ -44,14 +44,14 @@ Rails.application.routes.draw do
         get 'done', to: 'purchase#done'
       end
     end
+
+    #購入内容確認ページ
+    resources :product_confirmation, only: :index
+    post 'product_confirmation', to: 'product_confirmation#sell_item'
   end
-  #商品ページ
 
   # ログアウトページ
   resources :logout, only: :index
-
-  #購入内容確認ページ
-  resources :product_confirmation, only: :index
 
   # マイページ
   resources :my_page, only: :index
