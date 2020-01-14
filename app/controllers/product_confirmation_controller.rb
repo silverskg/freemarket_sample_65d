@@ -3,6 +3,8 @@ class ProductConfirmationController < ApplicationController
   before_action :set_item, only: :index
   before_action :set_user, only: :index
   before_action :set_card, only: :index
+  before_action :check_user, only: :index
+  before_action :check_sold_out, only: :index
 
   def index
   end
@@ -26,6 +28,18 @@ class ProductConfirmationController < ApplicationController
       Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
+    end
+  end
+
+  def check_user
+    if @item.user_id == current_user.id
+      redirect_to root_path
+    end
+  end
+
+  def check_sold_out
+    if @item.sale_status == "sold_out"
+      redirect_to root_path
     end
   end
   
