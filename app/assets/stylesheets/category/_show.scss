@@ -51,16 +51,17 @@ body {
     margin-bottom: 8px;
   }
   .itemsAllInCategory {
-    width: 1020px;
+    width: 1060px;
     height: auto;
     margin: 0 auto;
+    padding-left: 20px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     overflow: hidden;
     .itemBox {
       width: 188px;
       height: 298px;
+      margin-right: 20px;
       margin-bottom: 20px;
       .box {
         display: block;
