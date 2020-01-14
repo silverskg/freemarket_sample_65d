@@ -1,6 +1,7 @@
 class PurchaseController < ApplicationController
 
   require 'payjp'
+  before_action :authenticate_user!
   before_action :check_user, only: :sell_item
   before_action :check_item, only: :sell_item
 
