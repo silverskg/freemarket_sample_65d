@@ -31,7 +31,7 @@
 |user_id|references|foreign_key: true|
 |category_id|references|foreign_key: true|
 |brand_id|references|foreign_key: true|
-|include_image|string|null: false|
+|sale_status|string|
 
 ### Association
 - belongs_to :user
