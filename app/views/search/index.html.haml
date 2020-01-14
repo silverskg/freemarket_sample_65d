@@ -42,18 +42,81 @@
 
 %body
   .searchContents
+    -# gem ransackでサーバーサイドは実装予定
     .searchBox
       .searchPullDown
+        並び替え
+        =icon('fas', 'chevron-down')
       .searchDetails
+        .searchDetails__title
+          詳細検索
+        .searchDetails__keyword.formGroup
+          =icon('fas', 'plus')
+          .addKeyword
+            キーワードを追加する
+          %input.formBox{:type => "text"}/
+        .searchDetails__category.formGroup
+          =icon('fa', 'bars')
+          .chooseCategory
+            カテゴリーを選択する
+          %input.formBox{:type => "text"}/
+        .searchDetails__brand.formGroup
+          =icon('fas', 'tag')
+          .chooseBrand
+            ブランド名から探す
+          %input.formBox{:type => "text"}/
+        .searchDetails__size.formGroup
+          =icon('fas', 'vector-square')
+          .chooseSize
+            サイズを指定する
+          %input.formBox{:type => "text"}/
+        .searchDetails__price.formGroup
+          =icon('fa', 'coins')
+          .setPrice
+            価格
+          %input.formBox{:type => "text"}/
+        .searchDetails__quality.formGroup
+          =icon('fas', 'star')
+          .checkQuality
+            商品の状態
+          %input.formBox{:type => "text"}/
+        .searchDetails__deliveryFee.formGroup
+          =icon('fas', 'truck')
+          .setDeliveryFee
+            配送料の負担
+          %input.formBox{:type => "text"}/
+        .searchDetails__status.formGroup
+          =icon('fas', 'shopping-cart')
+          .setStatus
+            販売状況
+          %input.formBox{:type => "text"}/
+        .searchDetails__buttons
+          .clearButton
+            クリア
+          .searchButton
+            完了
+
     .searchItems
       .searchItems__header
-        #{@keyword}の検索結果
+        #{@keyword} の検索結果
       .searchItems__description
         該当する商品が見つかりません。検索条件を変えて、再度お試しください。
       .searchItems__searchNoResult
         新着商品
       .searchItems__items
-        -# 4かける6アイテム
+        - @items.each do |item|
+          = link_to item_path(item) do
+            .itemBox
+              = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
+              .itemBoxDescription
+                %p.name
+                  =item.name
+                .itemBoxDescription__bottom
+                  %p.price
+                    ¥#{item.price}
+                  .like
+                    = icon('fas', 'heart')
+                    %p 10
 
   .botom
     .botom__menu
