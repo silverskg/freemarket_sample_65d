@@ -78,14 +78,6 @@
             #card_token
             = submit_tag "追加する", id: "token_submit", class: "submitbtn"
 
-.footer
-  .footer__menu
-    =link_to('#', class:'privacybtn') do
-      プライバシーポリシー
-    =link_to('#', class:'rulebtn') do
-      メルカリ利用規約
-    =link_to('#', class:'transactionbtn') do
-      特定商取引に関する表記
-  =link_to('#', class:'imag2') do
-    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
-  %p © Mercari, Inc.
+%footer
+  = render 'shared/footer'
+= render 'shared/exhibition-btn'
