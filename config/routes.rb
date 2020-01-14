@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :card_register3, only: :index
 
   # 出品商品確認ページ
-  resources :sell_items, only: [:index, :show, :destroy]
+  resources :sell_items, only: [:index, :show]
 
   # カテゴリーページ
   resources :category, only: [:index, :show]
