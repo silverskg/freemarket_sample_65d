@@ -6,7 +6,7 @@ class PurchaseController < ApplicationController
   before_action :check_item, only: :sell_item
 
   def index
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     #Cardテーブルは前回記事で作成、テーブルからpayjpの顧客IDを検索
     if card.blank?
       #登録された情報がない場合にカード登録画面に移動
@@ -22,17 +22,22 @@ class PurchaseController < ApplicationController
 
   def pay
     @item = Item.find(params[:item_id])
-    card = Card.where(user_id: current_user.id).first
+    card = Card.find_by(user_id: current_user.id)
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
     Payjp::Charge.create(
-    :amount => @item.price, #支払金額を入力（送料は一旦無視)
-    :customer => card.customer_id, #顧客ID
-    :currency => 'jpy', #日本円
+    amount:  @item.price, #支払金額を入力（送料は一旦無視)
+    customer: card.customer_id, #顧客ID
+    currency: 'jpy' #日本円
   )
-    @item.sale_status = "sold_out"
-    @item.save
-    redirect_to root_path
-  # redirect_to action: 'done' #完了画面に移動
+    
+    if @item.save
+      @item.sale_status = "sold_out"
+      redirect_to root_path
+    else
+      render 'layouts/notifications'
+      redirect_to item_product_confirmation_index_path(@item)
+    end
+    
   end
 
   def check_user
