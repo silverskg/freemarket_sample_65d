@@ -1,4 +1,5 @@
 class SellItemsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_item, only: [:show, :destroy]
 
   def index
