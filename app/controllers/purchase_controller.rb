@@ -30,8 +30,8 @@ class PurchaseController < ApplicationController
     currency: 'jpy' #日本円
   )
     
+    @item.sale_status = "sold_out"
     if @item.save
-      @item.sale_status = "sold_out"
       redirect_to root_path
     else
       render 'layouts/notifications'
