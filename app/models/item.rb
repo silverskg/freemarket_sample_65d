@@ -18,4 +18,9 @@ class Item < ApplicationRecord
     validates :price, numericality: { message: "300以上9999999以下で入力してください", only_integer: true, greater_than: 299, less_than: 10000000 }
     validates :category_id, presence: { message: "選択してください" }
     validates :brand_id, presence: { message: "選択してください" }
+
+    def self.search(search)
+        return Item.all unless search
+        Item.where('name LIKE(?)', "%#{search}%")
+    end
 end

@@ -1,0 +1,216 @@
+@mixin text() {
+  text-decoration: none;
+  color: #333333;
+  font-size: 15px;
+}
+
+body {
+  color: #333333;
+  .searchContents {
+    width: 1020px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    .searchBox {
+      margin-top: 40px;
+      margin-right: 40px;
+      .searchPullDown {
+        width: 280px;
+        height: 48px;
+        padding: 0 16px;
+        background-color: white;
+        border-radius: 4px;
+        border: 1px #cccccc solid;
+        line-height: 48px;
+        position: relative;
+        .fas {
+          position: absolute;
+          top: 16px;
+          right: 16px;
+          color: #888888;
+        }
+      }
+      .searchDetails {
+        width: 280px;
+        height: auto;
+        margin-top: 40px;
+        padding: 16px;
+        font-weight: bold;
+        background-color: white;
+        .formGroup {
+          margin-top: 24px;
+          font-size: 14px;
+        }
+        .fas {
+          float: left;
+          margin: 0 4px 0 0;
+          color: #888;
+          font-size: 16px;
+          vertical-align: middle;
+        }
+        .fa {
+          float: left;
+          margin: 0 4px 0 0;
+          color: #888;
+          font-size: 16px;
+          vertical-align: middle;
+        }
+        .formBox {
+          width: 248px;
+          height: 48px;
+          margin-top: 8px;
+          padding: 10px 16px 8px;
+          border-radius: 4px;
+          border: 1px #cccccc solid;
+        }
+        &__buttons {
+          padding-top: 40px;
+          display: flex;
+          justify-content: space-between;
+          color: white;
+          font-size: 14px;
+          font-weight: normal;
+          .clearButton {
+            width: 111.59px;
+            height: 50px;
+            background-color: #aaaaaa;
+            text-align: center;
+            line-height: 50px;
+          }
+          .searchButton {
+            width: 111.59px;
+            height: 50px;
+            background-color: #Ea352d;
+            text-align: center;
+            line-height: 50px;
+          }
+        }
+      }
+    }
+    .searchItems {
+      width: 700px;
+      height: auto;
+      margin-top: 40px;
+      &__header {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      &__count {
+        font-size: 12px;
+        margin: 14px 0;
+        color: #888888;
+      }
+      &__description {
+        font-size: 14px;
+        margin: 16px 0 40px;
+      }
+      &__searchNoResult {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 16px;
+      }
+      &__items {
+        width: 720px;
+        height: auto;
+        margin: 0 auto;
+        margin-right: -20px;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        .itemBox {
+          width: 160px;
+          height: 270px;
+          margin-right: 20px;
+          margin-bottom: 20px;
+          .box {
+            display: block;
+          }
+          .itemBoxDescription {
+            width: 160px;
+            height: 110px;
+            background-color: white;
+            padding: 16px;
+            .name {
+              @include text();
+              height: 3em;
+              overflow: hidden;
+              display: inline-block;
+              position: relative;
+              &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 50%;
+                height: 1.5em;
+                background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+              }
+            }
+            &__bottom {
+              display: flex;
+              justify-content: space-between;
+              .price {
+                @include text();
+                font-weight: bold;
+              }
+              .like {
+                @include text();
+                display: flex;
+                .fas {
+                  line-height: 1.5;
+                  color: #cccccc;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    width: 700px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    a {
+      width: 44px;
+      height: 44px;
+      display: block;
+    }
+    .page {
+      @include pagination();
+    }
+    .current {
+      background-color: #ea352d;
+      color: white;
+      &:hover {
+        background-color: #ea352d;
+      }
+    }
+    .next {
+      @include pagination();
+      position: absolute;
+      right: 44px;
+    }
+    .last {
+      @include pagination();
+      position: absolute;
+      right: 0;
+    }
+    .first {
+      @include pagination();
+      position: absolute;
+      left: 0px;
+    }
+    .prev {
+      @include pagination();
+      position: absolute;
+      left: 44px;
+    }
+  }
+}
