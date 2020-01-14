@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :items do
     #購入内容確認ページ
     resources :product_confirmation, only: :index
+    post 'product_confirmation', to: 'product_confirmation#sell_item'
   end
 
   # ログアウトページ

@@ -51,7 +51,7 @@
           購入する
     - else
       .confirmationMain__purchase
-        =link_to('#', class:'purchaseBtn purchaseBtn--red') do
+        =link_to(item_product_confirmation_path, class:'purchaseBtn purchaseBtn--red', method: :post) do
           購入する
 
   .confirmationFooter
