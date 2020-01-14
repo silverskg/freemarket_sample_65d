@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'purchase/index'
+  get 'purchase/done'
   get 'card/new'
   get 'card/show'
 
@@ -22,7 +24,7 @@ Rails.application.routes.draw do
     post 'step4_registrations', to: 'users/registrations#step4'
     post 'step5_address_form_registrations', to: 'users/registrations#step5_address_form'
     get 'step6_payjp_registrations', to: 'users/registrations#step6_payjp'
-    post 'step7_registrations', to: 'users/registrations#step7'
+    get 'step7_registrations', to: 'users/registrations#step7'
     get  'user_registration', to: 'users/registrations#create'
   end
 
@@ -30,7 +32,15 @@ Rails.application.routes.draw do
   root to: "items#index"
   
   #商品登録画面
-  resources :items, only: [:index, :new, :create, :edit, :update, :show]
+  resources :items, only: [:index, :new, :create, :edit, :update, :show] do
+    resources :purchase, only: [:index] do
+      collection do
+        get 'index', to: 'purchase#index'
+        post 'pay', to: 'purchase#pay'
+        get 'done', to: 'purchase#done'
+      end
+    end
+  end
 
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示

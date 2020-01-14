@@ -3,7 +3,7 @@ class SellItemsController < ApplicationController
 
   def index
     # user_idは仮設定
-    @items = Item.where(user_id: 1).includes(:images)
+    @items = Item.where(user_id: current_user.id).includes(:images)
   end
 
   def destroy

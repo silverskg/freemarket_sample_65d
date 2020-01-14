@@ -1,4 +1,4 @@
-.registration4header
+.registration5header
   .progress-bar
     =link_to('#', class:'image') do
       = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
@@ -10,24 +10,23 @@
       %li2--gray
         電話番号認証
         .maru2red
-      %li3--red
+      %li3--gray
         お届け先住所入力
         .maru3red
-      %li4--gray
+      %li4--red
         支払い方法
-        .maru4gray
+        .maru4red
       %li5--gray
         完了
         .maru5gray
-      .grayline3
-      .redline3
-
+      .grayline4
+      .redline4
 .registermain
   .registerAddress
     発送元・お届け先住所入力
   .addressForm
     - hissuTag = "必須"
-    = form_for @address, url: step6_payjp_registrations_path do |f|
+    = form_for @address, url: user_registration_path do |f|
       .formNameZenkaku
         %p.titleBold お名前
         %span.hissuTag #{hissuTag}

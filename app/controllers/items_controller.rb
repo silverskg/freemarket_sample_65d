@@ -43,7 +43,7 @@ class ItemsController < ApplicationController
       :brand_id,
       #field_forで設定した値+_attributesで受け取る。
       images_attributes: [:image, :_destroy, :id]
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   def set_item
