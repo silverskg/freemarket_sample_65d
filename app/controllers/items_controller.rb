@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user! , except: [:index, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:update, :destroy]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -30,7 +31,7 @@ class ItemsController < ApplicationController
 
   def destroy
     if @item.destroy
-      redirect_to action: 'index'
+      redirect_to sell_items_path
     else
       render 'layouts/notifications'
       redirect_to action: 'show'
@@ -64,6 +65,12 @@ class ItemsController < ApplicationController
     @brand_items = Item.where(brand_id: @item.brand_id)
     @user_items = Item.where(user_id: @item.user_id)
     @images = Image.where(item_id:  @item.id)
+  end
+
+  def check_user
+    if current_user != @user
+      redirect_to root_path
+    end
   end
   
 end
