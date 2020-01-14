@@ -92,8 +92,12 @@
         ¥ 
         =@item.price  
       %p1 (税込) 
-      %p2 送料込み
-    =link_to('#', class:'link2') do
+      - if @item.deliver_fee == "送料込み(出品者負担)"
+        %p2 送料込み
+      - else
+        %p2 送料別
+  
+    =link_to(item_product_confirmation_index_path(@item), class:'link2') do
       .main1__btn
         購入画面に進む
     .main1__alrt

@@ -1,6 +1,6 @@
 .confirmationBody
   .confirmationHeader
-    =link_to('#', class:'imag') do
+    =link_to(root_path, class:'imag') do
       = image_tag "fmarket_logo_red.svg", size: "185x49", class: "rogo" 
   .confirmationMain
     .confirmationMain__title
@@ -9,8 +9,14 @@
       .picter
         =image_tag "03.gif", size: "80x80"
       .details
-        %p.name 商品の名前
-        %p.nedan ¥13,000 (税込) 送料込み
+        %p.name
+          = @item.name
+        %p.nedan
+          - if @item.deliver_fee == "送料込み(出品者負担)"
+            = "¥#{@item.price} (税込) 送料込み"
+          - else
+            = "¥#{@item.price} (税込) 送料別"
+
     .confirmationMain__price
       .confirmationMain__price__pay
         %p.price1 支払い金額
