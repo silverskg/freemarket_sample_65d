@@ -1,0 +1,23 @@
+.errorMessages5 {
+color: #ea352d;
+line-height: 1.5;
+font-size: 14px;
+  li {
+    margin-top: 8px; 
+    height: 21px;
+    width: 343px;
+  }
+  .aaa {
+    display: block!important;
+  }
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.leftContent {
+ body{
+padding: 4px 0;
+}
+}

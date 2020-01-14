@@ -2,6 +2,7 @@
 @import "./toppage/header";
 @import "./toppage/body";
 @import "./toppage/footer";
+@import "./toppage/footermenuber";
 @import "login/login";
 @import "logout/logout";
 @import "productDetails/details";
@@ -30,4 +31,5 @@
 @import "bread_bar/bread.scss";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "usersRegistrations/error_messages";
 @import "information/information";

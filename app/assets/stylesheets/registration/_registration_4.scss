@@ -112,7 +112,7 @@ li1--gray, li2--gray, li4--gray, li5--gray {
     .formareaBig {
       @include formarea();
     }
-    #_prefecture_id {
+    #address_prefectures {
       @include formarea();
     }
     .small {

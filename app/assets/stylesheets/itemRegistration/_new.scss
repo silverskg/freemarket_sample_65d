@@ -102,9 +102,10 @@ body{
             }
             .dropText {
               position: absolute;
+              pointer-events: none;
             }
             .num_0, .num_1, .num_2 .num_5, .num_6, .num_7{
-              width: 100%
+              width: 100%;
             }
             .num_3, .num_8 {
               width: 180px;

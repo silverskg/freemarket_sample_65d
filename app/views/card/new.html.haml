@@ -1,0 +1,91 @@
+.registration5header
+  .progress-bar
+    =link_to('#', class:'image') do
+      = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
+    %nav.progress-bar
+    %ol.clearfix
+      %li1--gray
+        会員情報
+        .maru1red
+      %li2--gray
+        電話番号認証
+        .maru2red
+      %li3--gray
+        お届け先住所入力
+        .maru3red
+      %li4--red
+        支払い方法
+        .maru4red
+      %li5--gray
+        完了
+        .maru5gray
+      .grayline4
+      .redline4
+
+
+.cardRegisterMain
+  .mainContainer
+    .cardRegisterTitle
+      クレジットカード情報入力
+    .cardRegisterForm
+      = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+        .cardInfo
+          - hissuTag = "必須"
+          .formCardNumber
+          %label.titleBold カード番号
+          %span.hissuTag #{hissuTag}
+          = text_field_tag "number", "", class: "number", placeholder: "半角数字のみ" ,maxlength: "16", type: "text", id: "card_number", class: "cardNumber formareaBig"
+          .formExpirationDate.topmargin
+          %p.titleBold 有効期限
+          %span.hissuTag #{hissuTag}
+          .flex
+            %select.select-default#exp_month{name: "exp_month", type: "text", class: "month formareaMiddle"}
+              %option{value: ""} --
+              %option{value: "1"}01
+              %option{value: "2"}02
+              %option{value: "3"}03
+              %option{value: "4"}04
+              %option{value: "5"}05
+              %option{value: "6"}06
+              %option{value: "7"}07
+              %option{value: "8"}08
+              %option{value: "9"}09
+              %option{value: "10"}10
+              %option{value: "11"}11
+              %option{value: "12"}12
+            %span.date 月
+            %select.select-default#exp_year{name: "exp_year", type: "text", class: "year formareaMiddle"}
+              %option{value: ""} --
+              %option{value: "2019"}19
+              %option{value: "2020"}20
+              %option{value: "2021"}21
+              %option{value: "2022"}22
+              %option{value: "2023"}23
+              %option{value: "2024"}24
+              %option{value: "2025"}25
+              %option{value: "2026"}26
+              %option{value: "2027"}27
+              %option{value: "2028"}28
+              %option{value: "2029"}29
+            %span.date 年
+          .formSecurityCode.topmargin
+            %p.titleBold セキュリティコード
+            %span.hissuTag #{hissuTag}
+            = text_field_tag "cvc", "", class: "cvc", placeholder: "カード背面4桁もしくは3桁の番号", maxlength: "4", id: "cvc", class: "securityNumber formareaBig"
+            = link_to '#', class: 'link questionLink' do
+              = icon('fas', 'question-circle', class: 'question')
+              カード裏面の番号とは？
+            #card_token
+            = submit_tag "追加する", id: "token_submit", class: "submitbtn"
+
+.footer
+  .footer__menu
+    =link_to('#', class:'privacybtn') do
+      プライバシーポリシー
+    =link_to('#', class:'rulebtn') do
+      メルカリ利用規約
+    =link_to('#', class:'transactionbtn') do
+      特定商取引に関する表記
+  =link_to('#', class:'imag2') do
+    = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
+  %p © Mercari, Inc.

@@ -1,0 +1,182 @@
+.topheader
+  .main
+    .main__top
+      = link_to root_path do
+        = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+      %label
+        .main__top--search
+          %input.card-nomber-form{placeholder:"何かお探しですか？"}
+          .icon
+            = link_to "" do
+              %i.fa.fa-search
+
+    - if user_signed_in?
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to category_index_path do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num3 
+            = link_to do
+              = icon('far', 'heart')
+              いいね！ 一覧
+          %li.num4 
+            = link_to do
+              = icon('far', 'bell')
+              お知らせ
+          %li.num5 
+            = link_to do
+              = icon('fas', 'check')
+              やることリスト
+          %li.num6 
+            = link_to my_page_index_path do
+              = icon('far', 'circle')
+              マイページ
+        .menuCategoryBar{id: "menuber"}
+          %li
+            = link_to(category_path(1), class: 'categoryMenu') do
+              レディース 
+          %li
+            = link_to(category_path(2), class: 'categoryMenu') do
+              メンズ 
+          %li
+            = link_to(category_path(3), class: 'categoryMenu') do
+              ベビー・キッズ 
+          %li
+            = link_to(category_path(4), class: 'categoryMenu') do
+              インテリア・住まい・小物 
+          %li
+            =link_to(category_path(5), class: 'categoryMenu') do
+              本・音楽・ゲーム 
+          %li
+            = link_to(category_path(6), class: 'categoryMenu') do
+              おもちゃ・ホビー・グッズ 
+          %li
+            = link_to(category_path(7), class: 'categoryMenu') do
+              コスメ・香水・美容 
+          %li
+            = link_to(category_path(8), class: 'categoryMenu') do
+              家電・スマホ・カメラ 
+          %li
+            = link_to(category_path(9), class: 'categoryMenu') do
+              スポーツ・レジャー 
+          %li
+            = link_to(category_path(10), class: 'categoryMenu') do
+              ハンドメイド 
+          %li
+            = link_to(category_path(11), class: 'categoryMenu') do
+              チケット 
+          %li
+            = link_to(category_path(12), class: 'categoryMenu') do
+              自動車・オートバイ 
+          %li
+            = link_to(category_path(13), class: 'categoryMenu') do
+              その他 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              カテゴリー一覧 
+        .menuBrandBar
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              シャネル
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ナイキ
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ルイ ヴィトン
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              シュプリーム
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              アディダス
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              ブランド一覧
+
+    - else
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num7 
+            = link_to step1_login_registrations_path do
+              %button.button8{:type => "submit"} 新規会員登録
+          %li.num8
+            = link_to new_user_session_path do
+              %button.button9{:type => "submit"} ログイン
+
+        .menuCategoryBar{id: "menuber"}
+          %li
+            = link_to(category_path(1), class: 'categoryMenu') do
+              レディース 
+          %li
+            = link_to(category_path(2), class: 'categoryMenu') do
+              メンズ 
+          %li
+            = link_to(category_path(3), class: 'categoryMenu') do
+              ベビー・キッズ 
+          %li
+            = link_to(category_path(4), class: 'categoryMenu') do
+              インテリア・住まい・小物 
+          %li
+            =link_to(category_path(5), class: 'categoryMenu') do
+              本・音楽・ゲーム 
+          %li
+            = link_to(category_path(6), class: 'categoryMenu') do
+              おもちゃ・ホビー・グッズ 
+          %li
+            = link_to(category_path(7), class: 'categoryMenu') do
+              コスメ・香水・美容 
+          %li
+            = link_to(category_path(8), class: 'categoryMenu') do
+              家電・スマホ・カメラ 
+          %li
+            = link_to(category_path(9), class: 'categoryMenu') do
+              スポーツ・レジャー 
+          %li
+            = link_to(category_path(10), class: 'categoryMenu') do
+              ハンドメイド 
+          %li
+            = link_to(category_path(11), class: 'categoryMenu') do
+              チケット 
+          %li
+            = link_to(category_path(12), class: 'categoryMenu') do
+              自動車・オートバイ 
+          %li
+            = link_to(category_path(13), class: 'categoryMenu') do
+              その他 
+          %li
+            = link_to('#', class: 'categoryMenu') do
+              カテゴリー一覧 
+      .menuBrandBar
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            シャネル
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            ナイキ
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            ルイ ヴィトン
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            シュプリーム
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            アディダス
+        %li
+          = link_to('#', class: 'categoryMenu') do
+            ブランド一覧
