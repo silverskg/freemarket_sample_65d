@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user! , except: [:index, :show]
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -25,6 +25,15 @@ class ItemsController < ApplicationController
       redirect_to sell_item_path(@item)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to action: 'index'
+    else
+      render 'layouts/notifications'
+      redirect_to action: 'show'
     end
   end
   

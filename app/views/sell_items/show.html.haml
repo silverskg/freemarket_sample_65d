@@ -84,7 +84,7 @@
   = link_to "商品の編集", edit_item_path(@item.id), class: "editItemInfoButton"
   %p or
   = link_to "出品を一旦停止する", "#", class: "statusChangeButton"
-  = link_to "この商品を削除する", sell_item_path(@item.id), method: :delete, class: "statusChangeButton"
+  = link_to "この商品を削除する", item_path(@item.id), method: :delete, class: "statusChangeButton"
 
 .commentForm
   %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。

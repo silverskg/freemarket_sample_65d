@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root to: "items#index"
   
   #商品ページ
-  resources :items, only: [:index, :new, :create, :edit, :update, :show]
+  resources :items
 
   # ログアウトページ
   resources :logout, only: :index
