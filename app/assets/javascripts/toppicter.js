@@ -1,3 +1,6 @@
 $(document).on('turbolinks:load', function() {
-  $('.slider').bxSlider();  
+  $('.slider').bxSlider({
+      auto: true,
+      pause: 5000
+  });  
 });
