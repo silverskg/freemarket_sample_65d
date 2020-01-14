@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   #商品登録画面
   resources :items, only: [:index, :new, :create, :edit, :update, :show]
 
+  resources :search, only: [:index]
+
   #トップページ以外は仮のルーティング設定
   # ログイン画面表示
   resources :login, only: :index
@@ -49,6 +51,5 @@ Rails.application.routes.draw do
   # カテゴリー
   resources :category, only: [:index, :show]
 
-  # キーワード検索
-  resources :search, only: [:index]
+
 end

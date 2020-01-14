@@ -20,7 +20,7 @@ class Item < ApplicationRecord
     validates :brand_id, presence: { message: "選択してください" }
 
     def self.search(search)
-        return Tweet.all unless search
-        Tweet.where('text LIKE(?)', "%#{search}%")
+        return Item.all unless search
+        Item.where('name LIKE(?)', "%#{search}%")
     end
 end
