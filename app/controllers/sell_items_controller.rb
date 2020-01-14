@@ -1,19 +1,12 @@
 class SellItemsController < ApplicationController
-  before_action :set_item, only: [:show, :destroy]
+  before_action :authenticate_user!
+  before_action :set_item, only: [:show]
+  before_action :check_user, only: [:show]
 
   def index
-    # user_idは仮設定
-    @items = Item.where(user_id: 1).includes(:images)
+    @items = Item.where(user_id: current_user.id).includes(:images)
   end
 
-  def destroy
-    if @item.destroy
-      redirect_to action: 'index'
-    else
-      render 'layouts/notifications'
-      redirect_to action: 'show'
-    end
-  end
 
   private
   def set_item
@@ -26,4 +19,11 @@ class SellItemsController < ApplicationController
     @user_items = Item.where(user_id: @item.user_id)
     @images = Image.where(item_id:  @item.id)
   end
+
+  def check_user
+    if current_user != @user
+      redirect_to root_path
+    end
+  end
+
 end
