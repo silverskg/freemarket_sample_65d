@@ -1,0 +1,96 @@
+%header
+  = render 'shared/header'
+
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :sellItemShow
+    = render "layouts/breadcrumbs"
+
+.itemInfo
+  .main1
+    .main1__product-name
+      = @item.name
+    .main1__menu
+      .main1__menu__picbig
+        = image_tag @item.images.first.image.to_s, size: "300x300", class: "picmain" 
+        .picsmall
+          -@images.each do |image| 
+            =  image_tag image.image.to_s, size: "60x60", class: "picsmall1","data-image_id": image.id
+
+      .main1__menu__data
+        %table{border: "1",class:"box"}
+          %tr
+            %th 出品者
+            %td 
+              =link_to('#', class:'link1') do
+                = @user.nickname
+              %br/
+              %i1.fas.fa-laugh-beam
+              %span 0
+              %i2.fas.fa-meh
+              %span 0
+              %i3.fas.fa-frown
+              %span 0
+          %tr
+            %th カテゴリー
+            %td 
+              =link_to category_path(@category.id), class:'link1' do
+                = @category.name
+                %br/
+              =link_to('#', class:'link1') do
+                %i.fas.fa-chevron-right
+                カテゴリー
+                %br/
+              =link_to('#', class:'link1') do
+                %i.fas.fa-chevron-right
+                カテゴリー 
+          %tr
+            %th ブランド
+            %td 
+              =link_to('#', class:'link1') do
+                = @brand.name
+          %tr
+            %th 商品状態
+            %td
+              = @item.status
+          %tr
+            %th 配送料負担
+            %td
+              = @item.deliver_fee
+          %tr
+            %th 配送方法
+            %td
+              = @item.how_to_deliver
+          %tr
+            %th 配送元の地域
+            %td 
+              = @prefecture.name
+          %tr
+            %th 配送日の目安
+            %td
+              = @item.delivery_date
+
+    .main1__price
+      %p
+        ¥
+        = @item.price
+      %p1 (税込) 
+      %p2 送料込み
+    
+    .main1__text
+      = simple_format(@item.body)
+
+.itemStatusChangeButtonsList
+  = link_to "商品の編集", edit_item_path(@item.id), class: "editItemInfoButton"
+  %p or
+  = link_to "出品を一旦停止する", "#", class: "statusChangeButton"
+  = link_to "この商品を削除する", sell_item_path(@item.id), method: :delete, class: "statusChangeButton"
+
+.commentForm
+  %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+  = form_for "#" do |f|
+    = f.text_area :body, class: "commentFormarea"
+    = f.submit "コメントする", class: "commentSubmit"
+
+%footer
+  = render 'shared/footer'

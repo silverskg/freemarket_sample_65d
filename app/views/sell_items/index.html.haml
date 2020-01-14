@@ -1,0 +1,43 @@
+%header
+  = render 'shared/header'
+
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :sellItem
+    = render "layouts/breadcrumbs"
+
+.editProfileMain
+  = render 'shared/side_bar'
+  .sellItemsAll
+    .sellTabHeader
+      出品した商品
+    .sellTabs
+      = link_to "出品中", '#', class: "tab tab--white"
+      = link_to "取引中", '#', class: "tab"
+      = link_to "売却済み", '#', class: "tab"
+    %ul.linkToEachItems
+      - @items.each do |item|
+        = link_to sell_item_path(item), class: "links" do
+          %li.itemLink
+            .image
+              = image_tag item.images[0].image.url, width: '50px', height: '50px'
+            .information
+              .title
+                = item.name
+              .data
+                = icon('fa', 'heart')
+                %text 0
+                = icon('fa', 'comment-alt')
+                %text 0
+                %p 出品中
+            .arrow
+              = icon('fas', 'chevron-right')
+    .mypageHistoryButtons
+      = link_to "#", class: "btn" do
+        = icon('fas', 'chevron-left')
+      = link_to "#", class: "btn" do
+        = icon('fas', 'chevron-right')
+
+%footer
+  = render 'shared/footer'
+= render 'shared/exhibition-btn'

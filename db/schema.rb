@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2020_01_09_030800) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name_zenkaku"
+    t.string "last_name_zenkaku"
+    t.string "first_name_kana"
+    t.string "last_name_kana"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -78,7 +82,6 @@ ActiveRecord::Schema.define(version: 2020_01_09_030800) do
     t.datetime "updated_at", null: false
     t.bigint "brand_id"
     t.bigint "category_id"
-    t.string "include_image"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -107,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_01_09_030800) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
