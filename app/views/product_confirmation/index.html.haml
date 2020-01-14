@@ -7,7 +7,7 @@
       購入内容の確認
     .confirmationMain__menu
       .picter
-        =image_tag "03.gif", size: "80x80"
+        =image_tag @image.image.url, size: "80x80"
       .details
         %p.name
           = @item.name
@@ -19,8 +19,12 @@
 
     .confirmationMain__price
       .confirmationMain__price__pay
-        %p.price1 支払い金額
-        %p.nedan1 ¥13,000
+        %p.price1
+          - if @item.deliver_fee == "送料込み(出品者負担)"
+            = "¥#{@item.price} (税込) 送料込み"
+          - else
+            = "¥#{@item.price} (税込) 送料別"
+
       .confirmationMain__price__box
         %label
           %input.checkbox-input{type: "checkbox"}/
@@ -35,12 +39,21 @@
         %p.Delivery 配送先
         =link_to('#', class:'Change1') do
           変更する
-      %p.add 〒000-0000
-      %p.add スカイオ 15F
-      %p.add3 テックエキスパート
-    .confirmationMain__purchase
-      =link_to('#', class:'purchaseBtn') do
-        購入する
+      %p.add
+        = "〒#{@address.post_number}"
+      %p.add
+        = "#{@prefecture.name} #{@address.city} #{@address.addresses_banchi}" 
+      %p.add3
+        = "#{@user.first_name_zenkaku} #{@user.last_name_zenkaku}"
+    - if @item.user_id == current_user.id
+      .confirmationMain__purchase
+        =link_to('#', class:'purchaseBtn purchaseBtn--grey') do
+          購入する
+    - else
+      .confirmationMain__purchase
+        =link_to('#', class:'purchaseBtn purchaseBtn--red') do
+          購入する
+
   .confirmationFooter
     .confirmationFooter__menu
       =link_to('#', class:'privacybtn') do
