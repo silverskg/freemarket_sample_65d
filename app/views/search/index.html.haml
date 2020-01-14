@@ -1,0 +1,246 @@
+-# 部分テンプレートに置換
+%header
+  .topheader
+    .main
+      .main__top
+        = link_to do
+          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
+        %label
+          .main__top--search
+            = form_tag search_index_path, method: :get do
+              = text_field_tag :keyword, "", placeholder: "何かお探しですか？", class: "card-nomber-form"
+              = label_tag :submit, search_index_path, class: 'icon' do
+                %i.fa.fa-search
+                = submit_tag :submit, class: "hidden", name: nil
+      -#  開発やりやすくする為、仮のフッター
+      .main__bottom
+        %ul 
+          %li.num1
+            = link_to category_index_path do
+              = icon('fas', 'bars')
+              カテゴリーから探す
+          %li.num2 
+            = link_to do
+              = icon('fas', 'tag')
+              ブランドから探す
+          %li.num3 
+            = link_to do
+              = icon('far', 'heart')
+              いいね！ 一覧
+          %li.num4 
+            = link_to do
+              = icon('far', 'bell')
+              お知らせ
+          %li.num5 
+            = link_to do
+              = icon('fas', 'check')
+              やることリスト
+          %li.num6 
+            = link_to my_page_index_path do
+              = icon('far', 'circle')
+              マイページ 
+
+%body
+  .searchContents
+    -# gem ransackでサーバーサイドは実装予定
+    .searchBox
+      .searchPullDown
+        並び替え
+        =icon('fas', 'chevron-down')
+      .searchDetails
+        .searchDetails__title
+          詳細検索
+        .searchDetails__keyword.formGroup
+          =icon('fas', 'plus')
+          .addKeyword
+            キーワードを追加する
+          %input.formBox{:type => "text"}/
+        .searchDetails__category.formGroup
+          =icon('fa', 'bars')
+          .chooseCategory
+            カテゴリーを選択する
+          %input.formBox{:type => "text"}/
+        .searchDetails__brand.formGroup
+          =icon('fas', 'tag')
+          .chooseBrand
+            ブランド名から探す
+          %input.formBox{:type => "text"}/
+        .searchDetails__size.formGroup
+          =icon('fas', 'vector-square')
+          .chooseSize
+            サイズを指定する
+          %input.formBox{:type => "text"}/
+        .searchDetails__price.formGroup
+          =icon('fa', 'coins')
+          .setPrice
+            価格
+          %input.formBox{:type => "text"}/
+        .searchDetails__quality.formGroup
+          =icon('fas', 'star')
+          .checkQuality
+            商品の状態
+          %input.formBox{:type => "text"}/
+        .searchDetails__deliveryFee.formGroup
+          =icon('fas', 'truck')
+          .setDeliveryFee
+            配送料の負担
+          %input.formBox{:type => "text"}/
+        .searchDetails__status.formGroup
+          =icon('fas', 'shopping-cart')
+          .setStatus
+            販売状況
+          %input.formBox{:type => "text"}/
+        .searchDetails__buttons
+          .clearButton
+            クリア
+          .searchButton
+            完了
+
+    .searchItems
+      .searchItems__header
+        #{@keyword} の検索結果
+      -if @items.present?
+        .searchItems__count
+          #{@items.count}件表示
+        .searchItems__items
+          - @items.each do |item|
+            = link_to item_path(item) do
+              .itemBox
+                = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
+                .itemBoxDescription
+                  %p.name
+                    =item.name
+                  .itemBoxDescription__bottom
+                    %p.price
+                      ¥#{item.price}
+                    .like
+                      = icon('fas', 'heart')
+                      %p 10
+        = paginate(@itemsPagination)
+      -else
+        .searchItems__description
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        .searchItems__searchNoResult
+          新着商品
+        .searchItems__items
+          - @itemsAll.each do |item|
+            = link_to item_path(item) do
+              .itemBox
+                = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
+                .itemBoxDescription
+                  %p.name
+                    =item.name
+                  .itemBoxDescription__bottom
+                    %p.price
+                      ¥#{item.price}
+                    .like
+                      = icon('fas', 'heart')
+                      %p 10
+
+  .botom
+    .botom__menu
+      =link_to('#', class:'link7') do
+        メルカリ 
+      %i.fas.fa-chevron-right
+        %p4
+          = @keyword
+
+-# 部分テンプレートに置換
+%footer
+  .images
+    = image_tag 'toppage/free-image-1.jpg', height: '260px', width: '100%', class: 'bottom-photo'
+  .about
+    .about__box
+      .about__box--text    
+        メルカリについて
+        .about__box--textIn
+          %nav.my-parts
+            %ul.ber
+              %li
+                %a{href: "#"} 会社概要（運営会社）
+              %li
+                %a{href: "#"} 採用情報
+              %li
+                %a{href: "#"} プレスリリース
+              %li
+                %a{href: "#"} 公式ブログ
+              %li
+                %a{href: "#"} メルカリロゴ利用ガイドライン
+          .footer_logo
+            = link_to "https://twitter.com/mercari_jp", class: "twi-icon" do
+              = icon('fab', 'twitter')
+          .footer_logo1
+            = link_to "https://www.facebook.com/mercarijp", class: "face-icon" do
+              = icon('fab', 'facebook-square')
+
+      .about__box--text1   
+        ヘルプ＆ガイド
+        .about__box--textIn
+          %nav.my-parts
+            %ul
+              %li
+                %a{href: "#"} メルカリガイド
+              %li
+                %a{href: "#"} らくらくメルカリ便
+              %li
+                %a{href: "#"} ゆうゆうメルカリ便
+              %li
+                %a{href: "#"} 大型メルカリ便
+              %li
+                %a{href: "#"} 車体取引ガイド
+              %li
+                %a{href: "#"} メルカリあんしん・あんぜん宣言！
+              %li
+                %a{href: "#"} 偽ブランド品撲滅への取り組み
+              %li
+                %a{href: "#"} メルカリボックス
+      .about__box--text2
+        プライバシーと利用規約
+        .about__box--textIn
+          %nav.my-parts
+            %ul
+              %li
+                %a{href: "#"} プライバシーポリシー
+              %li
+                %a{href: "#"} メルカリ利用規約
+              %li
+                %a{href: "#"} あんしんスマホサポート制度に関する利用特約
+              %li
+                %a{href: "#"} コンプライアンスポリシー
+      .about__box--text5
+        .about__box--textIn
+          %nav.my-parts
+            %ul
+              %li
+                %a{href: "#"} 個人データの安全管理に係る基本方針
+              %li
+                %a{href: "#"} 特定商取引に関する表記
+              %li
+                %a{href: "#"} 資金決済法に基づく表示
+              %li
+                %a{href: "#"} 法令順守と犯罪抑止のために            
+      .about__box--text3
+        国
+        .about__box--textIn
+          %nav.my-parts
+            %ul
+              %li
+                %a{href: "#"} 日本
+              %li
+                %a{href: "#"} United States
+
+    .about__bottom
+      .about__bottom--logo
+        %a(href="#")
+          = image_tag 'toppage/fmarket_logo_white.svg', height: '110px', width: '140px', class: 'logologo'
+      .about__bottom--name
+        %p.name
+          @Fmarket
+        -#  出品ボタン      
+= link_to new_item_path, class: "logo-btn" do      
+  .exhibition-btn
+    .fixed_btn
+      %span.btn-name
+      出品
+      %p.camera-icon
+        = icon('fas', 'camera')

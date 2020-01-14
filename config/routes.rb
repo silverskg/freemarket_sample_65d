@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'card/new'
   get 'card/show'
 
+  #トップページ以外は仮のルーティング設定
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
@@ -12,7 +13,6 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  
   # ログイン画面表示
 
   # ログインページ
@@ -72,5 +72,7 @@ Rails.application.routes.draw do
 
   # カテゴリーページ
   resources :category, only: [:index, :show]
-
+  
+  # キーワード検索機能
+  resources :search, only: [:index]
 end
