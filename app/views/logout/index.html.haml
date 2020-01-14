@@ -10,7 +10,7 @@
   = render 'shared/side_bar'
   .mainContainer
     .logoutButton
-      = link_to "ログアウト", "#", class: "submitbtn"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "submitbtn"
 
 %footer
   = render 'shared/footer'
