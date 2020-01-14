@@ -1,10 +1,8 @@
 class SearchController < ApplicationController
   def index
     @keyword = params[:keyword]
-    if @keyword.match(Item.name)
-      @items = Item.search(params[:keyword])
-    else
-      @items = Item.all
-    end
+    @items = Item.search(params[:keyword])
+    @itemsAll = Item.all
+    @itemsPagination = @items.order(created_at: :desc).all.page(params[:page]).per(1)
   end
 end

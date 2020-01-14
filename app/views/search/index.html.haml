@@ -99,24 +99,43 @@
     .searchItems
       .searchItems__header
         #{@keyword} の検索結果
-      .searchItems__description
-        該当する商品が見つかりません。検索条件を変えて、再度お試しください。
-      .searchItems__searchNoResult
-        新着商品
-      .searchItems__items
-        - @items.each do |item|
-          = link_to item_path(item) do
-            .itemBox
-              = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
-              .itemBoxDescription
-                %p.name
-                  =item.name
-                .itemBoxDescription__bottom
-                  %p.price
-                    ¥#{item.price}
-                  .like
-                    = icon('fas', 'heart')
-                    %p 10
+      -if @items.present?
+        .searchItems__count
+          #{@items.count}件表示
+        .searchItems__items
+          - @items.each do |item|
+            = link_to item_path(item) do
+              .itemBox
+                = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
+                .itemBoxDescription
+                  %p.name
+                    =item.name
+                  .itemBoxDescription__bottom
+                    %p.price
+                      ¥#{item.price}
+                    .like
+                      = icon('fas', 'heart')
+                      %p 10
+        = paginate(@itemsPagination)
+      -else
+        .searchItems__description
+          該当する商品が見つかりません。検索条件を変えて、再度お試しください。
+        .searchItems__searchNoResult
+          新着商品
+        .searchItems__items
+          - @itemsAll.each do |item|
+            = link_to item_path(item) do
+              .itemBox
+                = image_tag item.images.first.image.to_s, height: '160px', width: '160px', class: 'box'
+                .itemBoxDescription
+                  %p.name
+                    =item.name
+                  .itemBoxDescription__bottom
+                    %p.price
+                      ¥#{item.price}
+                    .like
+                      = icon('fas', 'heart')
+                      %p 10
 
   .botom
     .botom__menu

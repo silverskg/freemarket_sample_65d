@@ -96,6 +96,11 @@ body {
         font-size: 22px;
         font-weight: bold;
       }
+      &__count {
+        font-size: 12px;
+        margin: 14px 0;
+        color: #888888;
+      }
       &__description {
         font-size: 14px;
         margin: 16px 0 40px;
@@ -162,6 +167,50 @@ body {
           }
         }
       }
+    }
+  }
+  .pagination {
+    width: 700px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    a {
+      width: 44px;
+      height: 44px;
+      display: block;
+    }
+    .page {
+      @include pagination();
+    }
+    .current {
+      background-color: #ea352d;
+      color: white;
+      &:hover {
+        background-color: #ea352d;
+      }
+    }
+    .next {
+      @include pagination();
+      position: absolute;
+      right: 44px;
+    }
+    .last {
+      @include pagination();
+      position: absolute;
+      right: 0;
+    }
+    .first {
+      @include pagination();
+      position: absolute;
+      left: 0px;
+    }
+    .prev {
+      @include pagination();
+      position: absolute;
+      left: 44px;
     }
   }
 }
