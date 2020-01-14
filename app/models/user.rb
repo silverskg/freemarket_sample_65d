@@ -1,12 +1,15 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :omniauthable
+         :recoverable, :rememberable, :validatable, :omniauthable,
+         omniauth_providers: [:facebook, :google_oauth2]
+
 
   has_many :items
   has_many :likes
   has_many :comments
   has_one  :payment
   has_one  :address  
+  has_many :sns_credential
   
   accepts_nested_attributes_for :address
   VALID_KANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
