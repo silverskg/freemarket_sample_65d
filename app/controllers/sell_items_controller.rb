@@ -3,8 +3,7 @@ class SellItemsController < ApplicationController
   before_action :set_item, only: [:show, :destroy]
 
   def index
-    # user_idは仮設定
-    @items = Item.where(user_id: 1).includes(:images)
+    @items = Item.where(user_id: current_user.id).includes(:images)
   end
 
   def destroy
@@ -19,7 +18,7 @@ class SellItemsController < ApplicationController
   private
   def set_item
     @item = Item.find(params[:id])
-    @user = User.find(@item.user_id)
+    @user = User.find(current_user.id)
     @category = Category.find(@item.category_id)
     @brand = Brand.find(@item.brand_id)
     @prefecture = Prefecture.find(@item.region)
@@ -27,4 +26,5 @@ class SellItemsController < ApplicationController
     @user_items = Item.where(user_id: @item.user_id)
     @images = Image.where(item_id:  @item.id)
   end
+
 end

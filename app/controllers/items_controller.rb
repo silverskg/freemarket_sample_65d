@@ -29,7 +29,6 @@ class ItemsController < ApplicationController
   end
   
   private
-  # ユーザーidは、ユーザー登録後に実装(現在は仮で1を挿入)
   def item_params
     params.require(:item).permit(
       :name, 
@@ -44,7 +43,7 @@ class ItemsController < ApplicationController
       :brand_id,
       #field_forで設定した値+_attributesで受け取る。
       images_attributes: [:image, :_destroy, :id]
-    ).merge(user_id: 1)
+    ).merge(user_id: current_user.id)
   end
 
   def set_item
