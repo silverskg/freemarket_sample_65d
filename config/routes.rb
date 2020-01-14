@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   # ログイン画面表示
   devise_for :users, controllers: {
-    registrations:  'users/registrations'
+    sessions: 'users/sessions',
+    registrations:  'users/registrations',
+    omniauth_callbacks: 'users/omniauth_callbacks'
   }
   devise_scope :user do
     get 'login', to: 'users/registrations#new'

@@ -12,10 +12,10 @@
           新規会員登録
   .loginWithSNSaccount
     .btns
-      = link_to '#', class: 'btn facebookLoginLink' do
+      = link_to user_facebook_omniauth_authorize_path, method: :post, class: 'btn facebookLoginLink' do
         = icon('fab', 'facebook-square', class: 'facebookIcon')
         Facebookでログイン
-      = link_to '#', class: 'btn googleLoginLink' do
+      = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'btn googleLoginLink' do
         = icon('fab', 'google', class: 'googleIcon')
         Googleでログイン
   .loginWithEmail
