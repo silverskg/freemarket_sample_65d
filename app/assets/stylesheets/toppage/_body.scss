@@ -7,7 +7,13 @@ width: 1035px;
 margin: 0 auto;
 }
 
+.slide {
+  display: none;
+}
 
+.active {/*.slide{...}よりも下に記述*/
+  display: block;
+}
 
 .top-photo{
   background-size: auto;
