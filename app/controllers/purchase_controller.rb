@@ -23,7 +23,6 @@ class PurchaseController < ApplicationController
     @item = Item.find(params[:item_id])
     card = Card.where(user_id: current_user.id).first
     Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_SECRET_KEY)
-    binding.pry
     Payjp::Charge.create(
     :amount => @item.price, #支払金額を入力（送料は一旦無視)
     :customer => card.customer_id, #顧客ID
