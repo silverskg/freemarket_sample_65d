@@ -1,6 +1,17 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show]
 
+  # require 'payjp'
+
+  # def purchase
+  #   Payjp.api_key = "sk_test_32715e21c04b2a794f4e51d7"
+  #   Payjp::Charge.create(
+  #     amount: 809, # 決済する値段
+  #     card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+  #     currency: 'jpy'
+  #   )
+  # end
+
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
   end

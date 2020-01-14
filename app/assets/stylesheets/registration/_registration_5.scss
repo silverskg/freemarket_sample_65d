@@ -108,7 +108,7 @@ margin-left: 30px;
       width: 343px;
       height: 20px;
     }
-    .formareaBig {
+    input {
       @include formarea();
     }
     .flex {
@@ -165,3 +165,13 @@ margin-left: 30px;
 .footer{
   @include footer();
 }
+
+
+// width: 343px;
+// height: 48px;
+// border-radius: 5px;
+// border: 1px solid #dbd6d6;
+// box-shadow: none;
+// margin-top: 8px;
+// padding: 10px 16px 8px;
+// box-sizing: border-box;
