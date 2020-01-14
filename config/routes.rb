@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'purchase/index'
   get 'purchase/done'
   get 'card/new'
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
   end
   
   # ログイン画面表示
+
+  # ログインページ
+
   devise_for :users, controllers: {
     registrations:  'users/registrations'
   }
@@ -31,7 +35,7 @@ Rails.application.routes.draw do
   #トップページ
   root to: "items#index"
   
-  #商品登録画面
+
   resources :items, only: [:index, :new, :create, :edit, :update, :show] do
     resources :purchase, only: [:index] do
       collection do
@@ -41,22 +45,10 @@ Rails.application.routes.draw do
       end
     end
   end
+  #商品ページ
 
-  #トップページ以外は仮のルーティング設定
-  # ログイン画面表示
-  resources :login, only: :index
-
-  # ログアウト画面
+  # ログアウトページ
   resources :logout, only: :index
-
-  # ユーザー新規登録ページ表示
-  resources :registration0, only: :index
-  resources :registration1, only: :index
-  resources :registration2, only: :index
-  resources :registration3, only: :index
-  resources :registration4, only: :index
-  resources :registration5, only: :index
-  resources :registration6, only: :index
 
   #購入内容確認ページ
   resources :product_confirmation, only: :index
@@ -64,26 +56,21 @@ Rails.application.routes.draw do
   # マイページ
   resources :my_page, only: :index
 
-  # ユーザーマイページ編集画面
+  # マイページ編集ページ
   resources :edit_profile, only: :index
 
   # 本人情報確認ページ
   resources :information, only: :index
 
-  # クレジットカード情報登録ページ
+  # クレジットカード情報登録ページ(仮ルート)
   resources :card_register1, only: :index
   resources :card_register2, only: :index
   resources :card_register3, only: :index
 
-
-  #フッターメニューバー
-  resources :footermenu, only: :index
-
-
   # 出品商品確認ページ
-  resources :sell_items, only: [:index, :show, :destroy]
+  resources :sell_items, only: [:index, :show]
 
-  # カテゴリー
+  # カテゴリーページ
   resources :category, only: [:index, :show]
 
 end

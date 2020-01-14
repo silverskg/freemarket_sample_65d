@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update]
+  before_action :authenticate_user! , except: [:index, :show]
+  before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
     @items = Item.all.order(id: "DESC").includes(:images)
@@ -26,9 +27,17 @@ class ItemsController < ApplicationController
       render :edit
     end
   end
+
+  def destroy
+    if @item.destroy
+      redirect_to action: 'index'
+    else
+      render 'layouts/notifications'
+      redirect_to action: 'show'
+    end
+  end
   
   private
-  # ユーザーidは、ユーザー登録後に実装(現在は仮で1を挿入)
   def item_params
     params.require(:item).permit(
       :name, 
@@ -48,18 +57,13 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
-
     @user = User.find(@item.user_id)
     @category = Category.find(@item.category_id)
     @brand = Brand.find(@item.brand_id)
     @prefecture = Prefecture.find(@item.region)
-
-
     @brand_items = Item.where(brand_id: @item.brand_id)
     @user_items = Item.where(user_id: @item.user_id)
     @images = Image.where(item_id:  @item.id)
-
   end
-
-
+  
 end
