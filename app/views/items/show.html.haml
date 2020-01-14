@@ -97,9 +97,14 @@
       - else
         %p2 送料別
   
-    =link_to(item_product_confirmation_index_path(@item), class:'link2') do
-      .main1__btn
-        購入画面に進む
+    - if @item.sale_status == "on_sale"
+      =link_to(item_product_confirmation_index_path(@item), class:'link2') do
+        .main1__btn.main1__btn--red
+          購入画面に進む
+    -else
+      .main1__btn.main1__btn--grey
+        売り切れました
+
     .main1__alrt
     - if @item.how_to_deliver == 2
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
