@@ -19,13 +19,13 @@ Rails.application.routes.draw do
   root to: "items#index"
   
   #商品ページ
-  resources :items
+  resources :items do
+    #購入内容確認ページ
+    resources :product_confirmation, only: :index
+  end
 
   # ログアウトページ
   resources :logout, only: :index
-
-  #購入内容確認ページ
-  resources :product_confirmation, only: :index
 
   # マイページ
   resources :my_page, only: :index
