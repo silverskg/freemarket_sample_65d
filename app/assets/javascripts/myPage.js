@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   // クリックしたときの関数
   $('.mypage-tabs li').click(function() {
     console.log(this)
