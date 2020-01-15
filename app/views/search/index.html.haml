@@ -1,44 +1,5 @@
--# 部分テンプレートに置換
 %header
-  .topheader
-    .main
-      .main__top
-        = link_to do
-          = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
-        %label
-          .main__top--search
-            = form_tag search_index_path, method: :get do
-              = text_field_tag :keyword, "", placeholder: "何かお探しですか？", class: "card-nomber-form"
-              = label_tag :submit, search_index_path, class: 'icon' do
-                %i.fa.fa-search
-                = submit_tag :submit, class: "hidden", name: nil
-      -#  開発やりやすくする為、仮のフッター
-      .main__bottom
-        %ul 
-          %li.num1
-            = link_to category_index_path do
-              = icon('fas', 'bars')
-              カテゴリーから探す
-          %li.num2 
-            = link_to do
-              = icon('fas', 'tag')
-              ブランドから探す
-          %li.num3 
-            = link_to do
-              = icon('far', 'heart')
-              いいね！ 一覧
-          %li.num4 
-            = link_to do
-              = icon('far', 'bell')
-              お知らせ
-          %li.num5 
-            = link_to do
-              = icon('fas', 'check')
-              やることリスト
-          %li.num6 
-            = link_to my_page_index_path do
-              = icon('far', 'circle')
-              マイページ 
+  = render 'shared/header'
 
 %body
   .searchContents
@@ -116,7 +77,7 @@
                     .like
                       = icon('fas', 'heart')
                       %p 10
-        = paginate(@itemsPagination)
+        = paginate @itemsPagination
       -else
         .searchItems__description
           該当する商品が見つかりません。検索条件を変えて、再度お試しください。
