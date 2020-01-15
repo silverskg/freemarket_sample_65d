@@ -33,6 +33,10 @@
     @include buttonDesign();
     background-color: #EA352D;
     margin: 16px 0px;
+    &--gray {
+      background-color: #aaaaaa;
+    }
+
   }
   p {
     text-align: center;

@@ -51,64 +51,63 @@ body {
     margin-bottom: 8px;
   }
   .itemsAllInCategory {
-    width: 1020px;
+    width: 1060px;
     height: auto;
     margin: 0 auto;
-    .itemBoxContent {
-      margin: 0px -20px -20px 0;
-      display: flex;
-      flex-wrap: wrap;
-      overflow: hidden;
-      .itemBox {
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    .itemBox {
+      width: 188px;
+      height: 298px;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      .box {
+        display: block;
+      }
+      .itemBoxDescription {
         width: 188px;
-        height: 298px;
-        margin-right: 20px;
-        margin-bottom: 20px;
-        .box {
-          display: block;
-        }
-        .itemBoxDescription {
-          width: 188px;
-          height: 110px;
-          background-color: white;
-          padding: 16px;
-          .name {
-            @include text();
-            height: 3em;
-            overflow: hidden;
-            display: inline-block;
-            position: relative;
-            &:after {
-              display: block;
-              content: '';
-              position: absolute;
-              bottom: 0;
-              right: 0;
-              width: 50%;
-              height: 1.5em;
-              background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
-            }
+        height: 110px;
+        background-color: white;
+        padding: 16px;
+        .name {
+          @include text();
+          height: 3em;
+          overflow: hidden;
+          display: inline-block;
+          position: relative;
+          &:after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 1.5em;
+            background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
           }
-          &__bottom {
+        }
+        &__bottom {
+          display: flex;
+          justify-content: space-between;
+          .price {
+            @include text();
+            font-weight: bold;
+          }
+          .like {
+            @include text();
             display: flex;
-            justify-content: space-between;
-            .price {
-              @include text();
-              font-weight: bold;
-            }
-            .like {
-              @include text();
-              display: flex;
-              .fas {
-                line-height: 1.5;
-                color: #cccccc;
-              }
+            .fas {
+              line-height: 1.5;
+              color: #cccccc;
             }
           }
         }
       }
     }
   }
+  
   .pagination {
     width: 1020px;
     height: 44px;

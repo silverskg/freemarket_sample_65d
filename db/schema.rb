@@ -13,7 +13,6 @@
 
 ActiveRecord::Schema.define(version: 2020_01_14_073329) do
 
-
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "build_name"
     t.string "addresses_banchi", null: false
@@ -35,6 +34,15 @@ ActiveRecord::Schema.define(version: 2020_01_14_073329) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -75,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_073329) do
     t.datetime "updated_at", null: false
     t.bigint "brand_id"
     t.bigint "category_id"
+    t.string "sale_status"
     t.index ["brand_id"], name: "index_items_on_brand_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
@@ -109,6 +118,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_073329) do
   end
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "comments", "items"
   add_foreign_key "comments", "users"
   add_foreign_key "images", "items"

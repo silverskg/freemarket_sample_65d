@@ -1,0 +1,35 @@
+%header
+  = render 'shared/header'
+
+%nav.bread
+  %ul.bread__list
+    - breadcrumb :categories
+    = render "layouts/breadcrumbs"
+
+.cardRegisteredMain
+  = render 'shared/side_bar'
+  .mainContainer
+    .cardRegisteredTitle
+      支払い方法
+    .cardRegisteredInfo
+      %p クレジットカード一覧
+      .detailInfo
+        .left
+          .cardImage
+            = image_tag 'visa.svg', width: '49px', height: '16px', class: 'visa'
+          .cardNumber
+            = "**** **** **** " + @default_card_information.last4
+          .date
+            - exp_month = @default_card_information.exp_month.to_s
+            - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+            = exp_month + " / " + exp_year
+        .right
+          = form_tag(delete_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
+            %input{ type: "hidden", name: "card_id", value: "" }
+            %button.delete 削除する
+    .linkAboutPay
+      = link_to "支払い方法について >", "#", class: "aboutPay"
+
+%footer
+  = render 'shared/footer'
+= render 'shared/exhibition-btn'

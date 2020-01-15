@@ -33,13 +33,4 @@
         メルカリをはじめる 
       
   .footer
-    .footer__menu
-      =link_to('#', class:'privacybtn') do
-        プライバシーポリシー
-      =link_to('#', class:'rulebtn') do
-        メルカリ利用規約
-      =link_to('#', class:'transactionbtn') do
-        特定商取引に関する表記
-    =link_to('#', class:'image2') do  
-      = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
-    %p © Mercari, Inc.
+    = render 'shared/simple_footer'

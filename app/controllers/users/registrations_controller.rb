@@ -99,6 +99,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
 
     @user.save
+    
       session[:id] = @user.id
       @address = Address.create(
        first_name_zenkaku:          session[:first_name_zenkaku],
@@ -113,7 +114,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
        post_number:       session[:post_number],
        user_id:           session[:id]
       )
-      redirect_to  step7_registrations_path
+
+       session[:id] = @user.id
+       sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to  card_new_path
+    
   end
 
 

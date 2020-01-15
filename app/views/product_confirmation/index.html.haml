@@ -1,40 +1,67 @@
 .confirmationBody
   .confirmationHeader
-    =link_to('#', class:'imag') do
+    =link_to(root_path, class:'imag') do
       = image_tag "fmarket_logo_red.svg", size: "185x49", class: "rogo" 
   .confirmationMain
     .confirmationMain__title
       購入内容の確認
     .confirmationMain__menu
       .picter
-        =image_tag "03.gif", size: "80x80"
+        =image_tag @image.image.url, size: "80x80"
       .details
-        %p.name 商品の名前
-        %p.nedan ¥13,000 (税込) 送料込み
+        %p.name
+          = @item.name
+        %p.nedan
+          - if @item.deliver_fee == "送料込み(出品者負担)"
+            = "¥#{@item.price} (税込) 送料込み"
+          - else
+            = "¥#{@item.price} (税込) 送料別"
+
     .confirmationMain__price
       .confirmationMain__price__pay
-        %p.price1 支払い金額
-        %p.nedan1 ¥13,000
+        %p.price1
+          - if @item.deliver_fee == "送料込み(出品者負担)"
+            = "¥#{@item.price} (税込) 送料込み"
+          - else
+            = "¥#{@item.price} (税込) 送料別"
+
       .confirmationMain__price__box
         %label
           %input.checkbox-input{type: "checkbox"}/
         %p.point ポイント使用（所有ポイント：P0）
     .confirmationMain__payment
       %p.Method 支払い方法
-      %p.Credit クレジットカード 
-      %p.Nomber ********123
-      %p.Deadline 有効期限09/18
+      - if @card
+        %p.Credit クレジットカード 
+        %p.Nomber 
+          = "**** **** **** " + @default_card_information.last4
+          %p.Deadline
+          - exp_month = @default_card_information.exp_month.to_s
+          - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+          = "有効期限 #{exp_month} / #{exp_year}"
+      - else
+        %p.Credit カード未登録
+
     .confirmationMain__delivery
       .confirmationMain__delivery__change  
         %p.Delivery 配送先
         =link_to('#', class:'Change1') do
           変更する
-      %p.add 〒000-0000
-      %p.add スカイオ 15F
-      %p.add3 テックエキスパート
-    .confirmationMain__purchase
-      =link_to('#', class:'purchaseBtn') do
-        購入する
+      %p.add
+        = "〒#{@address.post_number}"
+      %p.add
+        = "#{@prefecture.name} #{@address.city} #{@address.addresses_banchi}" 
+      %p.add3
+        = "#{@user.first_name_zenkaku} #{@user.last_name_zenkaku}"
+    - if @item.user_id == current_user.id ||  @card.blank?
+      .confirmationMain__purchase
+        =link_to('#', class:'purchaseBtn purchaseBtn--grey') do
+          購入する
+    - else
+      .confirmationMain__purchase
+        =link_to(pay_item_purchase_index_path, class:'purchaseBtn purchaseBtn--red', method: :post) do
+          購入する
+
   .confirmationFooter
     .confirmationFooter__menu
       =link_to('#', class:'privacybtn') do

@@ -1,7 +1,7 @@
 .registration3body
   .registration3header
     .progress-bar
-      =link_to('#', class:'image') do
+      =link_to('/', class:'image') do
         = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
       %nav.progress-bar
       %ol.clearfix
@@ -48,13 +48,4 @@
         を確認して、もう一度電話番号を入力してください。
 
   .footer
-    .footer__menu
-      =link_to('#', class:'privacybtn') do
-        プライバシーポリシー
-      =link_to('#', class:'rulebtn') do
-        メルカリ利用規約
-      =link_to('#', class:'transactionbtn') do
-        特定商取引に関する表記
-    =link_to('#', class:'imag2') do
-      = image_tag "logo_gray.svg", size: "80x65", class: "logo2"  
-    %p © Mercari, Inc.
+    = render 'shared/simple_footer'

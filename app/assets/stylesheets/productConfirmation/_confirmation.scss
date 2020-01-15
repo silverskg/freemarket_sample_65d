@@ -131,7 +131,6 @@
         }  
 
         .purchaseBtn{
-          background-color: grey;
           height: 50px;
           width: 343px;
           color: #ffffff;
@@ -142,7 +141,14 @@
           position: relative;
           text-align: center; 
           margin: 30px auto 0 auto;
+          &--red {
+            background-color: red;
           }
+          &--grey {
+            background-color: grey;
+          }
+          }
+        
 }
 
 

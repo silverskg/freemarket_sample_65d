@@ -1,23 +1,31 @@
+%script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+%script{:src => "https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"}
+
+
 %header
   = render 'shared/header'
       
 %body
-  .images
+  .slider
     = image_tag 'toppage/free.image-1.jpg', height: '390px', width: '100%', class: 'top-photo'
+    = image_tag 'amazonIMGL0450_TP_V.jpg', height: '390px', width: '100%', class: 'top-photo'
+  
+  -# .images
+  -#   = image_tag 'toppage/free.image-1.jpg', height: '390px', width: '100%', class: 'top-photo'
     -# %img(src="スクリーンショット 2019-12-19 19.03.35.png" class="top-photo")/
   .bar
     %div 人気のカテゴリー
     .bar__btn
-      %a(href="#" class="btn-gradient-radius")レディース
-      %a(href="#" class="btn-gradient-radius")メンズ
-      %a(href="#" class="btn-gradient-radius")家電・スマホ・カメラ
-      %a(href="#" class="btn-gradient-radius")おもちゃ・ホビー・グッズ
+      %a(href="#sec1" class="btn-gradient-radius")レディース
+      %a(href="#sec2" class="btn-gradient-radius")メンズ
+      %a(href="#sec3" class="btn-gradient-radius")家電・スマホ・カメラ
+      %a(href="#sec4" class="btn-gradient-radius")おもちゃ・ホビー・グッズ
       -# レディースカテゴリー
 .category
   .category__box
     .women
       .women__box
-        .category-name
+        .category-name{id:'sec1'}
           %p レディース新着アイテム
           .motto
             = link_to do
@@ -40,7 +48,7 @@
   .category__box
     .women
       .women__box
-        .category-name
+        .category-name{id:'sec2'}
           %p メンズ新着アイテム
           .motto
             = link_to do
@@ -63,7 +71,7 @@
   .category__box
     .women
       .women__box
-        .category-name
+        .category-name{id:'sec3'}
           %p 家電・スマホ・カメラ新着アイテム
           .motto
             = link_to do
@@ -86,7 +94,7 @@
   .category__box
     .women
       .women__box
-        .category-name
+        .category-name{id:'sec4'}
           %p おもちゃ・ホビー・グッズ新着アイテム
           .motto
             = link_to do
@@ -109,16 +117,16 @@
 .bar
   %div 人気のカテゴリー
   .bar__btn
-    %a(href="#" class="btn-gradient-radius")シャネル
-    %a(href="#" class="btn-gradient-radius")ルイヴィトン
-    %a(href="#" class="btn-gradient-radius")シュプリーム
-    %a(href="#" class="btn-gradient-radius")ナイキ
+    %a(href="#sec5" class="btn-gradient-radius")シャネル
+    %a(href="#sec6" class="btn-gradient-radius")ルイヴィトン
+    %a(href="#sec7" class="btn-gradient-radius")シュプリーム
+    %a(href="#sec8" class="btn-gradient-radius")ナイキ
 
   -# シャネルカテゴリー
 .category
   .category__box
     .chanel
-      .category-name
+      .category-name{id:'sec5'}
         %p シャネル新着アイテム
         .motto
           = link_to do
@@ -141,7 +149,7 @@
       -# ビトンカテゴリー
   .category__box
     .chanel
-      .category-name
+      .category-name{id:'sec6'}
         %p ルイヴィトン新着アイテム
         .motto
           = link_to do
@@ -163,7 +171,7 @@
     -# シュプリームカテゴリー
   .category__box
     .chanel
-      .category-name
+      .category-name{id:'sec7'}
         %p シュプリーム新着アイテム
         .motto
           = link_to do
@@ -185,7 +193,7 @@
     -# ナイキカテゴリー
   .category__box
     .chanel
-      .category-name
+      .category-name{id:'sec8'}
         %p ナイキ新着アイテム
         .motto
           = link_to do

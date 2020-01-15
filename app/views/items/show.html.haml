@@ -7,7 +7,7 @@
     .main1__product
       = @item.name
     .main1__Introduction
-    - if user_signed_in?
+    - unless user_signed_in?
       『
       = @item.name
       』は、✖︎回の取引実績を持つ
@@ -92,10 +92,22 @@
         ¥ 
         =@item.price  
       %p1 (税込) 
-      %p2 送料込み
-    =link_to('#', class:'link2') do
-      .main1__btn
-        購入画面に進む
+      - if @item.deliver_fee == "送料込み(出品者負担)"
+        %p2 送料込み
+      - else
+        %p2 送料別
+  
+    - if @item.sale_status == "on_sale" && @item.user_id != current_user.id
+      =link_to(item_product_confirmation_index_path(@item), class:'link2') do
+        .main1__btn.main1__btn--red
+          購入画面に進む
+    - elsif @item.user_id == current_user.id
+      .main1__btn.main1__btn--grey
+        出品者につき購入不可
+    - else
+      .main1__btn.main1__btn--grey
+        売り切れました
+
     .main1__alrt
     - if @item.how_to_deliver == 2
       この商品はゆうゆうメルカリ便を利用しているため、アプリからのみ購入できます。
