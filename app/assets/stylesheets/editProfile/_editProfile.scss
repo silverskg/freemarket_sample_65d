@@ -29,14 +29,18 @@
       text-align: center;
       font-weight: 400;
     }
+    .profileImg {
+      position: absolute;
+      z-index: 1;
+    }
     .editProfileForm {
       .userProfile {
         width: 700px;
         height: 156px;
-        background-color: white;
         padding: 72px 16px 24px;
+        position: relative;
         display: flex;
-        background-image: url(editProfileBackground.jpg);
+        z-index: 2;
         .iconAndName {
           margin: 0 auto;
           display: flex;
