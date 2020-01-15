@@ -15,20 +15,19 @@
   .categoryTitle
     #{@category.name}の商品一覧
   .itemsAllInCategory
-    .itemBoxContent
-      - @items.each do |item|
-        = link_to item_path(item) do
-          .itemBox
-            = image_tag item.images.first.image.to_s, height: '188px', width: '188px', class: 'box'
-            .itemBoxDescription
-              %p.name
-                =item.name
-              .itemBoxDescription__bottom
-                %p.price
-                  ¥#{item.price}
-                .like
-                  = icon('fas', 'heart')
-                  %p 10
+    - @items.each do |item|
+      = link_to item_path(item) do
+        .itemBox
+          = image_tag item.images.first.image.to_s, height: '188px', width: '188px', class: 'box'
+          .itemBoxDescription
+            %p.name
+              =item.name
+            .itemBoxDescription__bottom
+              %p.price
+                ¥#{item.price}
+              .like
+                = icon('fas', 'heart')
+                %p 10
   = paginate(@items)
   .categoryDescription
     .categoryDescription__title

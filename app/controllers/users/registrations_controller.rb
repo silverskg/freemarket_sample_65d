@@ -1,10 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :validates_step2, only: [:step3]
-  before_action :validates_step5, only: [:step6_payjp] 
+  before_action :validates_step2, only: [:step3] 
   
   def index
   end
-
 
   def step1_login
     @user = User.new
@@ -33,12 +31,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       last_name_kana:       session[:last_name_kana],
       birthday:             session[:birthday]
     )
-    # binding.pry
    render :step2_user_form unless @user.valid?
-    @user.build_address
   end
 
   def step3
+    @user.build_address
   end
 
   def step4
@@ -50,41 +47,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @address = Address.new
   end
 
-  def validates_step5
-    session[:first_name_zenkaku] = address_params[:first_name_zenkaku]
-    session[:last_name_zenkaku] = address_params[:last_name_zenkaku]
-    session[:first_name_kana]  = address_params[:first_name_kana]
-    session[:last_name_kana] = address_params[:last_name_kana]
-    session[:post_number] = address_params[:post_number]
-    session[:prefectures] = address_params[:prefectures]
-    session[:city]  = address_params[:city]
-    session[:addresses_banchi] = address_params[:addresses_banchi]
-    session[:build_name]  = address_params[:build_name]
-    session[:phone_number] = address_params[:phone_number]
-    @address = Address.new(
-      first_name_zenkaku:          session[:first_name_zenkaku],
-      last_name_zenkaku:           session[:last_name_zenkaku],
-      first_name_kana:             session[:first_name_kana],
-      last_name_kana:              session[:last_name_kana],
-      post_number:                 session[:post_number],
-      prefectures:                 session[:prefectures],
-      city:                        session[:city],
-      addresses_banchi:            session[:addresses_banchi],
-      build_name:                  session[:build_name],
-      phone_number:                session[:phone_number]
-    )
-    render :step5_address_form unless @address.valid?
-  end
-
   def step6_payjp
     @user = User.new
-    @user.build_address
   end
 
   def step7_done
     @user = User.new
   end
-
 
   def create
     @user = User.new(
@@ -99,25 +68,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     )
 
     @user.save
+    session[:id] = @user.id
     
-      session[:id] = @user.id
-      @address = Address.create(
-       first_name_zenkaku:          session[:first_name_zenkaku],
-       last_name_zenkaku:           session[:last_name_zenkaku],
-       first_name_kana:             session[:first_name_kana],
-       last_name_kana:              session[:last_name_kana],
-       build_name:        session[:build_name],
-       addresses_banchi:  session[:addresses_banchi],
-       phone_number:      session[:phone_number],
-       prefectures:       session[:prefectures],
-       city:              session[:city],
-       post_number:       session[:post_number],
-       user_id:           session[:id]
-      )
-
-       session[:id] = @user.id
-       sign_in User.find(session[:id]) unless user_signed_in?
-      redirect_to  card_new_path
+    @address = Address.new(address_params)
+    if @address.valid?
+      @address.save
+      sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to card_new_path
+    else
+      render :step5_address_form
+    end
     
   end
 
@@ -154,7 +114,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       :last_name_zenkaku,
       :first_name_kana,
       :last_name_kana
-    )
+    ).merge(user_id: @user.id)
   end
   
 end

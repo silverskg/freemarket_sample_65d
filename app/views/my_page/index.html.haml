@@ -13,7 +13,8 @@
       = link_to "profile" do
         %figure
           = image_tag "my_page/サラリーマン.svg"
-        %h2.bold ユーザー
+        %h2.bold
+          = current_user.nickname
         .mypage-number
           .mypage-number__evaluation
             評価 0

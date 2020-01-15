@@ -52,7 +52,7 @@
           %tr
             %th カテゴリー
             %td 
-              =link_to('#', class:'link1') do
+              =link_to(category_path(@category), class:'link1') do
                 = @category.name
                 %br/
               =link_to('#', class:'link1') do
@@ -97,16 +97,22 @@
       - else
         %p2 送料別
   
-    - if @item.sale_status == "on_sale" && @item.user_id != current_user.id
+    - if user_signed_in?  
+      - if @item.sale_status == "on_sale" && @item.user_id != current_user.id
+        =link_to(item_product_confirmation_index_path(@item), class:'link2') do
+          .main1__btn.main1__btn--red
+            購入画面に進む
+
+      - elsif @item.user_id == current_user.id
+        .main1__btn.main1__btn--grey
+          出品者につき購入不可
+      - else
+        .main1__btn.main1__btn--grey
+          売り切れました
+    - else
       =link_to(item_product_confirmation_index_path(@item), class:'link2') do
         .main1__btn.main1__btn--red
           購入画面に進む
-    - elsif @item.user_id == current_user.id
-      .main1__btn.main1__btn--grey
-        出品者につき購入不可
-    - else
-      .main1__btn.main1__btn--grey
-        売り切れました
 
     .main1__alrt
     - if @item.how_to_deliver == 2

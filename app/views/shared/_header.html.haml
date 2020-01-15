@@ -5,10 +5,11 @@
         = image_tag 'toppage/fmarket_logo_red.svg', height: '120px', width: '165px', class: 'free-logo'
       %label
         .main__top--search
-          %input.card-nomber-form{placeholder:"何かお探しですか？"}
-          .icon
-            = link_to "" do
+          = form_tag search_index_path, method: :get do
+            = text_field_tag :keyword, "", placeholder: "何かお探しですか？", class: "card-nomber-form"
+            = label_tag :submit, search_index_path, class: 'icon' do
               %i.fa.fa-search
+              = submit_tag :submit, class: "hidden", name: nil
 
     - if user_signed_in?
       .main__bottom
@@ -78,7 +79,7 @@
             = link_to(category_path(13), class: 'categoryMenu') do
               その他 
           %li
-            = link_to('#', class: 'categoryMenu') do
+            = link_to(category_index_path, class: 'categoryMenu') do
               カテゴリー一覧 
         .menuBrandBar
           %li
@@ -104,7 +105,7 @@
       .main__bottom
         %ul 
           %li.num1
-            = link_to do
+            = link_to category_index_path do
               = icon('fas', 'bars')
               カテゴリーから探す
           %li.num2 
@@ -159,7 +160,7 @@
             = link_to(category_path(13), class: 'categoryMenu') do
               その他 
           %li
-            = link_to('#', class: 'categoryMenu') do
+            = link_to(category_index_path, class: 'categoryMenu') do
               カテゴリー一覧 
       .menuBrandBar
         %li

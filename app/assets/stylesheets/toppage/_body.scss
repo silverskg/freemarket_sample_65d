@@ -195,19 +195,33 @@ margin: 0 auto;
     z-index: 2;
     }
     .name{
-      font-size: 14px;
       width: 188px;
       height: 50px;
       background-color: white;
       position: absolute;
       top: 202px;
-      color: #222;
-      font-size: 14px;
-      line-height: 1.4em;
       padding: 5px 12px;
-      white-space: normal;
-      word-break: break-word;
       box-sizing: border-box;
+      .nameText {
+        width: 164px;
+        height: 40px;
+        font-size: 14px;
+        color: #222;
+        white-space: normal;
+        word-break: break-word;
+        line-height: 1.4em;
+        overflow: hidden;
+        &:after {
+          display: block;
+          content: '';
+          position: absolute;
+          bottom: 5px;
+          right: 12px;
+          width: 50%;
+          height: 1.5em;
+          background: linear-gradient(to right, rgba(255,255,255,0), #fff 72%);
+        }
+      }
     }
   }
 

@@ -21,10 +21,18 @@
 ul.bxslider {
   list-style: none;
 }
-//.bx-viewport {
-  /*fix other elements on the page moving (on Chrome)*/
-  //-webkit-transform: translatez(0);
-//}
+
+.bxslider li {
+  display: none;
+  }
+  .bx-viewport .bxslider li {
+  display: block !important;
+  }
+  
+// .bx-viewport {
+//   /*fix other elements on the page moving (on Chrome)*/
+//   -webkit-transform: translatez(0);
+// }
 /** THEME
 ===================================*/
 .bx-wrapper {

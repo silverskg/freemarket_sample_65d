@@ -2,8 +2,6 @@ class PurchaseController < ApplicationController
 
   require 'payjp'
   before_action :authenticate_user!
-  before_action :check_user, only: :pay
-  before_action :check_item, only: :pay
 
   def index
     card = Card.find_by(user_id: current_user.id)
