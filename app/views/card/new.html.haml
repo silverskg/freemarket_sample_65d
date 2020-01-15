@@ -26,7 +26,7 @@
 .cardRegisterMain
   .mainContainer
     .cardRegisterTitle
-      クレジットカード情報入力
+      支払い方法
     .cardRegisterForm
       = form_tag(pay_card_index_path, method: :post, id: 'charge-form',  name: "inputForm") do
         .cardInfo
@@ -78,6 +78,5 @@
             #card_token
             = submit_tag "追加する", id: "token_submit", class: "submitbtn"
 
-%footer
-  = render 'shared/footer'
-= render 'shared/exhibition-btn'
+.footer
+  = render 'shared/simple_footer'
