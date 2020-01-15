@@ -79,7 +79,7 @@
             = link_to(category_path(13), class: 'categoryMenu') do
               その他 
           %li
-            = link_to('#', class: 'categoryMenu') do
+            = link_to(category_index_path, class: 'categoryMenu') do
               カテゴリー一覧 
         .menuBrandBar
           %li
@@ -105,7 +105,7 @@
       .main__bottom
         %ul 
           %li.num1
-            = link_to do
+            = link_to category_index_path do
               = icon('fas', 'bars')
               カテゴリーから探す
           %li.num2 
@@ -160,7 +160,7 @@
             = link_to(category_path(13), class: 'categoryMenu') do
               その他 
           %li
-            = link_to('#', class: 'categoryMenu') do
+            = link_to(category_index_path, class: 'categoryMenu') do
               カテゴリー一覧 
       .menuBrandBar
         %li
