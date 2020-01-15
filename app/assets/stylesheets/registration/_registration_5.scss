@@ -24,7 +24,7 @@ body{
   
 //赤丸のクラス名を入力
 
-  .maru1red, .maru2red{
+  .maru1red, .maru2red,.maru3red{
 
     background:#ea352d;
     width: 12px;
@@ -34,7 +34,7 @@ body{
 }  
 
 
-.maru3red,.maru4gray, .maru5gray {
+.maru4red, .maru5gray {
 
     background: #ccc;
     width: 12px;
@@ -77,7 +77,7 @@ li1--gray, li2--gray, li4--red, li5--gray {
 //赤ラインのwidthの値を変更
 
 .redLine4 {
-  width: 210px;
+  width: 230px;
 
   display: block;
   content: '';
