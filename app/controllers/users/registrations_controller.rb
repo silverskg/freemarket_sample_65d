@@ -35,10 +35,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def step3
+    @user.build_address
   end
 
   def step4
     @user = User.new
+    @user.build_address
   end
 
   def step5_address_form
@@ -67,10 +69,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     @user.save
     session[:id] = @user.id
-    @address = Address.create(address_params)
     
-    sign_in User.find(session[:id]) unless user_signed_in?
-    redirect_to card_new_path
+    @address = Address.new(address_params)
+    if @address.valid?
+      @address.save
+      sign_in User.find(session[:id]) unless user_signed_in?
+      redirect_to card_new_path
+    else
+      render :step5_address_form
+    end
+    
   end
 
 
