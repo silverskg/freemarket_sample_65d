@@ -52,7 +52,7 @@
           %tr
             %th カテゴリー
             %td 
-              =link_to('#', class:'link1') do
+              =link_to(category_path(@category), class:'link1') do
                 = @category.name
                 %br/
               =link_to('#', class:'link1') do
