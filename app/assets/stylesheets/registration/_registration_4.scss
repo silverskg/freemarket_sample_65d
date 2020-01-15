@@ -1,15 +1,16 @@
-body{
+.registration3body{
   background-color: #f5f5f5;
   //height: 100vh;
+}
 
-
-.registration4header{
+.registration3header{
+  background-color: #f5f5f5;
   text-align: center; 
   width: 100%;
   height: 128px;
   display:flex;
-  padding:40px 0;
-  
+  padding: 40px 0;
+
   .progress-bar{
     text-align: center;
     margin: auto;
@@ -20,9 +21,11 @@ body{
     margin: 0 40px 0 0;
     text-align: center;
   }
+
+  
   
 //赤丸のクラス名を入力
-  .maru1red, .maru2red,.maru3red {
+  .maru1red, .maru2red{
     background:#ea352d;
     width: 12px;
     height: 12px;
@@ -30,7 +33,7 @@ body{
     border-radius: 50%;
 }  
 
-.maru4gray, .maru5gray {
+.maru3gray, .maru4gray, .maru5gray{
     background: #ccc;
     width: 12px;
     height: 12px;
@@ -41,7 +44,7 @@ body{
   
     
 //赤文字のli番号を入力
-li3--red {
+li2--red {
     font-weight: 600;
     color: #ea352d;
     z-index: 1;
@@ -50,7 +53,7 @@ li3--red {
     margin-right: 40px;
   }
 
-li1--gray, li2--gray, li4--gray, li5--gray {
+li1--gray, li3--gray, li4--gray, li5--gray {
   z-index: 5;
   display: inline-block;
   font-size: 12px;
@@ -58,7 +61,7 @@ li1--gray, li2--gray, li4--gray, li5--gray {
   margin-right: 40px;
   
 }
-.grayline3 {
+.grayline2 {
     display: block;
     content: '';
     width: 434px;
@@ -68,22 +71,20 @@ li1--gray, li2--gray, li4--gray, li5--gray {
 }
 
 //赤ラインのwidthの値を変更
-.redline3 {
-  width: 230px;
+.redline2 {
+  width: 100px;
   display: block;
   content: '';
   border-bottom: solid 3px #ea352d;
   margin-top: -3px;
   margin-left: 30px;
 }
-  
 }
 
-
-.registermain{
+.registration3main{
   background-color: #f5f5f5;
-  height: 1305px;
-  .registerAddress {
+  margin-bottom: 60px;
+  .certificatePhoneNumber {
     @include centralContent();
     border-bottom: 1px solid #f1f1f1;
     height: 97px;
@@ -92,7 +93,40 @@ li1--gray, li2--gray, li4--gray, li5--gray {
     font-size: 22px;
     line-height: 97px;
   }
-  .addressForm {
+  .certificationForm {
+    @include centralContent();
+    height: auto;
+    border-bottom: 0.5px solid #f1f1f1;
+    padding: 40px 178.5px 64px;
+    box-sizing: border-box;
+    font-size: 14px;
+    .formPhoneNumber {
+      .titleBold {
+        @include titleBold();
+      }
+      .formareaBig {
+        @include formarea();
+      }
+      .small {
+        color: #333333;
+        font-size: 14px;
+        margin-top: 8px;
+      }
+      .submitbtn {
+        width: 343px;
+        height: 50px;
+        font-size: 13px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+        background-color: #EA352D;
+        color: white;
+        margin-top: 32px;
+      }
+    }
+  }
+  .certificateWithPhonecall {
     @include centralContent();
     height: auto;
     border-bottom: 0.5px solid #f1f1f1;
@@ -101,19 +135,6 @@ li1--gray, li2--gray, li4--gray, li5--gray {
     font-size: 14px;
     .titleBold {
       @include titleBold();
-    }
-    .hissuTag {
-      @include hissuTag();
-    }
-    .notHissu {
-      @include hissuTag();
-      background-color: #cccccc;
-    }
-    .formareaBig {
-      @include formarea();
-    }
-    #address_prefectures {
-      @include formarea();
     }
     .small {
       color: #333333;
@@ -126,20 +147,37 @@ li1--gray, li2--gray, li4--gray, li5--gray {
       font-size: 13px;
       text-decoration: none;
       text-align: center;
-      line-height: 40px;
+      line-height: 48px;
       display: inline-block;
       background-color: #EA352D;
       color: white;
       margin-top: 32px;
     }
-    .topmargin {
+  }
+  .resendCertificationNumber {
+    @include centralContent();
+    height: auto;
+    padding: 40px 178.5px 64px;
+    box-sizing: border-box;
+    font-size: 14px;
+    .titleBold {
+      @include titleBold();
+    }
+    .link {
+      color: #0099e8;
+      text-decoration: none;
       margin-top: 32px;
     }
+    .small {
+      color: #333333;
+      font-size: 14px;
+      margin-top: 8px;
+    }
   }
+
 }
 
 
 .footer{
   @include footer();
-}
 }

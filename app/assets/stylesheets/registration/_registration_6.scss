@@ -1,15 +1,15 @@
-.registration6body{
+body{
   background-color: #f5f5f5;
-  height: 100vh;
-  }
-  
-.registration6header{
+  //height: 100vh;
+}
+
+.registration5header{
   text-align: center; 
   width: 100%;
   height: 128px;
-  display: flex;
+  display:flex;
   padding:40px 0;
-  
+
   .progress-bar{
     text-align: center;
     margin: auto;
@@ -21,95 +21,146 @@
     text-align: center;
   }
   
-  //赤丸のクラス名を入力
-  .maru1red, .maru2red, .maru3red, .maru4red, .maru5red {
+ //赤丸のクラス名を入力
+  .maru1red, .maru2red,.maru3red,.maru4red {
   background:#ea352d;
   width: 12px;
   height: 12px;
   margin: 8px auto 0;
   border-radius: 50%;
-  }
+}  
 
-  //赤文字のli番号を入力
-  li5--red {
-    font-weight: 600;
-    color: #ea352d;
-    z-index: 1;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 40px;
-  }
+.maru5gray {
+  background: #ccc;
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  border-radius: 50%;
+}
+
+
   
-  li1--gray, li2--gray, li3--gray, li4--gray {
-  z-index: 5;
+//赤文字のli番号を入力
+li4--red {
+  font-weight: 600;
+  color: #ea352d;
+  z-index: 1;
   display: inline-block;
   font-size: 12px;
-  color: #888;
   margin-right: 40px;
-  }
+}
 
-  .grayline5 {
-    display: block;
-    content: '';
-    width: 434px;
-    border-bottom: solid 3px #ccc;
-    margin-top: -8px;
-    margin-left: 30px;
-  }
-  
-  //赤ラインのwidthの値を変更
-  .redline5 {
-  width: 434px;
+li1--gray, li2--gray, li3--gray, li5--gray {
+z-index: 5;
+display: inline-block;
+font-size: 12px;
+color: #888;
+margin-right: 40px;
+
+}
+.grayline4 {
   display: block;
   content: '';
-  border-bottom: solid 3px #ea352d;
-  margin-top: -3px;
+  width: 434px;
+  border-bottom: solid 3px #ccc;
+  margin-top: -8px;
   margin-left: 30px;
-  } 
 }
-  
-  
-  
 
-.main-complete {
-  width: 700px;
-  height: 344px;
-  background-color: #ffffff;
-  text-align: center; 
-  margin: auto;
+//赤ラインのwidthの値を変更
+.redline4 {
+width: 350px;
+display: block;
+content: '';
+border-bottom: solid 3px #ea352d;
+margin-top: -3px;
+margin-left: 30px;
+} 
+
+}
+
+.paymentmain{
+  background-color: #f5f5f5;
   margin-bottom: 60px;
-  &__title{
+  .paymentHeader {
+    @include centralContent();
+    border-bottom: 1px solid #f1f1f1;
+    height: 97px;
+    text-align: center;
+    margin: auto;
     font-size: 22px;
-    padding: 32px;
-    font-weight: bold;
+    line-height: 97px;
   }
-  &__contents{
-    border-top: 1px #f5f5f5 solid;
-    height: 247px;
-    padding-left: 180px;
+  .paymentForm {
+    @include centralContent();
+    height: auto;
+    padding: 40px 178.5px 64px;
+    box-sizing: border-box;
     font-size: 14px;
-    ul{
-      padding-top: 50px;
-      padding-right: 150px;
+    .titleBold {
+      @include titleBold();
     }
-    ul2 {
-      padding-right: 150px;
+    .hissuTag {
+      @include hissuTag();
     }
-    .text {
-    background-color: #EA352D;
-    height: 50px;
-    width: 343px;
-    color: #FFFFFF;
-    border-radius: 4px;
-    line-height: 48px;
-    display: block;
-    text-decoration: none;
-    margin-top: 30px;
-    position: relative;
+    .cardImages {
+      margin-top: 8px;
+      width: 343px;
+      height: 20px;
+    }
+    input {
+      @include formarea();
+    }
+    .flex {
+      display: flex;
+      vertical-align: middle;
+      .formareaMiddle {
+        width: 131.5px;
+        height: 48px;
+        padding: 0px 16px;
+        border-radius: 5px;
+        border: 1px solid #dbd6d6;
+        box-shadow: none;
+        box-sizing: border-box;
+        margin-top: 8px;
+        background-color: white;
+      }
+    }
+    .small {
+      color: #333333;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .submitbtn {
+      width: 343px;
+      height: 50px;
+      font-size: 13px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 40px;
+      display: inline-block;
+      background-color: #EA352D;
+      color: white;
+      margin-top: 32px;
+    }
+    .topmargin {
+      margin-top: 32px;
+    }
+    .date {
+      font-size: 14px;
+      color: #333333;
+      margin: 16px 10px 0px;
+      line-height: 30px;
+    }
+    .link {
+      color: #0099e8;
+      text-decoration: none;
+      text-align: right;
+      display: inherit;
+      margin-top: 5px;
     }
   }
-}  
-  
+}
 
 .footer{
   @include footer();
