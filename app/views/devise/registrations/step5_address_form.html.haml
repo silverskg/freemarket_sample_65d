@@ -1,6 +1,6 @@
-.registration5header
+.RegistrationHeader
   .progress-bar
-    =link_to('/', class:'image') do
+    =link_to(root_path, class:'image') do
       = image_tag "fmarket_logo_red.svg", size: "185x49", class: "logo" 
     %nav.progress-bar
     %ol.clearfix
@@ -19,8 +19,8 @@
       %li5--gray
         完了
         .maru5gray
-      .grayline4
-      .redline4
+      .grayLine
+      .redLine
 .registermain
   .registerAddress
     発送元・お届け先住所入力
