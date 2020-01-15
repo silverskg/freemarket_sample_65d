@@ -1,7 +1,7 @@
 body{
   background-color: #f5f5f5;
   //height: 100vh;
-}
+
 
 .registration5header{
   text-align: center; 
@@ -9,7 +9,7 @@ body{
   height: 128px;
   display:flex;
   padding:40px 0;
-
+  
   .progress-bar{
     text-align: center;
     margin: auto;
@@ -21,68 +21,69 @@ body{
     text-align: center;
   }
   
- //赤丸のクラス名を入力
+//赤丸のクラス名を入力
   .maru1red, .maru2red,.maru3red {
-  background:#ea352d;
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  border-radius: 50%;
+    background:#ea352d;
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    border-radius: 50%;
 }  
 
-.maru4red,.maru5gray {
-  background: #ccc;
-  width: 12px;
-  height: 12px;
-  margin: 8px auto 0;
-  border-radius: 50%;
+.maru4gray, .maru5gray {
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    margin: 8px auto 0;
+    border-radius: 50%;
 }
-
 
   
+    
 //赤文字のli番号を入力
-li3--gray {
-  font-weight: 600;
-  color: #ea352d;
-  z-index: 1;
+li3--red {
+    font-weight: 600;
+    color: #ea352d;
+    z-index: 1;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 40px;
+  }
+
+li1--gray, li2--gray, li4--gray, li5--gray {
+  z-index: 5;
   display: inline-block;
   font-size: 12px;
+  color: #888;
   margin-right: 40px;
+  
 }
-
-li1--gray, li2--gray, li4--red, li5--gray {
-z-index: 5;
-display: inline-block;
-font-size: 12px;
-color: #888;
-margin-right: 40px;
-
-}
-.grayline4 {
-  display: block;
-  content: '';
-  width: 434px;
-  border-bottom: solid 3px #ccc;
-  margin-top: -8px;
-  margin-left: 30px;
+.grayline3 {
+    display: block;
+    content: '';
+    width: 434px;
+    border-bottom: solid 3px #ccc;
+    margin-top: -8px;
+    margin-left: 30px;
 }
 
 //赤ラインのwidthの値を変更
-.redline4 {
-width: 230px;
-display: block;
-content: '';
-border-bottom: solid 3px #ea352d;
-margin-top: -3px;
-margin-left: 30px;
-} 
-
+.redline3 {
+  width: 230px;
+  display: block;
+  content: '';
+  border-bottom: solid 3px #ea352d;
+  margin-top: -3px;
+  margin-left: 30px;
+}
+  
 }
 
-.paymentmain{
+
+.registermain{
   background-color: #f5f5f5;
-  margin-bottom: 60px;
-  .paymentHeader {
+  height: 1305px;
+  .registerAddress {
     @include centralContent();
     border-bottom: 1px solid #f1f1f1;
     height: 97px;
@@ -91,9 +92,10 @@ margin-left: 30px;
     font-size: 22px;
     line-height: 97px;
   }
-  .paymentForm {
+  .addressForm {
     @include centralContent();
     height: auto;
+    border-bottom: 0.5px solid #f1f1f1;
     padding: 40px 178.5px 64px;
     box-sizing: border-box;
     font-size: 14px;
@@ -103,28 +105,15 @@ margin-left: 30px;
     .hissuTag {
       @include hissuTag();
     }
-    .cardImages {
-      margin-top: 8px;
-      width: 343px;
-      height: 20px;
+    .notHissu {
+      @include hissuTag();
+      background-color: #cccccc;
     }
-    input {
+    .formareaBig {
       @include formarea();
     }
-    .flex {
-      display: flex;
-      vertical-align: middle;
-      .formareaMiddle {
-        width: 131.5px;
-        height: 48px;
-        padding: 0px 16px;
-        border-radius: 5px;
-        border: 1px solid #dbd6d6;
-        box-shadow: none;
-        box-sizing: border-box;
-        margin-top: 8px;
-        background-color: white;
-      }
+    #address_prefectures {
+      @include formarea();
     }
     .small {
       color: #333333;
@@ -146,22 +135,11 @@ margin-left: 30px;
     .topmargin {
       margin-top: 32px;
     }
-    .date {
-      font-size: 14px;
-      color: #333333;
-      margin: 16px 10px 0px;
-      line-height: 30px;
-    }
-    .link {
-      color: #0099e8;
-      text-decoration: none;
-      text-align: right;
-      display: inherit;
-      margin-top: 5px;
-    }
   }
 }
 
+
 .footer{
   @include footer();
+}
 }
