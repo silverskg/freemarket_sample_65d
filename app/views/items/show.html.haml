@@ -7,27 +7,27 @@
     .main1__product
       = @item.name
     .main1__Introduction
-    - unless user_signed_in?
-      『
-      = @item.name
-      』は、✖︎回の取引実績を持つ
-      =link_to('#', class:'link') do
-        %span 
-          = @user.nickname
-      さんから出品されました。
-      =link_to('#', class:'link') do
-        %span
-          =@brand.name
-      =link_to('#', class:'link') do
-        %span 
-          (
-          = @category.name
-          )
-      の商品で、
-      =@prefecture.name
-      から
-      = @item.delivery_date
-      されます。
+      - unless user_signed_in?
+        『
+        = @item.name
+        』は、✖︎回の取引実績を持つ
+        =link_to('#', class:'link') do
+          %span 
+            = @user.nickname
+        さんから出品されました。
+        =link_to('#', class:'link') do
+          %span
+            =@brand.name
+        =link_to('#', class:'link') do
+          %span 
+            (
+            = @category.name
+            )
+        の商品で、
+        =@prefecture.name
+        から
+        = @item.delivery_date
+        されます。
     .main1__menu
       .main1__menu__picbig
         =  image_tag @item.images.first.image.to_s, size: "300x300", class: "picmain" 
