@@ -71,8 +71,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session[:id] = @user.id
     
     @address = Address.new(address_params)
-    if @address.valid?
-      @address.save
+    if @address.save
       sign_in User.find(session[:id]) unless user_signed_in?
       redirect_to card_new_path
     else

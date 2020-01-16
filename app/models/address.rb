@@ -1,5 +1,5 @@
 class Address < ApplicationRecord
-  belongs_to :user,  optional: true
+  belongs_to :user
 
   VALID_KANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
   # # バリデーション
